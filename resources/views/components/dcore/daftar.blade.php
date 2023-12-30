@@ -8,7 +8,7 @@
         <div class="col-md-6 mt-3">
             <label>Gelombang<sup class="text-danger">*</sup></label>
             <input type="text" value="{{$gelombang->gelombang ?? 'Belum Ada Gelombang'}}" name="gelombang"
-                class="form-control disabl" readonly>
+                class="form-control disable" readonly>
         </div>
         <div class="col-md-6 mt-3">
             <label>Status Gelombang</label>
@@ -48,7 +48,7 @@
                 class="form-control" placeholder="NIK Ada Di KK"
                 {{$form}} @if($gelombang==null) @elseif($gelombang->status_gelombang == 'Buka') name="nik"
             @endif value="{{old('nik')}}">
-          
+
         </div>
         <div class="col-md-12 mt-3">
             <label>Jenis Kelamin</label>
@@ -114,14 +114,14 @@
             <input type="text" class="form-control" placeholder="Hobi"
                 {{$form}} @if($gelombang==null) @elseif($gelombang->status_gelombang == 'Buka') name="hobi"
             @endif value="{{old('hobi')}}">
-           
+
         </div>
         <div class="col-md-12 mt-3">
             <label>Cita Cita</label>
             <input type="text" class="form-control"
                 placeholder="Cita Cita" {{$form}} @if($gelombang==null) @elseif($gelombang->status_gelombang
             == 'Buka') name="cita" @endif value="{{old('cita')}}">
-           
+
         </div>
 
         <div class="col-md-12 mt-3">
