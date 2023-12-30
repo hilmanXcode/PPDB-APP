@@ -68,5 +68,5 @@ Route::group(['prefix' => 'home/sekolah'], function($id = null){
 });
 
 Route::get('/testing', function(){
-    return "Testing";
+    return view('components.dashboard.testing');
 });
