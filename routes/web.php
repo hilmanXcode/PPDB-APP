@@ -67,6 +67,15 @@ Route::group(['prefix' => 'home/sekolah'], function($id = null){
     Route::get('/kontak_admin/{id}/hapus_pesan', [AdminController::class, 'hapus_pesan'])->name('hapus_pesan', $id);
 });
 
+// Hilman
 Route::get('/testing', function(){
-    return view('components.dashboard.testing');
+    return view('testing', [
+        'page' => "dashboard"
+    ]);
+});
+
+Route::get('/testing2', function(){
+    return view('testing2', [
+        'page' => "daftarbaru"
+    ]);
 });
