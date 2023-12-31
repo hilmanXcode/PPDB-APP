@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>PPDB SMK Telematika Indramayu</title>
+  <title>PPDB SMK PGRI Telagasari</title>
 
   <!-- General CSS Files -->
   <link rel="stylesheet" href="https://technext.github.io/stisla-1/assets/modules/bootstrap/css/bootstrap.min.css">
