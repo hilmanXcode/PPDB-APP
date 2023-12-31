@@ -9,7 +9,7 @@
     <!-- Navbar End -->
 
     <!-- FAQ -->
-    <x-client.appointment />
+    <x-client.contactus />
     <!-- FAQ End -->
 
     <!-- Footer Start -->

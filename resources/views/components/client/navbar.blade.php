@@ -10,7 +10,7 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav mx-auto bg-light rounded pe-4 py-3 py-lg-0">
             <a href="{{url('/')}}" class="nav-item nav-link">Home</a>
-            <a href="{{route('siapa_kami')}}" class="nav-item nav-link">About Us</a>
+            <a href="{{route('aboutus')}}" class="nav-item nav-link">About Us</a>
             <a href="{{route('faq')}}" class="nav-item nav-link">F.A.Q</a>
             <a href="{{route('contactus')}}" class="nav-item nav-link">Contact Us</a>
         </div>

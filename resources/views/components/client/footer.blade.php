@@ -8,11 +8,11 @@
                 </p>
                 <div class="d-flex pt-2">
 
-                    <a class="btn btn-square me-1" href="https://www.facebook.com/hoemas.smkti"><i
+                    <a class="btn btn-square me-1" href="https://web.facebook.com/profile.php?id=100070948940143"><i
                             class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-square me-1" href="https://www.youtube.com/channel/UCGEoK96YkcjEHem-BDko2GQ"><i
+                    <a class="btn btn-square me-1" href="https://www.youtube.com/@smkpgri.telagasari5920"><i
                             class="fab fa-youtube"></i></a>
-                    <a class="btn btn-square me-0" href="https://www.instagram.com/official_smkti.indramayu/"><i
+                    <a class="btn btn-square me-0" href="https://www.instagram.com/smk.pgritelagasari/"><i
                             class="fab fa-instagram"></i></a>
                 </div>
             </div>
@@ -23,11 +23,11 @@
                     Barat 41381, Indonesia
                 </p>
                 <p><i class="fa fa-phone-alt me-3"></i>+62 123-4567-8910</p>
-                <p><i class="fa fa-envelope me-3"></i>fitramuhammadanugrah@gmail.com</p>
+                <p><i class="fa fa-envelope me-3"></i>info@smkpgritelagasari1.sch.id</p>
             </div>
             <div class="col-lg-4 col-md-6">
                 <h5 class="text-light mb-4">Link Alternatif</h5>
-                <a class="btn btn-link" href="{{route('siapa_kami')}}">Tentang Kami</a>
+                <a class="btn btn-link" href="{{route('aboutus')}}">Tentang Kami</a>
                 <a class="btn btn-link" href="{{route('informasi')}}">Informasi</a>
                 <a class="btn btn-link" href="{{route('daftar')}}">Daftar</a>
 

@@ -37,7 +37,7 @@
                     </div>
                     <div class="ms-3">
                         <h5>Email</h5>
-                        <p class="mb-0">fitramuhammadanugrah@gmail.com</p>
+                        <p class="mb-0">info@smkpgritelagasari1.sch.id</p>
                     </div>
                 </div>
             </div>

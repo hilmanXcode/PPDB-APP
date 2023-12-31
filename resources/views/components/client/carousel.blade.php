@@ -47,7 +47,7 @@
                                     class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Daftar
                                     Sekarang</a>
                                 <a href="{{route('cek')}}"
-                                    class="btn btn-light py-md-3 px-md-5 animated slideInRight">Baca Selengkapnya</a>
+                                    class="btn btn-light py-md-3 px-md-5 animated slideInRight">Cek Pendaftaran</a>
                             </div>
                         </div>
                     </div>

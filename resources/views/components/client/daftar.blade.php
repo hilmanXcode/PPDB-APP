@@ -2,7 +2,7 @@
     <div class="container">
         <div class="text-center mx-auto" style="max-width: 500px">
             <h1 class="display-6 mb-5">
-                Formulir Pendaftaran Online SMK Telematika Indramayu
+                Formulir Pendaftaran Online SMK PGRI Telagasari
             </h1>
         </div>
         <div class="row g-4 justify-content-center">
@@ -53,10 +53,10 @@
                         <label>Nomor Induk Kependudukan (NIK) Milik Siswa (Ada Di KK) </label>
                         <input type="number" maxlength="16"
                             oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                            class="form-control" placeholder="NIK Ada Di KK"
-                            {{$form}} @if($gelombang==null) @elseif($gelombang->status_gelombang == 'Buka') name="nik"
+                            class="form-control" placeholder="NIK Ada Di KK" {{$form}} @if($gelombang==null)
+                            @elseif($gelombang->status_gelombang == 'Buka') name="nik"
                         @endif value="{{old('nik')}}">
-                       
+
                     </div>
                     <div class="col-md-12 mt-3">
                         <label>Jenis Kelamin</label>
@@ -119,17 +119,17 @@
                     </div>
                     <div class="col-md-12 mt-3">
                         <label>Hobi</label>
-                        <input type="text" class="form-control" placeholder="Hobi"
-                            {{$form}} @if($gelombang==null) @elseif($gelombang->status_gelombang == 'Buka') name="hobi"
+                        <input type="text" class="form-control" placeholder="Hobi" {{$form}} @if($gelombang==null)
+                            @elseif($gelombang->status_gelombang == 'Buka') name="hobi"
                         @endif value="{{old('hobi')}}">
-                        
+
                     </div>
                     <div class="col-md-12 mt-3">
                         <label>Cita Cita</label>
-                        <input type="text" class="form-control"
-                            placeholder="Cita Cita" {{$form}} @if($gelombang==null) @elseif($gelombang->status_gelombang
+                        <input type="text" class="form-control" placeholder="Cita Cita" {{$form}} @if($gelombang==null)
+                            @elseif($gelombang->status_gelombang
                         == 'Buka') name="cita" @endif value="{{old('cita')}}">
-                       
+
                     </div>
 
                     <div class="col-md-12 mt-3">
@@ -285,12 +285,12 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Hi Guys</h5>
+                <h5 class="modal-title">Halo Guys</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <p>
-                    Selamat Datang Di Web PPDB SMK Telematika Indramayu 2023 / 2024, ada beberapa aturan sebelum mengisi
+                    Selamat Datang Di Web PPDB SMK PGRI Telagasari 2024 / 2025, ada beberapa aturan sebelum mengisi
                     form pengisian di bawah ini, seperti
                 </p>
                 <ul>
@@ -306,11 +306,11 @@
 
                 </ul>
                 <p>
-                    Terima kasih telah mendaftar di sekolah kami SMK Telematika Indramayu, jadi bagian telematika adalah
+                    Terima kasih telah mendaftar di sekolah kami SMK PGRI Telagasari, jadi bagian telematika adalah
                     suatu langkah awal yang baik, Terima kasih.
                 </p>
                 <p>
-                    Jangan lupa cek ya datamu !
+                    Jangan lupa cek datamu ya !
                 </p>
             </div>
             <div class="modal-footer">

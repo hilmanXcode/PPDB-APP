@@ -10,7 +10,7 @@
 <body>
     <div class="container">
 
-                <img src="https://ppdb.smktelematikaindramayu.sch.id/default/kop.png" alt="">
+                <img src="" alt="">
         
     <table>
         <tr>
