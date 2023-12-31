@@ -6,9 +6,6 @@
    <x-client.spinner />
     <!-- Spinner End -->
 
-    <!-- Topbar Start -->
-     <x-client.topbar />
-    <!-- Topbar End -->
     <x-dcore.alert />
     <!-- Navbar Start -->
     <x-client.navbar />

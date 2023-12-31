@@ -16,11 +16,16 @@ Route::group(['prefix' => '/'], function($id = null){
     Route::get('/siapa', [ClientController::class, 'siapa_kami'])->name('siapa_kami');
     Route::get('/informasi', [ClientController::class, 'informasi'])->name('informasi');
     Route::get('/informasi/{id}/baca', [ClientController::class, 'baca'])->name('baca', $id);
+    Route::get('/faq', [ClientController::class, 'faq'])->name('faq');
+    Route::get('/appointment', [ClientController::class, 'contactus'])->name('contactus');
+
+
 
     Route::get('/foto', [ClientController::class, 'foto'])->name('foto');
     Route::get('/video', [ClientController::class, 'video'])->name('video');
     Route::get('/help', [ClientController::class, 'help'])->name('help');
     Route::post('/hub', [ClientController::class, 'hub'])->name('hub');
+
 });
 
 Auth::routes(['register' => false]); // LOGIN
@@ -66,4 +71,3 @@ Route::group(['prefix' => 'home/sekolah'], function($id = null){
     Route::get('/kontak_admin/{id}/dibaca', [AdminController::class, 'dibaca'])->name('dibaca', $id);
     Route::get('/kontak_admin/{id}/hapus_pesan', [AdminController::class, 'hapus_pesan'])->name('hapus_pesan', $id);
 });
-

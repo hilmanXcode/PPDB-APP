@@ -6,10 +6,6 @@
    <x-client.spinner />
     <!-- Spinner End -->
 
-    <!-- Topbar Start -->
-     <x-client.topbar />
-    <!-- Topbar End -->
-
     <!-- Navbar Start -->
     <x-client.navbar />
     <!-- Navbar End -->

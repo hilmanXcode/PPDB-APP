@@ -3,20 +3,14 @@
 <x-client.head />
 
 <body>
-    <!-- Spinner Start -->
-    <x-client.spinner />
-    <!-- Spinner End -->
 
-    <x-dcore.alert />
     <!-- Navbar Start -->
     <x-client.navbar />
     <!-- Navbar End -->
 
-    <!-- Service Start -->
-    <x-client.siapa :data="$data" />
-    <!-- Service End -->
-
-    <x-client.features />
+    <!-- FAQ -->
+    <x-client.appointment />
+    <!-- FAQ End -->
 
     <!-- Footer Start -->
     <x-client.footer />
