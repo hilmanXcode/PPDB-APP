@@ -1,3 +1,3 @@
 <div class="login-brand">
-              <img src="https://technext.github.io/stisla-1/assets/img/stisla-fill.svg" alt="logo" width="100" class="shadow-light rounded-circle">
+              <img src="{{asset('img/logo_smk_new.png')}}" alt="logo" width="100" class="shadow-light rounded-circle">
             </div>

@@ -112,6 +112,15 @@ class ClientController extends Controller
         $data = Tentang::first();
         return view('Client/siapa', compact('data'));
     }
+
+    public function faq()    {
+        return view('Client/faq');
+    }
+
+    public function contactus()    {
+        return view('Client/contactus');
+    }
+
     public function informasi()
     {
         $info = Informasi::orderBy('id', 'DESC')->limit(9)->get();
