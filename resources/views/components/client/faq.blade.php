@@ -16,7 +16,7 @@
                                 </button>
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show"
-                                data-bs-parent="#accordionExample">
+                                data-bs-parent="#accordionOne">
                                 <div class="accordion-body">
                                     Caranya cukup mudah dengan cara klik tombol daftar sekarang yang ada di pojok kanan
                                     atas
@@ -30,8 +30,7 @@
                                     Apakah daftarnya wajib online?
                                 </button>
                             </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionExample">
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionTwo">
                                 <div class="accordion-body">
                                     Wajib online, tapi boleh offline bagi yang berkenan datang langsung ke sekolah
                                 </div>
@@ -45,9 +44,22 @@
                                 </button>
                             </h2>
                             <div id="collapseThree" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionExample">
+                                data-bs-parent="#accordionThree">
                                 <div class="accordion-body">
                                     Untuk tes masuk wajib datang langsung ke sekolah
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    Dimana lokasi SMK PGRI Telagasari?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFour">
+                                <div class="accordion-body">
+                                    Jl. Raya Syeh Quro, Talagasari, Kabupaten Karawang, Jawa Barat 41381, Indonesia
                                 </div>
                             </div>
                         </div>
@@ -58,8 +70,7 @@
                                     Apa saja jurusan yang tersedia di sekolah ini?
                                 </button>
                             </h2>
-                            <div id="collapseFive" class="accordion-collapse collapse"
-                                data-bs-parent="#accordionExample">
+                            <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFive">
                                 <div class="accordion-body">
                                     <p></p>
                                     <ul>

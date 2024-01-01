@@ -13,7 +13,7 @@
                     <div class="testimonial-item text-center">
                         <img class="img-fluid rounded mx-auto mb-4" src="{{asset('default/ardi.jpg')}}" alt="" />
                         <p class="fs-5">
-                            SMKTI SETARA DENGAN D3 PENGAJARANNYA.
+                            SMK SETARA DENGAN D3 PENGAJARANNYA.
                         </p>
                         <h5>Ardiansyah Em Habib</h5>
                         <span>IT Desain Grafis</span>
@@ -48,21 +48,10 @@
                         <p class="fs-5">
                             Terimakasih banyak almamater ku telah banyak memberikan pelajaran dan pengajaran tentang
                             dunia IT, yang dulunya sangat buta akan teknologi kini sedikit membuka mata tentang IT lewat
-                            SMK telematika Indramayu
+                            SMK PGRI Telagasari
                         </p>
                         <h5>Sinengsih</h5>
                         <span>Mahasiswi AMIK Purnama Niaga</span>
-                    </div>
-                    <div class="testimonial-item text-center">
-                        <img class="img-fluid rounded mx-auto mb-4" src="{{asset('default/lukmen.jpeg')}}" alt="" />
-                        <p class="fs-5">
-                            Yakin nggak mau lanjut ke smkti ?
-                            Ilmu it yang ada di smkti terbaik se Indramayu loh. Gurunya pun bersahabat jadi tidak
-                            canggung untuk bertanya jika tidak bisa. Suasana sekolah nya pun sangat nyaman. Yok langsung
-                            join dan jadi bagian bari smkti.
-                        </p>
-                        <h5>Lukman Hakim</h5>
-                        <span>Mahasiswa Politeknik Negeri Indramayu</span>
                     </div>
                 </div>
             </div>

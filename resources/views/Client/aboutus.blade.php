@@ -13,10 +13,8 @@
     <!-- Navbar End -->
 
     <!-- Service Start -->
-    <x-client.siapa :data="$data" />
+    <x-client.aboutus :data="$data" />
     <!-- Service End -->
-
-    <x-client.features />
 
     <!-- Footer Start -->
     <x-client.footer />
