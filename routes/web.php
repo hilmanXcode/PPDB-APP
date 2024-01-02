@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\MasukController;
 
 Route::group(['prefix' => '/'], function($id = null){
     Route::get('/', [ClientController::class, 'index'])->name('/');
@@ -66,4 +67,4 @@ Route::group(['prefix' => 'home/sekolah'], function($id = null){
     Route::get('/kontak_admin/{id}/dibaca', [AdminController::class, 'dibaca'])->name('dibaca', $id);
     Route::get('/kontak_admin/{id}/hapus_pesan', [AdminController::class, 'hapus_pesan'])->name('hapus_pesan', $id);
 });
-
+Route::get('/contoh', [MasukController::class, 'index']);
