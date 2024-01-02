@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
@@ -65,17 +66,4 @@ Route::group(['prefix' => 'home/sekolah'], function($id = null){
     Route::get('/kontak_admin', [AdminController::class, 'kontak_admin'])->name('kontak_admin');
     Route::get('/kontak_admin/{id}/dibaca', [AdminController::class, 'dibaca'])->name('dibaca', $id);
     Route::get('/kontak_admin/{id}/hapus_pesan', [AdminController::class, 'hapus_pesan'])->name('hapus_pesan', $id);
-});
-
-// Hilman
-Route::get('/testing', function(){
-    return view('testing', [
-        'page' => "dashboard"
-    ]);
-});
-
-Route::get('/testing2', function(){
-    return view('testing2', [
-        'page' => "daftarbaru"
-    ]);
 });

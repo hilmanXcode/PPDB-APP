@@ -19,11 +19,15 @@
           <li class="nav-item dropdown">
             <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
               aria-expanded="false">
-              <img src="images/profile/user-1.jpg" alt="" width="35" height="35" class="rounded-circle">
+              <img src="{{ asset('images/profile/user-1.jpg') }}" alt="" width="35" height="35" class="rounded-circle">
             </a>
             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
-              <div class="message-body">
-                <a href="./authentication-login.html" class="btn btn-outline-primary mx-3 d-block">Logout</a>
+              <div class="px-2">
+                <form action="{{ route('logout') }}" method="POST">
+                  @csrf
+                  <button type="submit" class="btn btn-outline-primary d-block w-100">Logout</button>
+
+                </form>
               </div>
             </div>
           </li>
