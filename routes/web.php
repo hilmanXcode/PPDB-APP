@@ -72,5 +72,5 @@ Route::group(['prefix' => 'home/sekolah'], function($id = null){
     Route::get('/kontak_admin', [AdminController::class, 'kontak_admin'])->name('kontak_admin');
     Route::get('/kontak_admin/{id}/dibaca', [AdminController::class, 'dibaca'])->name('dibaca', $id);
     Route::get('/kontak_admin/{id}/hapus_pesan', [AdminController::class, 'hapus_pesan'])->name('hapus_pesan', $id);
-});
 
+});

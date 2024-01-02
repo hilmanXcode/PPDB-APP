@@ -23,7 +23,7 @@
     <!-- Ayo Daftar -->
     <x-client.ayodaftar />
     <!-- Ayo Daftar -->
-    
+
     <!-- FAQ -->
     <x-client.faq />
     <!-- FAQ End -->
@@ -33,7 +33,7 @@
     <!-- Testimonial End -->
 
     <!-- Appointment Start -->
-    <x-client.appointment />
+    <x-client.contactus />
     <!-- Appointment End -->
 
     <!-- Footer Start -->
