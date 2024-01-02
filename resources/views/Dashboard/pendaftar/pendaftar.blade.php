@@ -178,7 +178,7 @@
 
                                             <td>
                                                 <a href="{{route('daful', $ddf->id)}}"
-                                                    class="btn btn-sm btn-block btn-outline-success">✅</a>
+                                                    class="btn btn-sm btn-block btn-outline-success">✅✅✅</a>
                                             </td>
                                         </tr>
                                         @endforeach

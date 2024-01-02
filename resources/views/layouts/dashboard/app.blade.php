@@ -10,4 +10,4 @@
             </div>
         </div>
     </div>
-    @include('components.dashboard.footer')
+@include('components.dashboard.footer')
