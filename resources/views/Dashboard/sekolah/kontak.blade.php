@@ -1,10 +1,7 @@
-<x-dcore.head />
+@extends('layouts.dashboard.app')
+@section('content')
   <div id="app">
     <div class="main-wrapper main-wrapper-1">
-      <div class="navbar-bg"></div>
-      <x-dcore.nav />
-      <x-dcore.sidebar />
-      <x-dcore.alert />
       <div class="main-content">
         <section class="section">
 
@@ -12,10 +9,8 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="card">
-                <div class="card-header">
-                  <h4>Kontak Masuk Depan</h4>
-                </div>
                 <div class="card-body table-responsive">
+                  <h5 class="fw-semibold">Kontak Masuk Depan</h5>
                     <div class="row">
                         
                         <div class="col-md-12">
@@ -32,31 +27,30 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @php $no = 1; @endphp
                                     @foreach ($data as $item)
                                         <tr>
-                                            <td>{{$no++}}</td>
+                                            <td>{{$loop->iteration}}</td>
                                             <td>{{$item->nama}}</td>
                                             <td>{{$item->nomor_hp}}</td>
                                             <td>{{$item->email}}</td>
                                             <td>{{$item->untuk}}</td>
                                             <td>
                                                 @if($item->status == 0)
-                                                    <span class="badge badge-secondary">Belum Di Baca</span>
+                                                    <span class="badge bg-secondary">Belum Di Baca</span>
                                                 @elseif($item->status == 1)
-                                                <span class="badge badge-success">Sudah Baca</span>
+                                                <span class="badge bg-success">Sudah Di Baca</span>
                                                 @endif
                                             </td>
                                             <td>
-                                                <a href="{{route('dibaca', $item->id)}}" class="btn btn-outline-primary"><i class="fas fa-eye"></i></a>
-                                                <a href="{{route('hapus_pesan', $item->id)}}" class="btn btn-outline-danger"><i class="fas fa-trash"></i></a>
+                                                <a href="{{route('dibaca', $item->id)}}" class="btn btn-outline-primary">🧐🧐</a>
+                                                <a href="{{route('hapus_pesan', $item->id)}}" class="btn btn-outline-danger">❌❌</a>
                                             </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
                             </table>
+                            {{ $data->links() }}
                         </div>
-                        
                     </div>
                 </div>
               </div>
@@ -68,7 +62,6 @@
 
         </section>
       </div>
-      <x-dcore.footer />
     </div>
   </div>
-<x-dcore.script />
+@endsection

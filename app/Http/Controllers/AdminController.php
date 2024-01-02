@@ -285,8 +285,9 @@ class AdminController extends Controller
     }
     public function kontak_admin()
     {
-        $data = Kontak::orderBy('id', 'DESC')->get();
-        return view('Dashboard/sekolah/kontak', compact('data'));
+        $data = Kontak::orderBy('id', 'DESC')->paginate(5);
+        $page = 'kontak_admin';
+        return view('Dashboard/sekolah/kontak', compact('data', 'page'));
     }
     public function dibaca($id)
     {
@@ -295,7 +296,8 @@ class AdminController extends Controller
         $baca->update([
             'status' => 1
         ]);
-        return view('Dashboard/sekolah/baca', compact('baca'));
+        $page = 'kontak_admin';
+        return view('Dashboard/sekolah/baca', compact('baca', 'page'));
 
     }
     public function hapus_pesan($id)
