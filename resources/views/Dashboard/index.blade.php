@@ -1,32 +1,91 @@
-<x-dcore.head />
-  <div id="app">
-    <div class="main-wrapper main-wrapper-1">
-      <div class="navbar-bg"></div>
-      <x-dcore.nav />
-      <x-dcore.sidebar />
-      <x-dcore.alert />
-      <div class="main-content">
-        <section class="section">
-        <x-dcore.card :g1="$g1" :g2="$g2" :g3="$g3" :g4="$g4" :bdf="$bdf" :sdf="$sdf"/>
+@extends('layouts.dashboard.app')
 
-        <!-- MAIN OF CENTER CONTENT -->
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="card">
-               
-                <div class="card-body d-flex justify-content-center">
-                <h3>Selamat Datang Di Aplikasi PPDB SMKTI Rev.3.0.0 - 2022</h3>
-              </div>
-              </div>
+@section('content')
+    <h1 class="card-title fw-semibold my-5 text-center">E-PPDB SMK PGRI TELAGASARI</h1>
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="card">
+                <div class="card-body d-flex gap-4">
+                    <div class="px-4 py-4 bg-primary rounded text-white">
+                        <i class="ti ti-user fs-6"></i>
+                    </div>
+                    <div class="mt-1">
+                        <h5 class="card-title">Gelombang 1</h5>
+                        <p class="card-text">{{ $g1 }}</p>
+                    </div>
+                </div>
             </div>
-            
-          </div>
-        <!-- END OF CENTER CONTENT -->
+        </div>
+        
+        <div class="col-lg-3">
+            <div class="card">
+                <div class="card-body d-flex gap-4">
+                    <div class="px-4 py-4 bg-primary rounded text-white">
+                        <i class="ti ti-user fs-6"></i>
+                    </div>
+                    <div class="mt-1">
+                        <h5 class="card-title">Gelombang 2</h5>
+                        <p class="card-text">{{ $g2 }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-
-        </section>
-      </div>
-      <x-dcore.footer />
+        <div class="col-lg-3">
+            <div class="card">
+                <div class="card-body d-flex gap-4">
+                    <div class="px-4 py-4 bg-primary rounded text-white">
+                        <i class="ti ti-user fs-6"></i>
+                    </div>
+                    <div class="mt-1">
+                        <h5 class="card-title">Gelombang 3</h5>
+                        <p class="card-text">{{ $g3 }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-3">
+            <div class="card">
+                <div class="card-body d-flex gap-4">
+                    <div class="px-4 py-4 bg-primary rounded text-white">
+                        <i class="ti ti-user fs-6"></i>
+                    </div>
+                    <div class="mt-1">
+                        <h5 class="card-title">Gelombang 4</h5>
+                        <p class="card-text">{{ $g4 }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-<x-dcore.script />
+    <div class="row justify-content-center">
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body d-flex gap-4">
+                    <div class="px-4 py-4 bg-primary rounded text-white">
+                        <i class="ti ti-user fs-6"></i>
+                    </div>
+                    <div class="mt-1">
+                        <h5 class="card-title">Belum Daftar Ulang</h5>
+                        <p class="card-text">{{ $bdf }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body d-flex gap-4">
+                    <div class="px-4 py-4 bg-primary rounded text-white">
+                        <i class="ti ti-user fs-6"></i>
+                    </div>
+                    <div class="mt-1">
+                        <h5 class="card-title">Sudah Daftar Ulang</h5>
+                        <p class="card-text">{{ $sdf }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection

@@ -30,7 +30,8 @@ class HomeController extends Controller
         $g4 = Pendaftar::where('gelombang', 'gelombang_4')->count();
         $bdf = Pendaftar::where('acc', '1')->where('daful', '0')->count();
         $sdf = Pendaftar::where('acc', '1')->where('daful', '1')->count();
+        $page = "dashboard";
 
-        return view('Dashboard/index', compact('g1', 'g2', 'g3', 'g4', 'bdf', 'sdf'));
+        return view('Dashboard/index', compact('g1', 'g2', 'g3', 'g4', 'bdf', 'sdf', 'page'));
     }
 }
