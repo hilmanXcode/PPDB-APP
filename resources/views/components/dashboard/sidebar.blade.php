@@ -76,7 +76,7 @@
             </a>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="./authentication-register.html" aria-expanded="false">
+            <a class="sidebar-link {{ $page === "tentang_sekolah" ? 'active' : '' }}" href="{{ route('tentang_sekolah') }}" aria-expanded="false">
                 <span>
                     <i class="ti ti-article"></i>
                 </span>

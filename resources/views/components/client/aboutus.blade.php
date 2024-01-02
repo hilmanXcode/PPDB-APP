@@ -7,10 +7,8 @@
             </div>
             <div class="row g-4">
                 <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.1s">
-                    <h5>🌟 Selamat Datang di Website PPDB Tahun Ajaran Baru! 📚</h5>
-                    <p class="mb-4">Bersiaplah untuk memulai perjalanan pendidikan yang menarik! Di sini, kesempatan
-                        untuk meraih mimpi dan cita-citamu dimulai. Temukan pengalaman belajar yang inspiratif dan
-                        fasilitas untuk mendukung perkembanganmu.</p>
+                    <h5>{{ $data->deskripsi_singkat }}</h5>
+                    <p class="mb-4">{!! $data->tentang !!}</p>
 
 
                 </div>
