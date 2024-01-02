@@ -11,7 +11,7 @@
             <img alt="image" src="https://demo.getstisla.com/assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
             <div class="d-sm-none d-lg-inline-block">{{Auth::user()->name}}</div></a>
             <div class="dropdown-menu dropdown-menu-right">
-              <div class="dropdown-title">Hellow {{Auth::user()->name}}</div>
+              <div class="dropdown-title">Hello {{Auth::user()->name}}</div>
               <a href="https://demo.getstisla.com/features-profile.html" class="dropdown-item has-icon">
                 <i class="far fa-user"></i> Profile
               </a>

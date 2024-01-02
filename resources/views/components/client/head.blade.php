@@ -4,36 +4,32 @@
     
 
  <!-- Primary Meta Tags -->
- <title>PPDB SMK Telematika Indramayu - Pendaftaran Siswa Baru</title> 
+ <title>PPDB SMK PGRI Telagasari - Pendaftaran Siswa Baru</title> 
  <!-- Open Graph / Facebook -->
  <meta property="og:type" content="website">
- <meta property="og:url" content="https://ppdb.smktelematikaindramayu.sch.id/">
- <meta property="og:title" content="PPDB SMK Telematika Indramayu - Pendaftaran Siswa Baru">
- <meta property="og:description" content="Pendaftaran Siswa Baru Di SMK Telematika Indramayu Tahun 2021/2022 Mengggunakan Sistem Online / Daring.">
- <meta property="og:image" content="https://cdn.kibrispdr.org/data/116/download-logo-smkti-37.png">
+ <meta property="og:url" content="">
+ <meta property="og:title" content="PPDB SMK PGRI Telagasari - Pendaftaran Siswa Baru">
+ <meta property="og:description" content="Pendaftaran Siswa Baru Di SMK PGRI Telagasari Tahun 2024/2025 Mengggunakan Sistem Online / Daring.">
+ <meta property="og:image" content="">
  
  <!-- Twitter -->
  <meta property="twitter:card" content="summary_large_image">
- <meta property="twitter:url" content="https://ppdb.smktelematikaindramayu.sch.id/">
- <meta property="twitter:title" content="PPDB SMK Telematika Indramayu - Pendaftaran Siswa Baru">
- <meta property="twitter:description" content="Pendaftaran Siswa Baru Di SMK Telematika Indramayu Tahun 2021/2022 Mengggunakan Sistem Online / Daring.">
- <meta property="twitter:image" content="https://cdn.kibrispdr.org/data/116/download-logo-smkti-37.png">
+ <meta property="twitter:title" content="PPDB SMK PGRI Telagasari - Pendaftaran Siswa Baru">
+ <meta property="twitter:description" content="Pendaftaran Siswa Baru Di SMK PGRI Telagasari Tahun 2024/2025 Mengggunakan Sistem Online / Daring.">
 
 <meta content="PPDB" name="keywords">
 
-<meta name="title" content="SMK Telematika Indramayu - Pendaftaran Siswa Baru">
-<meta name="description" content="SMK Telematika Indramayu Adalah Sekolah Yang Berdiri Pada Tahun 2003, Yang Hanya Memiliki Satu Jurusan Yaitu Teknik Komputer dan Jaringan (TKJ )">
-<meta name="keywords" content="SMKTI, SMK Telematika Indramyu, PPDB SMK TI, PPDB SMK Telematika Indramayu, SMKTI BISA, SMK BISA">
+<meta name="title" content="SMK PGRI Telagasari - Pendaftaran Siswa Baru">
+<meta name="description" content="SMK PGRI Telagasari Adalah Sekolah Kejuruan, Yang Memiliki Jurusan Yaitu Rekayasa Perangkat Lunak, Teknik Mesin Industri, Teknik Kendaraan Ringan, Teknik Pengelasan">
+<meta name="keywords" content="SMKS, SMK PGRI Telagasari, PPDB SMK, PPDB SMK PGRI Telagasari, SMK BISA, SMK BISA">
 <meta name="robots" content="index, follow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="language" content="English">
-<meta name="author" content="SMK Telematika Indramayu">
-
-
+<meta name="author" content="SMK PGRI Telagasari">
 
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon" />
+    <link rel="icon" href="{{asset('img/logo_smk_new.jpg')}}" type="img/icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

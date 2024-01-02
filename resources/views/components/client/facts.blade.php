@@ -1,39 +1,53 @@
-<div class="container-fluid overflow-hidden my-5 px-lg-0">
-    <div class="container facts px-lg-0">
-      <div class="row g-0 mx-lg-0">
-        <div class="col-lg-6 facts-text wow fadeIn" data-wow-delay="0.1s">
-          <div class="h-100 px-4 ps-lg-0">
-            <h1 class="text-white mb-4">Siapa SMK Telematika Indramayu ?</h1>
-            <p class="text-light mb-5 text-justify">
-              {{$tentang->deskripsi_singkat ?? 'Belum Ada Apapun'}}
-            </p>
-            <a href="{{route('siapa_kami')}}" class="align-self-start btn btn-secondary py-3 px-5"
-              >Selengkapnya</a
-            >
-          </div>
-        </div>
-        <div class="col-lg-6 facts-counter wow fadeIn" data-wow-delay="0.5s">
-          <div class="h-100 px-4 pe-lg-0">
-            <div class="row g-5">
-              <div class="col-sm-6">
-                <h1 class="display-5" data-toggle="counter-up">{{$jp}}</h1>
-                <p class="fs-5 text-primary">Pendaftar</p>
-              </div>
-              <div class="col-sm-6">
-                <h1 class="display-5" data-toggle="counter-up">{{$jt}}</h1>
-                <p class="fs-5 text-primary">Terdaftar</p>
-              </div>
-              <div class="col-sm-6">
-                <h1 class="display-5" data-toggle="counter-up">{{$jj}}</h1>
-                <p class="fs-5 text-primary">Jurusan</p>
-              </div>
-              <div class="col-sm-6">
-                <h1 class="display-5" data-toggle="counter-up">3</h1>
-                <p class="fs-5 text-primary">Costumer Service</p>
-              </div>
+< <!-- Service Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-2 text-center">
+                <div class="col-12 wow fadeInUp" data-wow-delay="0.3s">
+                    <h1 style="color: #000000;">Fasilitas dan keunggulan sekolah.</h1>
+                    <p class="mb-5">SMK PGRI Telagasari memiliki fasilitas dan keunggulan yang lengkap untuk mendukung
+                        proses pembelajaran dan pengembangan diri siswa, antara lain:
+                        .</p>
+                </div>
             </div>
-          </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item text-center pt-3 shadow">
+                        <div class="p-4">
+                            <img src="{{asset('img/icon/icon-a.png')}}" alt="" width="60px" class="mb-4">
+                            <h5 class="mb-3">Akreditasi A</h5>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item text-center pt-3 shadow">
+                        <div class="p-4">
+                            <img src="{{asset('img/icon/icon-teacher.png')}}" alt="" width="60px" class="mb-4">
+                            <h5 class="mb-3">Guru Tersertifikasi</h5>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item text-center pt-3 shadow">
+                        <div class="p-4">
+                            <img src="{{asset('img/icon/icon-workshop.png')}}" alt="" width="60px" class="mb-4">
+                            <h5 class="mb-3">Ruang Workshop</h5>
+                            <p>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="service-item text-center pt-3 shadow">
+                        <div class="p-4">
+                            <img src="{{asset('img/icon/icon-developer.png')}}" alt="" width="60px" class="mb-4">
+                            <h5 class="mb-3">Ektrakulikuler</h5>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+    <!-- Service End -->
