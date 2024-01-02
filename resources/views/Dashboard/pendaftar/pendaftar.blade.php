@@ -2,6 +2,7 @@
 @section('content')
 <div id="app">
     <div class="main-wrapper main-wrapper-1">
+      <x-dcore.alert />
         <div class="main-content">
             <section class="section">
                 <!-- MAIN OF CENTER CONTENT -->
