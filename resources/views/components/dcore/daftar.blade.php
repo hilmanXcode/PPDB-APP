@@ -261,7 +261,7 @@
             @enderror
         </div>
         <div class="col-md-12 mt-3">
-            <input {{$form}} @if($gelombang==null) class="btn btn-outline-danger btn-block"
+            <input {{$form}} @if($gelombang==null) class="btn btn-outline-danger btn-block w-100"
                 value="Belum Di Buka!" @elseif($gelombang->status_gelombang == 'Buka') class="btn
             btn-outline-success btn-block" value="Kirim Datamu!" type="submit" @endif
             >

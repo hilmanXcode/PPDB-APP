@@ -29,8 +29,9 @@
         <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
         <span class="hide-menu">Modul Pendaftaran</span>
         </li>
+        </li>
         <li class="sidebar-item">
-        <a class="sidebar-link" href="/testing2" aria-expanded="false">
+        <a class="sidebar-link {{ $page === "daftar_admin" ? 'active' : '' }}" href="{{ route('daftar_admin') }}" aria-expanded="false">
             <span>
                 <i class="ti ti-user fs-6"></i>
             </span>
