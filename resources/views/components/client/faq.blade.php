@@ -184,7 +184,7 @@
                            <h2 class="accordion-header">
                                <button class="accordion-button collapsed wow fadeInUp" data-wow-delay="0.3s"
                                    type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-3">
-                                   Apa saja jurusan yang tersedia di sekoalh ini?
+                                   Apa saja jurusan yang tersedia di sekolah ini?
                                </button>
                            </h2>
                            <div id="faq2-content-3" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
