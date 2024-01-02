@@ -43,10 +43,10 @@
                                 <p class="fs-5 text-white mb-5">
                                     {{"sekolah kejuruan yang berlokasi di Kabupaten Karawang, Jawa Barat, kini menerima peserta didik baru untuk tahun ajaran 2024/2025.!"}}
                                 </p>
-                                <a href="{{route('daftar')}}"
+                                <a href="{{route('daftar')}}" target="_blank"
                                     class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Daftar
                                     Sekarang</a>
-                                <a href="{{route('cek')}}"
+                                <a href="{{route('cek')}}" target="_blank"
                                     class="btn btn-light py-md-3 px-md-5 animated slideInRight">Cek Pendaftaran</a>
                             </div>
                         </div>
