@@ -1,21 +1,16 @@
-<x-dcore.head />
+@extends('layouts.dashboard.app')
+@section('content')
 <div id="app">
     <div class="main-wrapper main-wrapper-1">
-        <div class="navbar-bg"></div>
-        <x-dcore.nav />
-        <x-dcore.sidebar />
-        <x-dcore.alert />
         <div class="main-content">
             <section class="section">
                 <!-- MAIN OF CENTER CONTENT -->
                 <div class="row">
-                    <div class="col-lg-8">
+                    <div class="col-lg-9">
                         <div class="card">
-                            <div class="card-header">
-                                <h4>Data Pendaftar</h4>
-                            </div>
                             <div class="card-body table-responsive">
-                                <table class="table" id="data_pendaftar">
+                              <h5 class="card-title fw-semibold mb-4">Data Pendaftar</h5>
+                                <table class="table table-borderless" id="data_pendaftar">
                                     <thead>
                                         <tr>
                                             <th>No</th>
@@ -27,42 +22,37 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @php $no = 1; @endphp
                                         @foreach($data_pendaftar as $dp)
                                         <tr>
-                                            <td>{{$no++}}</td>
+                                            <td>{{$loop->iteration}}</td>
                                             <td>{{$dp->nama_siswa}}</td>
                                             <td>{{$dp->asal_sekolah}}</td>
                                             <td>{{$dp->rekomendasi ?? '-' }}</td>
                                             <td>{{$dp->gelombang ?? '-' }}</td>
 
                                             <td>
-                                                <a class="btn btn-primary dropdown-toggle" href="#" role="button"
-                                                    id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
-                                                    Option
+                                                <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                                  Option
                                                 </a>
-
-                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                    <a class="dropdown-item" href="{{route('acc', $dp->id)}}">ACC</a>
-                                                    <a class="dropdown-item"
-                                                        href="{{route('lihat', $dp->id)}}">Lihat</a>
-                                                    <a class="dropdown-item"
-                                                        href="{{route('hapus_siswa', $dp->id)}}">Hapus</a>
-                                                </div>
+                                              
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                  <li><a class="dropdown-item" href="{{ route('acc', $dp->id) }}">ACC</a></li>
+                                                  <li><a class="dropdown-item" href="{{ route('lihat', $dp->id) }}">Lihat</a></li>
+                                                  <li><a class="dropdown-item" href="{{ route('hapus_siswa', $dp->id) }}">Hapus</a></li>
+                                                </ul>
                                             </td>
                                         </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
+                                {{ $data_pendaftar->links() }}
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-3">
                         <div class="card">
-                            <div class="card-header">
-                                <h4>ACC Gelombang</h4>
-                            </div>
                             <div class="card-body">
+                              <h5 class="card-title fw-semibold mb-4">ACC Gelombang</h5>
                                 <form action="{{route('acc_massal')}}" method="POST">
                                     @csrf
                                     <div class="form-group">
@@ -75,8 +65,8 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <input type="submit" class="btn btn-primary mt-2 btn-block"
-                                            value="Acc Gelombang">
+                                        <input type="submit" class="btn btn-primary mt-2 btn-block w-100"
+                                            value="Submit">
                                     </div>
                                 </form>
                             </div>
@@ -91,11 +81,9 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
-                            <div class="card-header">
-                                <h4>Data Sudah Di ACC</h4>
-                            </div>
                             <div class="card-body table-responsive">
-                                <table class="table" id="data_acc">
+                              <h5 class="card-title fw-semibold mb-4">Data Sudah Di ACC</h5>
+                                <table class="table table-borderless" id="data_acc">
                                     <thead>
                                         <tr>
                                             <th>No</th>
@@ -121,10 +109,9 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @php $no = 1; @endphp
                                         @foreach($data_acc as $dc)
                                         <tr>
-                                            <td>{{$no++}}</td>
+                                            <td>{{$loop->iteration}}</td>
                                             <td>{{$dc->nama_siswa}}</td>
                                             <td>{{$dc->nik}}</td>
                                             <td>{{$dc->tempat_lahir}}, {{$dc->tanggal_lahir}}</td>
@@ -143,23 +130,20 @@
                                             <td>{{$dc->pekerjaan_ibu}}</td>
                                             <td>{{$dc->status_ibu}}</td>
                                             <td>
-                                                <a class="btn btn-primary dropdown-toggle" href="#" role="button"
-                                                    id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
-                                                    Option
-                                                </a>
-
-                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                    <a class="dropdown-item"
-                                                        href="{{route('lihat', $dc->id)}}">Lihat</a>
-                                                    <a class="dropdown-item"
-                                                        href="{{route('hapus_siswa', $dc->id)}}">Hapus</a>
-                                                </div>
+                                              <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Option
+                                              </a>
+                                            
+                                              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                <li><a class="dropdown-item" href="{{ route('lihat', $dc->id) }}">Lihat</a></li>
+                                                <li><a class="dropdown-item" href="{{ route('hapus_siswa', $dc->id) }}">Hapus</a></li>
+                                              </ul>
                                             </td>
                                         </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
-
+                                {{ $data_acc->links() }}
 
                             </div>
                         </div>
@@ -173,12 +157,9 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="card">
-                            <div class="card-header">
-                                <h4>Data Belum Daftar Ulang</h4>
-                            </div>
                             <div class="card-body table-responsive">
-
-                                <table class="table" id="belum_daful">
+                              <h5 class="card-title fw-semibold mb-4">Data Belum Daftar Ulang</h5>
+                                <table class="table table-borderless" id="belum_daful">
                                     <thead>
                                         <tr>
                                             <th>No</th>
@@ -188,10 +169,9 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @php $no = 1; @endphp
                                         @foreach($belum_daful as $ddf)
                                         <tr>
-                                            <td>{{$no++}}</td>
+                                            <td>{{$loop->iteration}}</td>
                                             <td>{{$ddf->nama_siswa}}</td>
                                             <td>{{$ddf->rekomendasi}}</td>
 
@@ -205,45 +185,33 @@
                                         @endforeach
                                     </tbody>
                                 </table>
-
+                                {{ $belum_daful->links() }}
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="card">
-                            <div class="card-header">
-                                <h4>Data Sudah Daftar Ulang</h4>
-                            </div>
                             <div class="card-body table-responsive">
-
-                                <table class="table" id="sudah_daful">
+                              <h5 class="card-title fw-semibold mb-4">Data Sudah Daftar Ulang</h5>
+                                <table class="table table-borderless" id="sudah_daful">
                                     <thead>
                                         <tr>
                                             <th>No</th>
                                             <th>Nama Lengkap</th>
                                             <th>Rekomendasi</th>
-                                            <th>Download</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @php $no = 1; @endphp
                                         @foreach($sudah_daful as $ddfu)
                                         <tr>
-                                            <td>{{$no++}}</td>
+                                            <td>{{$loop->iteration}}</td>
                                             <td>{{$ddfu->nama_siswa}}</td>
                                             <td>{{$ddfu->rekomendasi}}</td>
-
-
-                                            <td>
-                                                <a href="{{route('download', $ddfu->id)}}"
-                                                    class="btn btn-sm btn-block btn-outline-success"><i
-                                                        class="fas fa-download"></i></a>
-                                            </td>
                                         </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
-
+                                {{ $sudah_daful->links() }}
                             </div>
 
 
@@ -251,12 +219,9 @@
                     </div>
                     <div class="col-lg-12">
                         <div class="card">
-                            <div class="card-header">
-                                <h4>Data Untuk Dapodik</h4>
-                            </div>
                             <div class="card-body table-responsive">
-
-                                <table class="table" id="dapo">
+                              <h5 class="card-title fw-semibold mb-4">Data Untuk Dapodik</h5>
+                                <table class="table table-borderless" id="dapo">
                                     <thead>
                                         <tr>
                                             <th>No</th>
@@ -269,10 +234,9 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @php $no = 1; @endphp
                                         @foreach($sudah_daful as $dpo)
                                         <tr>
-                                            <td>{{$no++}}</td>
+                                            <td>{{$loop->iteration}}</td>
                                             <td>{{$dpo->nama_siswa}}</td>
                                             <td>{{$dpo->tempat_lahir}}, {{$dpo->tanggal_lahir}}</td>
                                             <td>{{$dpo->nik}}</td>
@@ -284,7 +248,7 @@
                                         @endforeach
                                     </tbody>
                                 </table>
-
+                                {{ $sudah_daful->links() }}
                             </div>
 
 
@@ -296,7 +260,6 @@
         </section>
 
     </div>
-    <x-dcore.footer />
 </div>
 </div>
-<x-dcore.script />
+@endsection
