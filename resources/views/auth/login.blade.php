@@ -1,19 +1,28 @@
 @extends('layouts.Dashboard')
 @section('content')
-<div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
-    <x-logo />
-
-    <div class="card card-primary">
-        <div class="card-header">
-            <h4>Login</h4>
-        </div>
-
-        <div class="card-body">
-            <form method="POST" action="{{ route('login') }}" class="needs-validation">
+<link href="{{ asset('css/styles.min.css') }}" rel="stylesheet" />
+<div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed">
+  <div class="position-relative overflow-hidden radial-gradient min-vh-100 d-flex align-items-center justify-content-center">
+    <div class="d-flex align-items-center justify-content-center w-100">
+      <div class="row justify-content-center w-100 mx-auto rounded-lg">
+        <div class="col-md-7 col-lg-6 col-xxl-3">
+          <div class="card mb-0 mx-auto rounded-lg">
+             <div class="card-body">
+             <a
+                    href="./index.html"
+                    class="text-nowrap logo-img text-center d-block py-5 w-100"
+                  >
+                    <img
+                      src="{{ asset('img/logo.png') }}"
+                      width="180"
+                      alt=""
+                    />
+                  </a>
+             
+             <form method="POST" action="{{ route('login') }}" >
                 @csrf
-
                 <div class="form-group">
-                    <label for="email">Email</label>
+                    <label for="email" class="form-label">Email</label>
                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
                         name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
@@ -27,11 +36,6 @@
                 <div class="form-group">
                     <div class="d-block">
                         <label for="password" class="control-label">Password</label>
-                        <div class="float-right">
-                            <a href="{{ route('password.request') }}" class="text-small">
-                                Forgot Password?
-                            </a>
-                        </div>
                     </div>
                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
                         name="password" required autocomplete="current-password">
@@ -43,31 +47,27 @@
                     @enderror
           </div>
 
-        <div class="form-group">
-            <div class="custom-control custom-checkbox">
+             <div class="form-group">
+                  <div class="custom-control custom-checkbox">
 
-                <input class="custom-control-input" type="checkbox" name="remember" id="remember-me"
+                    <input class="custom-control-input" type="checkbox" name="remember" id="remember-me"
                     {{ old('remember') ? 'checked' : '' }}>
 
-                <label class="custom-control-label" for="remember-me">Remember Me</label>
+                    <label class="custom-control-label" for="remember-me">Remember Me</label>
             </div>
         </div>
 
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
-                Login
-            </button>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
+                    Login
+                </button>
+            </div>
+         </form>
+            </div>
+          </div>
         </div>
-        </form>
-
+      </div>
     </div>
-
+  </div>
 </div>
-</div>
-</div>
-<div class="mt-5 text-muted text-center">
-    Don't have an account? <a href="{{url('/register')}}">Create One</a>
-</div>
-<x-footer />
-
-@stop
+<x-script />
