@@ -38,8 +38,10 @@ class AdminController extends Controller
             $form = '';
             $button = 'type="submit"';
         }
+
+        $page = "daftar_admin";
     
-        return view('Dashboard/pendaftar/daftar', compact('jurusan', 'gelombang', 'form', 'button'));
+        return view('Dashboard/pendaftar/daftar', compact('jurusan', 'gelombang', 'form', 'button', 'page'));
     }
    
 
