@@ -17,7 +17,7 @@
                         <p class="mb-4 text-black">Masa depan cerah dimulai dari pendidikan yang baik. Gabung dengan
                             kami dan jadilah siswa yang cerdas. Segera daftar sekarang dan mulailah perjalanan menempuh
                             pendidikan yang membawa keberhasilan!</p>
-                        <a href="{{route('daftar')}}"
+                        <a href="{{route('daftar')}}" target="_blank"
                             class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Daftar
                             Sekarang</a>
                     </div>

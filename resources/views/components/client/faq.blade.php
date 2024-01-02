@@ -111,8 +111,8 @@
                            <div id="faq-content-1" class="accordion-collapse collapse" data-bs-parent="#faqlist1">
                                <div class="accordion-body">
                                    Caranya cukup mudah dengan cara klik tombol daftar sekarang yang ada di pojok kanan
-                                   atas atau klik <a class="scrollto" href="#daftar">disini<i
-                                           class="ri-arrow-right-up-line"></i></a>
+                                   atas atau klik <a class="scrollto" href="{{route('daftar')}}"
+                                       target="_blank">disini<i class="ri-arrow-right-up-line"></i></a>
                                </div>
                            </div>
                        </div>
@@ -173,9 +173,8 @@
                            </h2>
                            <div id="faq2-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
                                <div class="accordion-body">
-                                   Untuk informasi mengenai fasilitas
-                                   dapat dilihat
-                                   <a href="https://alfurqanpaser.com/fasilitas" target="_blank">disini<i
+                                   Untuk melihat informasi dapat dilihat
+                                   <a href="{{route('informasi')}}" target="_blank">disini<i
                                            class="ri-arrow-right-up-line"></i></a>
                                </div>
                            </div>
