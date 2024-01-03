@@ -29,8 +29,8 @@ class AdminController extends Controller
     {
         $jurusan = Jurusan::all();
         $gelombang = Gelombang::first();
-      
-       
+
+
 
         if($gelombang == null){
             $form = 'disabled';
@@ -46,10 +46,10 @@ class AdminController extends Controller
         }
 
         $page = "daftar_admin";
-    
+
         return view('Dashboard/pendaftar/daftar', compact('jurusan', 'gelombang', 'form', 'button', 'page'));
     }
-   
+
 
     public function kirim_data(Request $req)
     {
@@ -64,7 +64,6 @@ class AdminController extends Controller
             'pekerjaan_ibu' => 'required',
             'jurusan' => 'required',
             'nama_siswa' => 'required',
-            'jenis_kelamin' => 'required',
             'tempat_lahir' => 'required',
             'tanggal_lahir' => 'required',
             'asal_sekolah' => 'required',
@@ -102,7 +101,7 @@ class AdminController extends Controller
 
     }
 
-    
+
     public function daful($id)
     {
         $data = Pendaftar::find($id)->update([
@@ -137,7 +136,7 @@ class AdminController extends Controller
             ]);
             return redirect()->back()->with('success', 'Gelombang Tersebut Telah Di Acc');
         }
-      
+
     }
 
     // SEKOLAH
@@ -157,7 +156,7 @@ class AdminController extends Controller
             'status_gelombang' => 'required'
         ]);
         $data = Gelombang::first();
-        
+
         if($data == NULL){
             $data = Gelombang::create([
                 'gelombang' => $req->gelombang,
@@ -174,7 +173,7 @@ class AdminController extends Controller
 
         }
     }
-    // 
+    //
     public function informasi_slide()
     {
         $data = Slider::orderBy('id', 'DESC')->get();
@@ -182,16 +181,16 @@ class AdminController extends Controller
     }
     public function post_slide(Request $req)
     {
-       
+
 
         $file = $req->file('wallpaper');
- 
+
 		$nama_file = 'wallpaper_'.date('dmy').'_.'.$file->getClientOriginalExtension();
- 
+
       	        // isi dengan nama folder tempat kemana file diupload
 		$tujuan_upload = 'slide';
 		$file->move($tujuan_upload,$nama_file);
- 
+
         $data = Slider::create([
             'judul' => $req->judul,
             'wallpaper' => $nama_file,
@@ -222,7 +221,7 @@ class AdminController extends Controller
             Tentang::latest()->first()->update($req->all());
             return redirect()->back()->with('success', 'Sukses Update Tentang Sekolah');
         }
-       
+
 
     }
     public function informasi_sekolah()
@@ -297,7 +296,7 @@ class AdminController extends Controller
     }
     public function dibaca($id)
     {
-        
+
         $baca = Kontak::find($id);
         $baca->update([
             'status' => 1
