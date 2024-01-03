@@ -237,8 +237,9 @@ class AdminController extends Controller
     }
     public function informasi_sekolah()
     {
+        $page ="informasi_sekolah";
         $data = Informasi::orderBy('id', 'DESC')->get();
-        return view('Dashboard/sekolah/informasi', compact('data'));
+        return view('Dashboard/sekolah/informasi', compact('data', 'page'));
     }
     public function upload_informasi(Request $req)
     {

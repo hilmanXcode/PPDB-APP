@@ -1,58 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-    <x-client.head />
-  <body>
-    <!-- Spinner Start -->
-   <x-client.spinner />
-    <!-- Spinner End -->
+<x-client.head />
 
-    <!-- Topbar Start -->
-     <x-client.topbar />
-    <!-- Topbar End -->
+<body>
 
     <!-- Navbar Start -->
     <x-client.navbar />
     <!-- Navbar End -->
 
     <!-- Carousel Start -->
-    <x-client.carousel :slide="$slide"/>
+    <x-client.carousel :slide="$slide" />
     <!-- Carousel End -->
 
-    <!-- About Start -->
-    <x-client.about />
-    <!-- About End -->
-
-    <!-- Facts Start -->
-    <x-client.facts  :tentang="$tentang" :jp="$jp" :jt="$jt" :jj="$jj"/>
-    <!-- Facts End -->
-
     <!-- Features Start -->
-   <x-client.features />
+    <x-client.features />
     <!-- Features End -->
 
-    <!-- Service Start -->
-   <x-client.service :info="$info"/>
-    <!-- Service End -->
+    <!-- Facts Start -->
+    <x-client.facts :tentang="$tentang" :jp="$jp" :jt="$jt" :jj="$jj" />
+    <!-- Facts End -->
 
-    <!-- Appointment Start -->
-   <x-client.appointment/>
-    <!-- Appointment End -->
+    <!-- Ayo Daftar -->
+    <x-client.ayodaftar />
+    <!-- Ayo Daftar -->
 
-    <!-- Team Start -->
-    
-    <!-- Team End -->
+    <!-- FAQ -->
+    <x-client.faq />
+    <!-- FAQ End -->
 
     <!-- Testimonial Start -->
     <x-client.testimonial />
     <!-- Testimonial End -->
 
+    <!-- Appointment Start -->
+    <x-client.contactus />
+    <!-- Appointment End -->
+
     <!-- Footer Start -->
-   <x-client.footer />
+    <x-client.footer />
     <!-- Footer End -->
 
     <!-- Back to Top -->
     <x-client.backtotop />
 
     <x-client.script />
-  </body>
+</body>
+
 </html>

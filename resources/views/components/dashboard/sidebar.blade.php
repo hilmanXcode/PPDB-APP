@@ -68,7 +68,7 @@
         </a>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="./authentication-register.html" aria-expanded="false">
+            <a class="sidebar-link {{ $page === "" ? 'active' : '' }}" href="{{ route ('informasi_sekolah') }}" aria-expanded="false">
                 <span>
                     <i class="ti ti-article"></i>
                 </span>
