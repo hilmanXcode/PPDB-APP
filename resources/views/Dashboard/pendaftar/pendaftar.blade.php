@@ -10,6 +10,12 @@
                         <div class="card">
                             <div class="card-body table-responsive">
                               <h5 class="card-title fw-semibold mb-4">Data Pendaftar</h5>
+                                <form action="">
+                                    <div class="input-group">
+                                        <input type="search" class="form-control rounded-start" placeholder="Search" aria-label="Search" aria-describedby="search-addon" name="pendaftar_search" value="{{ request('pendaftar_search') }}" />
+                                        <button type="submit" class="btn btn-outline-primary" data-mdb-ripple-init>search</button>
+                                    </div>
+                                </form>
                                 <table class="table table-borderless" id="data_pendaftar">
                                     <thead>
                                         <tr>
@@ -84,6 +90,12 @@
                             <div class="card-body table-responsive">
                               <h5 class="card-title fw-semibold mb-4">Data Sudah Di ACC</h5>
                               <button class="btn btn-success" onclick="exportData('xlsx', 'data_acc')">Excel</button>
+                                <form class="mt-2">
+                                <div class="input-group">
+                                    <input type="search" class="form-control rounded-start" placeholder="Search" aria-label="Search" aria-describedby="search-addon" name="data_acc_search" value="{{ request('data_acc_search') }}" />
+                                    <button type="submit" class="btn btn-outline-primary" data-mdb-ripple-init>search</button>
+                                </div>
+                                </form>
                                 <table class="table table-borderless" id="data_acc">
                                     <thead>
                                         <tr>
@@ -161,6 +173,12 @@
                             <div class="card-body table-responsive">
                               <h5 class="card-title fw-semibold mb-4">Data Belum Daftar Ulang</h5>
                               <button class="btn btn-success" onclick="exportData('xlsx', 'belum_daful')">Excel</button>
+                                <form class="mt-2">
+                                <div class="input-group">
+                                    <input type="search" class="form-control rounded-start" placeholder="Search" aria-label="Search" aria-describedby="search-addon" name="belum_daful_search" value="{{ request('belum_daful_search') }}" />
+                                    <button type="submit" class="btn btn-outline-primary" data-mdb-ripple-init>search</button>
+                                </div>
+                                </form>
                                 <table class="table table-borderless" id="belum_daful">
                                     <thead>
                                         <tr>
@@ -195,6 +213,12 @@
                             <div class="card-body table-responsive">
                               <h5 class="card-title fw-semibold mb-4">Data Sudah Daftar Ulang</h5>
                               <button class="btn btn-success" onclick="exportData('xlsx', 'sudah_daful')">Excel</button>
+                                <form class="mt-2">
+                                <div class="input-group">
+                                    <input type="search" class="form-control rounded-start" placeholder="Search" aria-label="Search" aria-describedby="search-addon" name="sudah_daful_search" value="{{ request('sudah_daful_search') }}" />
+                                    <button type="submit" class="btn btn-outline-primary" data-mdb-ripple-init>search</button>
+                                </div>
+                                </form>
                                 <table class="table table-borderless" id="sudah_daful">
                                     <thead>
                                         <tr>
@@ -208,7 +232,7 @@
                                         <tr>
                                             <td>{{$loop->iteration}}</td>
                                             <td>{{$ddfu->nama_siswa}}</td>
-                                            <td>{{$ddfu->rekomendasi}}</td>
+                                            <td>{{$ddfu->rekomendasi ?? '-'}}</td>
                                         </tr>
                                         @endforeach
                                     </tbody>
