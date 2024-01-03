@@ -8,11 +8,11 @@
                 </p>
                 <div class="d-flex pt-2">
 
-                    <a class="btn btn-square me-1" href="https://web.facebook.com/profile.php?id=100070948940143"><i
+                    <a class="btn btn-square me-1" target="_blank" href="https://web.facebook.com/profile.php?id=100070948940143"><i
                             class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-square me-1" href="https://www.youtube.com/@smkpgri.telagasari5920"><i
+                    <a class="btn btn-square me-1" target="_blank" href="https://www.youtube.com/@smkpgri.telagasari5920"><i
                             class="fab fa-youtube"></i></a>
-                    <a class="btn btn-square me-0" href="https://www.instagram.com/smk.pgritelagasari/"><i
+                    <a class="btn btn-square me-0" target="_blank" href="https://www.instagram.com/smk.pgritelagasari/"><i
                             class="fab fa-instagram"></i></a>
                 </div>
             </div>
