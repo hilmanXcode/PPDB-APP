@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                <div class="bg-white rounded p-5">
+                <div class="bg-white rounded p-5"> 
                     <div class="d-flex justify-content-center">
                         <H2>Hubungi Kami</H2>
                     </div>

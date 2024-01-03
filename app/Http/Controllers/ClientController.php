@@ -40,8 +40,8 @@ class ClientController extends Controller
     {
         $jurusan = Jurusan::all();
         $gelombang = Gelombang::first();
-      
-       
+
+
 
         if($gelombang == null){
             $form = 'disabled';
@@ -68,7 +68,6 @@ class ClientController extends Controller
             'pekerjaan_ibu' => 'required',
             'jurusan' => 'required',
             'nama_siswa' => 'required',
-            'jenis_kelamin' => 'required',
             'tempat_lahir' => 'required',
             'tanggal_lahir' => 'required',
             'asal_sekolah' => 'required',
@@ -113,11 +112,11 @@ class ClientController extends Controller
         return view('Client/aboutus', compact('data'));
     }
 
-    public function faq()    {
+    public function faq(){
         return view('Client/faq');
     }
 
-    public function contactus()    {
+    public function contactus(){
         return view('Client/contactus');
     }
 
@@ -133,6 +132,13 @@ class ClientController extends Controller
     }
     public function hub(Request $req)
     {
+        // Contoh validasi
+
+        // $req->validate([
+        //     'A' => 'required',
+        //     'B' => 'required',
+        // ]);
+
         Kontak::create([
             'nama' => $req->input('nama'),
             'nomor_hp' => $req->input('nomor_hp'),
@@ -140,6 +146,7 @@ class ClientController extends Controller
             'untuk' => $req->input('untuk'),
             'pesan' => $req->input('pesan')
         ]);
+
         return redirect()->back()->with('sukses', 'Berhasil Mengirim Pesan, Terima Kasih');
     }
     public function foto()

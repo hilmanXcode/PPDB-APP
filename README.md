@@ -21,7 +21,7 @@ Aplikasi ini adalah manajemen PPDB berbasis website yang di bangun dan di kemban
 * Install dependencies: `composer install`
 * Run `cp .env.example .env` for create .env file
 * Create new database: `db_ppdb_app`
-* Run `php artisan migrate --seed` for migration database
+* Run `php artisan migrate:fresh --seed` for migration database
 * Run `php artisan storage:link` for create folder storage
 
 ## Login Credentials
