@@ -17,11 +17,13 @@
                                 @csrf
                             <div class="form-group">
                                 <label class="mb-2">Deskripsi Singkat</label>
-                                <input name="deskripsi_singkat" class="form-control" placeholder="Deskripsi Singkat Untuk Di Depan" value="{{ $data->deskripsi_singkat }}">
+                                <input name="deskripsi_singkat" class="form-control" placeholder="Deskripsi Singkat Untuk Di Depan" value="{{ $data->deskripsi_singkat ?? '🌟 Selamat Datang di Website PPDB Tahun Ajaran Baru! 📚'  }}">
                             </div>
                             <div class="form-group mt-2">
                                 <label class="mb-2">Tentang Sekolah (Lengkap)</label>
-                                <textarea name="tentang" id="konten2" class="form-control" cols="30" rows="10">{{ $data->tentang }}</textarea>
+                                <textarea name="tentang" id="konten2" class="form-control" cols="30" rows="10">{!! $data->tentang ?? 'Bersiaplah untuk memulai perjalanan pendidikan yang menarik! Di sini, kesempatan
+                                  untuk meraih mimpi dan cita-citamu dimulai. Temukan pengalaman belajar yang inspiratif dan
+                                  fasilitas untuk mendukung perkembanganmu.' !!}</textarea>
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary btn-block w-100 mt-2" value="Update Data">

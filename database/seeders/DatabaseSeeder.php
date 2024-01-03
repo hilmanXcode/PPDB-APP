@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -24,8 +24,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('tentang')->insert([
-            'deskripsi_singkat' => 'Deskripsi tentang SMK PGRI Telagasari',
-            'tentang' => 'tentang SMK PGRI Telagasari'
+            'deskripsi_singkat' => 'Tentang SMK PGRI TELAGASARI',
+            'tentang'   => 'Tentang SMK PGRI TELAGASARI'
         ]);
     }
 }

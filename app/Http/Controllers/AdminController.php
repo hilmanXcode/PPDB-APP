@@ -78,13 +78,19 @@ class AdminController extends Controller
     }
     public function pendaftar()
     {
-        $data_pendaftar = Pendaftar::orderBy('id', 'DESC')->where('acc', '0')->where('daful', '0')->paginate(5);
-        $data_acc       = Pendaftar::orderBy('id', 'DESC')->where('acc', '1')->paginate(5);
-        $belum_daful    = Pendaftar::orderBy('id', 'DESC')->where('acc', '1')->where('daful', '0')->paginate(5);
-        $sudah_daful    = Pendaftar::orderBy('id', 'DESC')->where('acc', '1')->where('daful', '1')->paginate(5);
+        $data_pendaftar = Pendaftar::orderBy('id', 'DESC')->where('acc', '0')->where('daful', '0')->paginate(5, ['*'], 'pendaftar');
+
+        $data_acc       = Pendaftar::orderBy('id', 'DESC')->where('acc', '1')->paginate(5, ['*'], 'data_acc');
+
+        $belum_daful    = Pendaftar::orderBy('id', 'DESC')->where('acc', '1')->where('daful', '0')->paginate(5, ['*'], 'belum_daful');
+
+        $sudah_daful    = Pendaftar::orderBy('id', 'DESC')->where('acc', '1')->where('daful', '1')->paginate(5, ['*'], 'sudah_daful');
+
+        $data_dapodik    = Pendaftar::orderBy('id', 'DESC')->where('acc', '1')->where('daful', '1')->paginate(5, ['*'], 'data_dapodik');
+
         $page = "pendaftar";
-        
-        return view('Dashboard/pendaftar/pendaftar', compact('data_pendaftar', 'data_acc', 'belum_daful', 'sudah_daful', 'page'));
+
+        return view('Dashboard/pendaftar/pendaftar', compact('data_pendaftar', 'data_acc', 'belum_daful', 'sudah_daful', 'page', 'data_dapodik'));
     }
 
     public function acc($id)
@@ -285,8 +291,9 @@ class AdminController extends Controller
     }
     public function kontak_admin()
     {
-        $data = Kontak::orderBy('id', 'DESC')->get();
-        return view('Dashboard/sekolah/kontak', compact('data'));
+        $data = Kontak::orderBy('id', 'DESC')->paginate(5);
+        $page = 'kontak_admin';
+        return view('Dashboard/sekolah/kontak', compact('data', 'page'));
     }
     public function dibaca($id)
     {
@@ -295,7 +302,8 @@ class AdminController extends Controller
         $baca->update([
             'status' => 1
         ]);
-        return view('Dashboard/sekolah/baca', compact('baca'));
+        $page = 'kontak_admin';
+        return view('Dashboard/sekolah/baca', compact('baca', 'page'));
 
     }
     public function hapus_pesan($id)

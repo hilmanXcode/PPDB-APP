@@ -237,7 +237,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($sudah_daful as $dpo)
+                                        @foreach($data_dapodik as $dpo)
                                         <tr>
                                             <td>{{$loop->iteration}}</td>
                                             <td>{{$dpo->nama_siswa}}</td>
@@ -251,7 +251,7 @@
                                         @endforeach
                                     </tbody>
                                 </table>
-                                {{ $sudah_daful->links() }}
+                                {{ $data_dapodik->links() }}
                             </div>
 
 
