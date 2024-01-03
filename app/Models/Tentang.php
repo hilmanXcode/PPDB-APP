@@ -10,4 +10,8 @@ class Tentang extends Model
     use HasFactory;
     protected $table = 'tentang';
     protected $guarded = [];
+    protected $fillable = [
+        'deksripsi_singkat',
+        'tentang'
+    ];
 }
