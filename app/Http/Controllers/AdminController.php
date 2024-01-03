@@ -86,11 +86,9 @@ class AdminController extends Controller
 
         $sudah_daful    = Pendaftar::orderBy('id', 'DESC')->where('acc', '1')->where('daful', '1')->paginate(5, ['*'], 'sudah_daful');
 
-        $data_dapodik    = Pendaftar::orderBy('id', 'DESC')->where('acc', '1')->where('daful', '1')->paginate(5, ['*'], 'data_dapodik');
-
         $page = "pendaftar";
 
-        return view('Dashboard/pendaftar/pendaftar', compact('data_pendaftar', 'data_acc', 'belum_daful', 'sudah_daful', 'page', 'data_dapodik'));
+        return view('Dashboard/pendaftar/pendaftar', compact('data_pendaftar', 'data_acc', 'belum_daful', 'sudah_daful', 'page'));
     }
 
     public function acc($id)
