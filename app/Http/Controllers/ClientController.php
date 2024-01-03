@@ -132,12 +132,13 @@ class ClientController extends Controller
     }
     public function hub(Request $req)
     {
-        // Contoh validasi
-
-        // $req->validate([
-        //     'A' => 'required',
-        //     'B' => 'required',
-        // ]);
+        $req->validate ([
+            'nama' => 'required',
+            'nomor_hp' => 'required',
+            'email' => 'required',
+            'untuk' => 'required',
+            'pesan' => 'required'
+        ]);
 
         Kontak::create([
             'nama' => $req->input('nama'),
@@ -146,8 +147,7 @@ class ClientController extends Controller
             'untuk' => $req->input('untuk'),
             'pesan' => $req->input('pesan')
         ]);
-
-        return redirect()->back()->with('sukses', 'Berhasil Mengirim Pesan, Terima Kasih');
+        return redirect()->back()->with('sukses', 'Terima kasih telah menghubungi kami.');
     }
     public function foto()
     {
