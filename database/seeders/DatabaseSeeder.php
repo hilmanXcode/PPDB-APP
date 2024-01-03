@@ -22,5 +22,10 @@ class DatabaseSeeder extends Seeder
             'email' => 'jajang@gmail.com',
             'password' => Hash::make('123456')
         ]);
+
+        \App\Models\Tentang::factory()->create([
+            'deskripsi_singkat' => 'Ini isi deskripsi',
+            'tentang' => 'Tentang sekolah diisi disni'
+        ]);
     }
 }
