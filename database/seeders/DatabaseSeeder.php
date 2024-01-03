@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,14 +18,14 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         \App\Models\User::factory()->create([
-            'name' => 'jajang',
-            'email' => 'jajang@gmail.com',
+            'name' => 'admin',
+            'email' => 'admin@smk.com',
             'password' => Hash::make('123456')
         ]);
 
-        \App\Models\Tentang::factory()->create([
-            'deskripsi_singkat' => 'Ini isi deskripsi',
-            'tentang' => 'Tentang sekolah diisi disni'
+        DB::table('tentang')->insert([
+            'deskripsi_singkat' => 'Deskripsi tentang SMK PGRI Telagasari',
+            'tentang' => 'tentang SMK PGRI Telagasari'
         ]);
     }
 }
