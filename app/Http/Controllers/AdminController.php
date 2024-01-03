@@ -85,16 +85,14 @@ class AdminController extends Controller
 
         $sudah_daful    = Pendaftar::orderBy('id', 'DESC')->where('acc', '1')->where('daful', '1')->paginate(5, ['*'], 'sudah_daful');
 
-        $data_dapodik    = Pendaftar::orderBy('id', 'DESC')->where('acc', '1')->where('daful', '1')->paginate(5, ['*'], 'data_dapodik');
-
         $page = "pendaftar";
 
-        return view('Dashboard/pendaftar/pendaftar', compact('data_pendaftar', 'data_acc', 'belum_daful', 'sudah_daful', 'page', 'data_dapodik'));
+        return view('Dashboard/pendaftar/pendaftar', compact('data_pendaftar', 'data_acc', 'belum_daful', 'sudah_daful', 'page'));
     }
 
     public function acc($id)
     {
-        $data = Pendaftar::find($id)->update([
+        Pendaftar::find($id)->update([
             'acc' => 1
         ]);
         return redirect()->back()->with('success', 'Siswa Telah Di Acc');
@@ -104,7 +102,7 @@ class AdminController extends Controller
 
     public function daful($id)
     {
-        $data = Pendaftar::find($id)->update([
+        Pendaftar::find($id)->update([
             'daful' => 1
         ]);
         return redirect()->back()->with('success', 'Siswa Telah Daftar Ulang');
@@ -121,7 +119,7 @@ class AdminController extends Controller
 
     public function hapus_siswa($id)
     {
-        $data = Pendaftar::find($id)->delete();
+        Pendaftar::find($id)->delete();
         return redirect()->back()->with('success', 'Data Siswa Berhasil Di Hapus');
     }
 
@@ -131,7 +129,7 @@ class AdminController extends Controller
         if($cek == NULL){
             return redirect()->back()->with('error', 'Gelombang Tersebut Belum Ada');
         }else{
-            $data = Pendaftar::where('gelombang', $req->gelombang)->update([
+            Pendaftar::where('gelombang', $req->gelombang)->update([
                 'acc' => 1
             ]);
             return redirect()->back()->with('success', 'Gelombang Tersebut Telah Di Acc');
@@ -143,7 +141,7 @@ class AdminController extends Controller
 
     public function add_jurusan(Request $req)
     {
-        $data = Jurusan::create([
+        Jurusan::create([
             'jurusan' => $req->jurusan,
             'deskripsi_jurusan' => $req->deskripsi_jurusan
         ]);
@@ -190,8 +188,8 @@ class AdminController extends Controller
       	        // isi dengan nama folder tempat kemana file diupload
 		$tujuan_upload = 'slide';
 		$file->move($tujuan_upload,$nama_file);
-
-        $data = Slider::create([
+ 
+        Slider::create([
             'judul' => $req->judul,
             'wallpaper' => $nama_file,
             'deskripsi_slider' => $req->deskripsi_slider,
@@ -200,7 +198,7 @@ class AdminController extends Controller
     }
     public function hapus_slide($id)
     {
-        $data = Slider::find($id)->delete();
+        Slider::find($id)->delete();
         return redirect()->back()->with('success', 'Sukses Menghapus Slider');
 
     }
@@ -231,13 +229,13 @@ class AdminController extends Controller
     }
     public function upload_informasi(Request $req)
     {
-        $data = Informasi::create($req->all());
+        Informasi::create($req->all());
         return redirect()->back()->with('success', 'Sukses Upload Informasi Sekolah');
 
     }
     public function hapus_informasi($id)
     {
-       $data = Informasi::find($id)->delete();
+       Informasi::find($id)->delete();
        return redirect()->back()->with('success', 'Sukses Menghapus Informasi Sekolah');
     }
     public function galeri()
@@ -278,13 +276,13 @@ class AdminController extends Controller
     }
     public function hapus_foto($id)
     {
-        $data = Foto::find($id)->delete();
+        Foto::find($id)->delete();
         return redirect()->back()->with('success', 'Sukses Menghapus Foto Di Galeri Sekolah');
 
     }
     public function hapus_video($id)
     {
-        $data = YT::find($id)->delete();
+        YT::find($id)->delete();
         return redirect()->back()->with('success', 'Sukses Menghapus Video Di Galeri Sekolah');
 
     }
@@ -307,7 +305,7 @@ class AdminController extends Controller
     }
     public function hapus_pesan($id)
     {
-        $data = Kontak::find($id)->delete();
+        Kontak::find($id)->delete();
         return redirect()->back()->with('success', 'Sukses Menghapus Pesan');
 
     }

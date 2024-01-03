@@ -219,44 +219,6 @@
 
                         </div>
                     </div>
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <div class="card-body table-responsive">
-                              <h5 class="card-title fw-semibold mb-4">Data Untuk Dapodik</h5>
-                              <button class="btn btn-success" onclick="exportData('xlsx', 'dapo')">Excel</button>
-                                <table class="table table-borderless" id="dapo">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Nama Lengkap</th>
-                                            <th>TTL</th>
-                                            <th>NIK</th>
-                                            <th>Nama Ayah</th>
-                                            <th>Nama Ibu</th>
-                                            <th>Asal Sekolha</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach($data_dapodik as $dpo)
-                                        <tr>
-                                            <td>{{$loop->iteration}}</td>
-                                            <td>{{$dpo->nama_siswa}}</td>
-                                            <td>{{$dpo->tempat_lahir}}, {{$dpo->tanggal_lahir}}</td>
-                                            <td>{{$dpo->nik}}</td>
-                                            <td>{{$dpo->nama_ayah}}</td>
-                                            <td>{{$dpo->nama_ibu}}</td>
-                                            <td>{{$dpo->asal_sekolah}}</td>
-
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                                {{ $data_dapodik->links() }}
-                            </div>
-
-
-                        </div>
-                    </div>
                     
                 </div>
         
