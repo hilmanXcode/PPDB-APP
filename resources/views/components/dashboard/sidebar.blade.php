@@ -60,7 +60,7 @@
         </a>
         </li>
         <li class="sidebar-item">
-        <a class="sidebar-link" href="./authentication-register.html" aria-expanded="false">
+        <a class="sidebar-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-expanded="false">
             <span>
                 <i class="ti ti-article"></i>
             </span>
