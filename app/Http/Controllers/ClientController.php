@@ -76,7 +76,7 @@ class ClientController extends Controller
             'alamat' => 'required',
         ]);
 
-        $data = Pendaftar::create([
+        Pendaftar::create([
             'gelombang'     => $req->input('gelombang'),
             'nik'           => $req->input('nik'),
             'hobi'          => $req->input('hobi'),
@@ -133,7 +133,7 @@ class ClientController extends Controller
     }
     public function hub(Request $req)
     {
-        $data = Kontak::create([
+        Kontak::create([
             'nama' => $req->input('nama'),
             'nomor_hp' => $req->input('nomor_hp'),
             'email' => $req->input('email'),
