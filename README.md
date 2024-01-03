@@ -14,18 +14,39 @@ Aplikasi ini adalah manajemen PPDB berbasis website yang di bangun dan di kemban
 - Manajemen Gelombang (Pendaftaran dapat dipisahkan berdasarkan periode)
 - Ekpor data ke File Excel
 
-## Instalasi
+## Installation / Instalasi
+Jalankan perintah berikut untuk menyalin repository dari GitHub
+```
+git clone https://github.com/hilmanXcode/PPDB-APP.git
+```
+Jalankan perintah berikut untuk menginstal dependensi php
+```
+composer install
+```
+Jalankan perintah berikut untuk mengatur _environment variable_
+```
+cp .env.example .env
+```
+Pastikan Anda telah membuat database baru bernama `db_ppdb_app` di MySQL dan silakan tambahkan di file `.env`.
+Jalankan perintah berikut untuk membuat _key_ untuk web app Anda
+```
+php artisan key:generate
+```
+Jalankan perintah berikut untuk membuat skema database
+```
+php artisan migrate:fresh --seed
+```
+Terakhir, jalankan perintah berikut untuk menyalakan web server bawaan laravel 
+```
+php artisan serve
+```
+Setelah perintah di atas dijalankan, web app anda bisa sudah bisa diakses
 
-* Install [Composer](https://getcomposer.org/download)
-* Clone the repository: `git clone https://github.com/andes2912/sekolahku`
-* Install dependencies: `composer install`
-* Run `cp .env.example .env` for create .env file
-* Create new database: `db_ppdb_app`
-* Run `php artisan migrate:fresh --seed` for migration database
+## Login Credetials
 
-## Login Credentials
-* email : admin@smk.com
-* Password : 123456
+| Email      | admin@admin.com |
+|------------|-----------------|
+| Passwrord  | 123456          |
 
 ## Team Pengembang
 - [hilmanXcode](https://github.com/hilmanXcode) MUHAMMAD HILMAN NURSALAM - XII RPL 2
