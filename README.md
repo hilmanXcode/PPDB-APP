@@ -7,7 +7,7 @@
 
 ## Tentang Aplikasi
 
-Aplikasi ini adalah manajemen PPDB berbasis website yang di bangun dan di kembangkan dengan Framework Laravel. Fitur-fitur pada aplikasi PPDB-APP antara lain :
+Aplikasi ini adalah manajemen PPDB berbasis website yang dibangun dan dikembangkan dengan Framework Laravel. fitur-fitur pada aplikasi PPDB-APP antara lain :
 
 - Website Sekolah
 - Monitoring pendaftaran
@@ -27,7 +27,7 @@ Jalankan perintah berikut untuk mengatur _environment variable_
 ```
 cp .env.example .env
 ```
-Pastikan Anda telah membuat database baru bernama `db_ppdb_app` di MySQL dan silakan tambahkan di file `.env`.
+Pastikan Anda telah membuat database baru bernama `db_ppdb_app` di MySQL dan silakan tambahkan di file `.env`. <br>
 Jalankan perintah berikut untuk membuat _key_ untuk web app Anda
 ```
 php artisan key:generate
@@ -44,7 +44,7 @@ Setelah perintah di atas dijalankan, web app anda bisa sudah bisa diakses
 
 ## Login Credetials
 
-| Email      | admin@admin.com |
+| Email      | admin@smk.com |
 |------------|-----------------|
 | Passwrord  | 123456          |
 
