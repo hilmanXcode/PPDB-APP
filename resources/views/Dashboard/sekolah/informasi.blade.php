@@ -1,9 +1,9 @@
 @extends('layouts.dashboard.app')
 @section('content')
+<x-dcore.alert />
   <div id="app">
     <div class="main-wrapper main-wrapper-1">
       <div class="navbar-bg"></div>
-      <x-dcroe.alert />
       <div class="main-content">
         <section class="section">
 
