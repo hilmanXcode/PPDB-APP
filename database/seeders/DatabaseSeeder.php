@@ -22,10 +22,28 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@smk.com',
             'password' => Hash::make('123456')
         ]);
+        
+        $data = [
+            [
+                'gelombang' => 'Gelombang_1',
+                'status_gelombang' => 'Tutup'
+            ],
+            [
+                'gelombang' => 'Gelombang_2',
+                'status_gelombang' => 'Tutup'
+            ],
+            [
+                'gelombang' => 'Gelombang_3',
+                'status_gelombang' => 'Tutup'
+            ],
+            [
+                'gelombang' => 'Gelombang_4',
+                'status_gelombang' => 'Tutup'
+            ]
+        ];
 
-        DB::table('tentang')->insert([
-            'deskripsi_singkat' => 'Deskripsi tentang SMK PGRI TELAGASARI',
-            'tentang' => 'Tentang SMK PGRI TELAGASARI'
-        ]);
+        DB::table('gelombang')->insert($data);
+
+
     }
 }

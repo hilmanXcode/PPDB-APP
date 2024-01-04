@@ -78,7 +78,7 @@ class AdminController extends Controller
     public function pendaftar()
     {
         $data_pendaftar = Pendaftar::orderBy('id', 'DESC')->where('acc', '0')->where('daful', '0');
-        
+
         $data_acc       = Pendaftar::orderBy('id', 'DESC')->where('acc', '1');
 
         $belum_daful    = Pendaftar::orderBy('id', 'DESC')->where('acc', '1')->where('daful', '0');
@@ -101,11 +101,11 @@ class AdminController extends Controller
         {
             $sudah_daful->where('nama_siswa','like', '%' . request('sudah_daful_search') . '%');
         }
-        
+
         $belum_daful    = $belum_daful->paginate(5, ['*'], 'belum_daful');
-        
+
         $sudah_daful    = $sudah_daful->paginate(5, ['*'], 'sudah_daful');
-        
+
         $data_pendaftar = $data_pendaftar->paginate(5, ['*'], 'pendaftar');
 
         $data_acc       = $data_acc->paginate(5, ['*'], 'data_acc');
@@ -191,46 +191,29 @@ class AdminController extends Controller
             'gelombang' => 'required',
             'status_gelombang' => 'required'
         ]);
-        $data = Gelombang::first();
 
-        if($data == NULL){
-            $data = Gelombang::create([
-                'gelombang' => $req->gelombang,
-                'status_gelombang' => $req->status_gelombang,
-            ]);
-            return redirect()->back()->with('success', 'Sukses Menambahkan Gelombang');
+        Gelombang::first()->update([
+            'gelombang' => $req->gelombang,
+            'status_gelombang' => $req->status_gelombang,
+        ]);
+        return redirect()->back()->with('success', 'Sukses Update Gelombang');
+    }
 
-        }else{
-            $data = Gelombang::first()->update([
-                'gelombang' => $req->gelombang,
-                'status_gelombang' => $req->status_gelombang,
-            ]);
-            return redirect()->back()->with('success', 'Sukses Update Gelombang');
+    public function edit_gelombang($id, $param){
 
-        }
+        Gelombang::find($id)->update([
+            'status_gelombang' => $param
+        ]);
+
+        return redirect()->back()->with('success', 'Sukses update gelombang');
     }
 
     public function gelombang(){
         $data = Gelombang::all();
         $page = "Gelombang";
+
         return view('Dashboard/sekolah/gelombang', compact('data', 'page'));
     }
-
-    public function gelombangToggle(Request $request)
-    {
-
-        $toggle = Gelombang::where('status_gelombang', $request->input('name'))->first();
-
-        if ($toggle) {
-            $toggle->status = !$toggle->status;
-            $toggle->save();
-
-            return response()->json(['status' => $toggle->status]);
-        }
-
-        return response()->json(['error' => 'Toggle not found'], 404);
-    }
-
 
     public function informasi_slide()
     {
@@ -248,7 +231,7 @@ class AdminController extends Controller
       	        // isi dengan nama folder tempat kemana file diupload
 		$tujuan_upload = 'slide';
 		$file->move($tujuan_upload,$nama_file);
- 
+
         Slider::create([
             'judul' => $req->judul,
             'wallpaper' => $nama_file,
