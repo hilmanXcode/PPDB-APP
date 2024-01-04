@@ -2,7 +2,6 @@
     <script src="{{ asset('libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('js/sidebarmenu.js') }}"></script>
     <script src="{{ asset('js/app.min.js') }}"></script>
-    <script src="{{ asset('libs/apexcharts/dist/apexcharts.min.js') }}"></script>
     <script src="{{ asset('libs/simplebar/dist/simplebar.js') }}"></script>
     <script src="{{ asset('js/dashboard.js') }}"></script>
     <script src="{{ asset('js/sheet.js') }}"></script>
@@ -37,6 +36,35 @@
             const wb = XLSX.utils.table_to_book(table)
             XLSX.writeFile(wb, fileName)
         }
+    </script>
+    <script type="text/javascript">
+        $(function(){
+            $(document).on('click', '#hapus', function(e){
+                e.preventDefault();
+                let data = $(this).attr("data-bs-id");
+                let link = "http://127.0.0.1:8000/home/sekolah/jurusan/"+ data +"/hapus_jurusan";
+            Swal.fire({
+             title: 'Do you want to save the changes?',
+             showDenyButton: true,
+             showCancelButton: true,
+             confirmButtonText: 'Yes',
+             denyButtonText: 'No',
+             customClass: {
+                actions: 'my-actions',
+                cancelButton: 'order-1 right-gap',
+                confirmButton: 'order-2',
+                denyButton: 'order-3',
+            },
+        }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire('Saved!', '', 'success')
+            window.location.href = link;
+        } else if (result.isDenied) {
+            Swal.fire('Changes are not saved', '', 'info')
+     }
+    })
+            });
+        });
     </script>
 </body>
 

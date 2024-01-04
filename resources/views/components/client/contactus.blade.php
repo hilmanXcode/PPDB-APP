@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                <div class="bg-white rounded p-5"> 
+                <div class="bg-white rounded p-5">
                     <div class="d-flex justify-content-center">
                         <H2>Hubungi Kami</H2>
                     </div>
@@ -51,37 +51,44 @@
                         {{session('sukses')}}
                     </div>
                     @endif
-                    <form method="POST" action="{{route('hub')}}">
+                    <form class="needs-validation" novalidate method="POST" action="{{route('hub')}}">
                         @csrf
                         <div class="row g-3">
                             <div class="col-sm-6">
                                 <div class="form-floating">
                                     <input type="text" name="nama" class="form-control" id="gname"
-                                        placeholder="Gurdian Name" />
+                                        placeholder="Nama Lengkap" required />
                                     <label for="gname">Nama Lengkap</label>
+                                    <div class="invalid-feedback">This field is required</div>
+                                    <div class="valid-feedback"></div>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
                                     <input type="email" name="email" class="form-control" id="gmail"
-                                        placeholder="xxx@xxx.com" />
+                                        placeholder="xxx@xxx.com" required />
                                     <label for="gmail">Email Valid</label>
+                                    <div class="invalid-feedback">This field is required</div>
+                                    <div class="valid-feedback"></div>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
                                     <input type="number" name="nomor_hp" class="form-control" id="cname"
-                                        placeholder="08xxxxxxxxx" />
+                                        placeholder="08xxxxxxxxx" required />
                                     <label for="cname">Nomor HP/WA</label>
+                                    <div class="invalid-feedback">This field is required</div>
+                                    <div class="valid-feedback"></div>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-floating">
-
-                                    <select name="untuk" class="form-control">
+                                    <select name="untuk" class="form-control" required>
                                         <option disabled selected value>Pesan Untuk</option>
                                         <option value="Customer Services">Customer Services</option>
                                         <option value="Technical Support">Technical Support</option>
+                                        <div class="invalid-feedback">This field is required</div>
+                                        <div class="valid-feedback"></div>
                                     </select>
                                     <label for="cage">Pesan Untuk</label>
                                 </div>
@@ -89,8 +96,10 @@
                             <div class="col-12">
                                 <div class="form-floating">
                                     <textarea name="pesan" class="form-control" placeholder="Pesan kamu" id="message"
-                                        style="height: 328px"></textarea>
+                                        style="height: 328px" required></textarea>
                                     <label for="message">Pesan</label>
+                                    <div class="invalid-feedback">This field is required</div>
+                                    <div class="valid-feedback"></div>
                                 </div>
                             </div>
                             <div class="col-12">
@@ -105,3 +114,25 @@
         </div>
     </div>
 </div>
+
+<script>
+(function() {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+        .forEach(function(form) {
+            form.addEventListener('submit', function(event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+
+                form.classList.add('was-validated')
+            }, false)
+        })
+})()
+</script>

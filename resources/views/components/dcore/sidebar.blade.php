@@ -28,8 +28,8 @@
             <li class="dropdown">
               <a href="#" class="nav-link has-dropdown"><i class="fas fa-plug"></i> <span>Modul Sekolah</span></a>
               <ul class="dropdown-menu">
-                <li><a class="nav-link" href="#" data-toggle="modal" data-target="#modalJurusan">Jurusan</a></li>
-                <li><a class="nav-link" href="#" data-toggle="modal" data-target="#modalGelombang">Gelombang</a></li>
+                <li><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalJurusan">Jurusan</a></li>
+                <li><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalGelombang">Gelombang</a></li>
                 <li><a class="nav-link" href="{{route('informasi_slide')}}">Informasi Slide</a></li>
                 <li><a class="nav-link" href="{{route('informasi_sekolah')}}">Informasi Sekolah</a></li>
                 <li><a class="nav-link" href="{{route('tentang_sekolah')}}">Tentang Sekolah</a></li>

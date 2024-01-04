@@ -52,7 +52,7 @@
         <span class="hide-menu">SETTINGS</span>
         </li>
         <li class="sidebar-item">
-        <a class="sidebar-link" href="./authentication-login.html" aria-expanded="false">
+        <a class="sidebar-link {{ $page === "jurusan" ? "active" : '' }}" href="{{ route('jurusan') }}" aria-expanded="false">
             <span>
                 <i class="ti ti-article"></i>
             </span>
@@ -60,7 +60,9 @@
         </a>
         </li>
         <li class="sidebar-item">
-        <a class="sidebar-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-expanded="false">
+
+        <a class="sidebar-link {{ $page === "gelombang" ? "active" : '' }}"" href="{{ route('gelombang') }}"  aria-expanded="false">
+
             <span>
                 <i class="ti ti-article"></i>
             </span>
@@ -68,7 +70,7 @@
         </a>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="./authentication-register.html" aria-expanded="false">
+            <a class="sidebar-link {{ $page === "informasi_sekolah" ? 'active' : '' }}" href="{{ route ('informasi_sekolah') }}" aria-expanded="false">
                 <span>
                     <i class="ti ti-article"></i>
                 </span>

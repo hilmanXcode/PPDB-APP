@@ -10,10 +10,10 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="card">
-                <div class="card-header d-flex justify-content-between">
-                  <h4>Jurusan</h4>
-                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalJurusan">
-                    <i class="bi bi-plus-circle"></i>Tambah Jurusan
+                <div class="card-header">
+                  <h4>Gelombang</h4>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalGelombang">
+                    Test 2
                   </button>
                 </div>
                 <div class="card-body table-responsive">
@@ -23,7 +23,7 @@
                               <thead>
                                 <tr>
                                   <th>No</th>
-                                  <th>Jurusan </th>
+                                  <th>Gelombang</th>
                                   <th>Option</th>
                                 </tr>
                               </thead>
@@ -32,9 +32,12 @@
                                @foreach($data as $info)
                                <tr>
                                 <td>{{$no++}}</td>
-                                <td>{{$info->jurusan}}</td>
+                                <td>{{$info->gelombang}}</td>
                                 <td>
-                                    <a href="#" class="btn btn-danger" id="hapus" data-bs-id="{{ $info->id }}"><i class="bi bi-trash-fill"></i></a>
+                                <div class="form-check form-switch">
+                                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                                  <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox input</label>
+                                </div>
                                 </td>
                                </tr>
                                @endforeach
@@ -45,6 +48,7 @@
                 </div>
               </div>
             </div>
+            
           </div>
         <!-- END OF CENTER CONTENT -->
 

@@ -77,13 +77,38 @@ class AdminController extends Controller
     }
     public function pendaftar()
     {
-        $data_pendaftar = Pendaftar::orderBy('id', 'DESC')->where('acc', '0')->where('daful', '0')->paginate(5, ['*'], 'pendaftar');
+        $data_pendaftar = Pendaftar::orderBy('id', 'DESC')->where('acc', '0')->where('daful', '0');
+        
+        $data_acc       = Pendaftar::orderBy('id', 'DESC')->where('acc', '1');
 
-        $data_acc       = Pendaftar::orderBy('id', 'DESC')->where('acc', '1')->paginate(5, ['*'], 'data_acc');
+        $belum_daful    = Pendaftar::orderBy('id', 'DESC')->where('acc', '1')->where('daful', '0');
 
-        $belum_daful    = Pendaftar::orderBy('id', 'DESC')->where('acc', '1')->where('daful', '0')->paginate(5, ['*'], 'belum_daful');
+        $sudah_daful    = Pendaftar::orderBy('id', 'DESC')->where('acc', '1')->where('daful', '1');
 
-        $sudah_daful    = Pendaftar::orderBy('id', 'DESC')->where('acc', '1')->where('daful', '1')->paginate(5, ['*'], 'sudah_daful');
+        if(request('pendaftar_search'))
+        {
+            $data_pendaftar->where('nama_siswa','like', '%' . request('pendaftar_search') . '%');
+        }
+        else if(request('data_acc_search'))
+        {
+            $data_acc->where('nama_siswa','like', '%' . request('data_acc_search') . '%');
+        }
+        else if(request('belum_daful_search'))
+        {
+            $belum_daful->where('nama_siswa','like', '%' . request('belum_daful_search') . '%');
+        }
+        else if(request('sudah_daful_search'))
+        {
+            $sudah_daful->where('nama_siswa','like', '%' . request('sudah_daful_search') . '%');
+        }
+        
+        $belum_daful    = $belum_daful->paginate(5, ['*'], 'belum_daful');
+        
+        $sudah_daful    = $sudah_daful->paginate(5, ['*'], 'sudah_daful');
+        
+        $data_pendaftar = $data_pendaftar->paginate(5, ['*'], 'pendaftar');
+
+        $data_acc       = $data_acc->paginate(5, ['*'], 'data_acc');
 
         $page = "pendaftar";
 
@@ -147,6 +172,19 @@ class AdminController extends Controller
         ]);
         return redirect()->back()->with('success', 'Sukses Menambahkan Jurusan');
     }
+
+    public function jurusan(){
+        $data = Jurusan::all();
+        $page = "jurusan";
+        return view('Dashboard/sekolah/jurusan', compact('data', 'page'));
+    }
+
+    public function hapus_jurusan($id)
+    {
+       $data = jurusan::find($id)->delete();
+       return redirect()->back()->with('success', 'Sukses Menghapus Jurusan');
+    }
+
     public function add_gelombang(Request $req)
     {
         $req->validate([
@@ -171,7 +209,29 @@ class AdminController extends Controller
 
         }
     }
-    //
+
+    public function gelombang(){
+        $data = Gelombang::all();
+        $page = "Gelombang";
+        return view('Dashboard/sekolah/gelombang', compact('data', 'page'));
+    }
+
+    public function gelombangToggle(Request $request)
+    {
+
+        $toggle = Gelombang::where('status_gelombang', $request->input('name'))->first();
+
+        if ($toggle) {
+            $toggle->status = !$toggle->status;
+            $toggle->save();
+
+            return response()->json(['status' => $toggle->status]);
+        }
+
+        return response()->json(['error' => 'Toggle not found'], 404);
+    }
+
+
     public function informasi_slide()
     {
         $data = Slider::orderBy('id', 'DESC')->get();
@@ -224,8 +284,9 @@ class AdminController extends Controller
     }
     public function informasi_sekolah()
     {
+        $page ="informasi_sekolah";
         $data = Informasi::orderBy('id', 'DESC')->get();
-        return view('Dashboard/sekolah/informasi', compact('data'));
+        return view('Dashboard/sekolah/informasi', compact('data', 'page'));
     }
     public function upload_informasi(Request $req)
     {
