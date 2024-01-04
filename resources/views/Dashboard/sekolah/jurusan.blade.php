@@ -13,7 +13,7 @@
                 <div class="card-header d-flex justify-content-between">
                   <h4>Jurusan</h4>
                   <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalJurusan">
-                    Test 2
+                    <i class="bi bi-plus-circle"></i>Tambah Jurusan
                   </button>
                 </div>
                 <div class="card-body table-responsive">
@@ -45,7 +45,6 @@
                 </div>
               </div>
             </div>
-            
           </div>
         <!-- END OF CENTER CONTENT -->
 
