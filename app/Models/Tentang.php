@@ -9,5 +9,9 @@ class Tentang extends Model
 {
     use HasFactory;
     protected $table = 'tentang';
+    protected $fillable = [
+        'deskripsi_singkat',
+        'tentang'
+    ];
     protected $guarded = [];
 }

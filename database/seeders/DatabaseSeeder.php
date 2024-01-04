@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,9 +18,14 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         \App\Models\User::factory()->create([
-            'name' => 'jajang',
-            'email' => 'jajang@gmail.com',
+            'name' => 'admin',
+            'email' => 'admin@smk.com',
             'password' => Hash::make('123456')
+        ]);
+
+        DB::table('tentang')->insert([
+            'deskripsi_singkat' => 'Deskripsi tentang SMK PGRI TELAGASARI',
+            'tentang' => 'Tentang SMK PGRI TELAGASARI'
         ]);
     }
 }

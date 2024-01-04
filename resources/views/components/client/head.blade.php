@@ -1,17 +1,17 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    
+
 
  <!-- Primary Meta Tags -->
- <title>PPDB SMK PGRI Telagasari - Pendaftaran Siswa Baru</title> 
+ <title>PPDB SMK PGRI Telagasari - Pendaftaran Siswa Baru</title>
  <!-- Open Graph / Facebook -->
  <meta property="og:type" content="website">
  <meta property="og:url" content="">
  <meta property="og:title" content="PPDB SMK PGRI Telagasari - Pendaftaran Siswa Baru">
  <meta property="og:description" content="Pendaftaran Siswa Baru Di SMK PGRI Telagasari Tahun 2024/2025 Mengggunakan Sistem Online / Daring.">
  <meta property="og:image" content="">
- 
+
  <!-- Twitter -->
  <meta property="twitter:card" content="summary_large_image">
  <meta property="twitter:title" content="PPDB SMK PGRI Telagasari - Pendaftaran Siswa Baru">
@@ -29,7 +29,7 @@
 
 
     <!-- Favicon -->
-    <link rel="icon" href="{{asset('img/logo_smk_new.jpg')}}" type="img/icon">
+    <link rel="icon" href="{{asset('img/icon/favicon.ico')}}" type="img/icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
