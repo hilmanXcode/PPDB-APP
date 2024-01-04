@@ -234,26 +234,7 @@ class AdminController extends Controller
         return redirect()->back()->with('success', 'Sukses Menghapus Slider');
 
     }
-    public function tentang_sekolah()
-    {
-        $data = Tentang::first();
-        $page = "tentang_sekolah";
-        return view('Dashboard/sekolah/tentang', compact('data', 'page'));
-    }
-    public function upload_tentang_sekolah(Request $req)
-    {
-
-        $cek  = Tentang::first();
-        if($cek == Null){
-            Tentang::create($req->all());
-            return redirect()->back()->with('success', 'Sukses Update Tentang Sekolah');
-        }else{
-            Tentang::latest()->first()->update($req->all());
-            return redirect()->back()->with('success', 'Sukses Update Tentang Sekolah');
-        }
-       
-
-    }
+    
     public function informasi_sekolah()
     {
         $page ="informasi_sekolah";
