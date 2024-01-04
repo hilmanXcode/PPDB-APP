@@ -52,7 +52,7 @@
         <span class="hide-menu">SETTINGS</span>
         </li>
         <li class="sidebar-item">
-        <a class="sidebar-link" href="./authentication-login.html" aria-expanded="false">
+        <a class="sidebar-link {{ $page === "jurusan" ? "active" : '' }}" href="{{ route('jurusan') }}" aria-expanded="false">
             <span>
                 <i class="ti ti-article"></i>
             </span>
@@ -60,7 +60,7 @@
         </a>
         </li>
         <li class="sidebar-item">
-        <a class="sidebar-link" href="./authentication-register.html" aria-expanded="false">
+        <a class="sidebar-link {{ $page === "gelombang" ? "active" : '' }}"" href="{{ route('gelombang') }}"  aria-expanded="false">
             <span>
                 <i class="ti ti-article"></i>
             </span>
@@ -68,7 +68,7 @@
         </a>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link {{ $page === "" ? 'active' : '' }}" href="{{ route ('informasi_sekolah') }}" aria-expanded="false">
+            <a class="sidebar-link {{ $page === "informasi_sekolah" ? 'active' : '' }}" href="{{ route ('informasi_sekolah') }}" aria-expanded="false">
                 <span>
                     <i class="ti ti-article"></i>
                 </span>
@@ -76,7 +76,7 @@
             </a>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="./authentication-register.html" aria-expanded="false">
+            <a class="sidebar-link {{ $page === "tentang_sekolah" ? 'active' : '' }}" href="{{ route('tentang_sekolah') }}" aria-expanded="false">
                 <span>
                     <i class="ti ti-article"></i>
                 </span>
@@ -84,7 +84,7 @@
             </a>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="./authentication-register.html" aria-expanded="false">
+            <a class="sidebar-link {{ $page === "kontak_admin" ? 'active' : '' }}" href="{{ route('kontak_admin') }}" aria-expanded="false">
                 <span>
                     <i class="ti ti-article"></i>
                 </span>

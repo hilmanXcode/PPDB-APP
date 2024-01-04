@@ -18,6 +18,12 @@ use Alaouy\Youtube\Facades\Youtube;
 
 class AdminController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     // Pendaftaran
     public function daftar_admin()
     {
@@ -66,30 +72,8 @@ class AdminController extends Controller
             'alamat' => 'required',
         ]);
 
-        $data = Pendaftar::create([
-            'gelombang'     => $req->input('gelombang'),
-            'nik'           => $req->input('nik'),
-            'hobi'          => $req->input('hobi'),
-            'cita'          => $req->input('cita'),
-            'jurusan'       => $req->input('jurusan'),
-            'nama_siswa'    => $req->input('nama_siswa'),
-            'jenis_kelamin' => $req->input('jenis_kelamin'),
-            'tempat_lahir'  => $req->input('tempat_lahir'),
-            'tanggal_lahir' => $req->input('tanggal_lahir'),
-            'asal_sekolah'  => $req->input('asal_sekolah'),
-            'agama'         => $req->input('agama'),
-            'nama_ayah'     => $req->input('nama_ayah'),
-            'pekerjaan_ayah'      => $req->input('pekerjaan_ayah'),
-            'nama_ibu'      => $req->input('nama_ibu'),
-            'pekerjaan_ibu'      => $req->input('pekerjaan_ibu'),
-            'status_ayah'   => $req->input('status_ayah'),
-            'status_ibu'    => $req->input('status_ibu'),
-            'hp_ayah'       => $req->input('hp_ayah'),
-            'hp_ibu'        => $req->input('hp_ibu'),
-            'hp_siswa'      => $req->input('hp_siswa'),
-            'rekomendasi'   => $req->input('rekomendasi'),
-            'alamat'        => $req->input('alamat'),
-        ]);
+        Pendaftar::create($req->all());
+
         return redirect()->back()->with('success', 'Sukses Menambahkan Siswa');
     }
     public function pendaftar()
@@ -160,6 +144,19 @@ class AdminController extends Controller
         ]);
         return redirect()->back()->with('success', 'Sukses Menambahkan Jurusan');
     }
+
+    public function jurusan(){
+        $data = Jurusan::all();
+        $page = "jurusan";
+        return view('Dashboard/sekolah/jurusan', compact('data', 'page'));
+    }
+
+    public function hapus_jurusan($id)
+    {
+       $data = jurusan::find($id)->delete();
+       return redirect()->back()->with('success', 'Sukses Menghapus Jurusan');
+    }
+
     public function add_gelombang(Request $req)
     {
         $req->validate([
@@ -184,6 +181,28 @@ class AdminController extends Controller
 
         }
     }
+
+    public function gelombang(){
+        $data = Gelombang::all();
+        $page = "Gelombang";
+        return view('Dashboard/sekolah/gelombang', compact('data', 'page'));
+    }
+
+    public function gelombangToggle(Request $request)
+    {
+
+        $toggle = Gelombang::where('status_gelombang', $request->input('name'))->first();
+
+        if ($toggle) {
+            $toggle->status = !$toggle->status;
+            $toggle->save();
+
+            return response()->json(['status' => $toggle->status]);
+        }
+
+        return response()->json(['error' => 'Toggle not found'], 404);
+    }
+
     // 
     public function informasi_slide()
     {
@@ -218,19 +237,19 @@ class AdminController extends Controller
     public function tentang_sekolah()
     {
         $data = Tentang::first();
-        return view('Dashboard/sekolah/tentang', compact('data'));
+        $page = "tentang_sekolah";
+        return view('Dashboard/sekolah/tentang', compact('data', 'page'));
     }
     public function upload_tentang_sekolah(Request $req)
     {
 
         $cek  = Tentang::first();
         if($cek == Null){
-        $data = Tentang::create($req->all());
-        return redirect()->back()->with('success', 'Sukses Upload Tentang Sekolah');
+            Tentang::create($req->all());
+            return redirect()->back()->with('success', 'Sukses Update Tentang Sekolah');
         }else{
-        $data = Tentang::latest()->first()->update($req->all());
-        return redirect()->back()->with('success', 'Sukses Upload Tentang Sekolah');
-
+            Tentang::latest()->first()->update($req->all());
+            return redirect()->back()->with('success', 'Sukses Update Tentang Sekolah');
         }
        
 
@@ -302,8 +321,9 @@ class AdminController extends Controller
     }
     public function kontak_admin()
     {
-        $data = Kontak::orderBy('id', 'DESC')->get();
-        return view('Dashboard/sekolah/kontak', compact('data'));
+        $data = Kontak::orderBy('id', 'DESC')->paginate(5);
+        $page = 'kontak_admin';
+        return view('Dashboard/sekolah/kontak', compact('data', 'page'));
     }
     public function dibaca($id)
     {
@@ -312,7 +332,8 @@ class AdminController extends Controller
         $baca->update([
             'status' => 1
         ]);
-        return view('Dashboard/sekolah/baca', compact('baca'));
+        $page = 'kontak_admin';
+        return view('Dashboard/sekolah/baca', compact('baca', 'page'));
 
     }
     public function hapus_pesan($id)

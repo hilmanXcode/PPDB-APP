@@ -1,6 +1,5 @@
 @extends('layouts.dashboard.app')
 @section('content')
-<x-dcore.alert />
   <div id="app">
     <div class="main-wrapper main-wrapper-1">
       <div class="navbar-bg"></div>
@@ -73,7 +72,7 @@
 
         </section>
       </div>
-
+      <x-dcore.footer />
     </div>
   </div>
 <x-dcore.script />

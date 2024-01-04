@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\MasukController;
+use App\Http\Controllers\testingController;
 
 Route::group(['prefix' => '/'], function($id = null){
     Route::get('/', [ClientController::class, 'index'])->name('/');
@@ -48,6 +49,11 @@ Route::group(['prefix' => 'home/pendaftaran'], function($id = null){
 });
 
 Route::group(['prefix' => 'home/sekolah'], function($id = null){
+    Route::get('/jurusan', [AdminController::class, 'jurusan'])->name('jurusan');
+    Route::get('/jurusan/{id}/hapus_jurusan', [AdminController::class, 'hapus_jurusan'])->name('hapus_jurusan', $id);
+
+    Route::get('/gelombang',[AdminController::class,'gelombang'])->name('gelombang');
+
     Route::post('/add_jurusan', [AdminController::class, 'add_jurusan'])->name('add_jurusan');
     Route::post('/add_gelombang', [AdminController::class, 'add_gelombang'])->name('add_gelombang');
     Route::get('/informasi_slide', [AdminController::class, 'informasi_slide'])->name('informasi_slide');    

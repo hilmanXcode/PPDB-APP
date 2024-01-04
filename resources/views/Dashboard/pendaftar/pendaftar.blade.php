@@ -83,6 +83,7 @@
                         <div class="card">
                             <div class="card-body table-responsive">
                               <h5 class="card-title fw-semibold mb-4">Data Sudah Di ACC</h5>
+                              <button class="btn btn-success" onclick="exportData('xlsx', 'data_acc')">Excel</button>
                                 <table class="table table-borderless" id="data_acc">
                                     <thead>
                                         <tr>
@@ -159,6 +160,7 @@
                         <div class="card">
                             <div class="card-body table-responsive">
                               <h5 class="card-title fw-semibold mb-4">Data Belum Daftar Ulang</h5>
+                              <button class="btn btn-success" onclick="exportData('xlsx', 'belum_daful')">Excel</button>
                                 <table class="table table-borderless" id="belum_daful">
                                     <thead>
                                         <tr>
@@ -178,8 +180,7 @@
 
                                             <td>
                                                 <a href="{{route('daful', $ddf->id)}}"
-                                                    class="btn btn-sm btn-block btn-outline-success"><i
-                                                        class="fas fa-check"></i></a>
+                                                    class="btn btn-sm btn-block btn-outline-success">✅✅✅</a>
                                             </td>
                                         </tr>
                                         @endforeach
@@ -193,6 +194,7 @@
                         <div class="card">
                             <div class="card-body table-responsive">
                               <h5 class="card-title fw-semibold mb-4">Data Sudah Daftar Ulang</h5>
+                              <button class="btn btn-success" onclick="exportData('xlsx', 'sudah_daful')">Excel</button>
                                 <table class="table table-borderless" id="sudah_daful">
                                     <thead>
                                         <tr>
@@ -221,6 +223,7 @@
                         <div class="card">
                             <div class="card-body table-responsive">
                               <h5 class="card-title fw-semibold mb-4">Data Untuk Dapodik</h5>
+                              <button class="btn btn-success" onclick="exportData('xlsx', 'dapo')">Excel</button>
                                 <table class="table table-borderless" id="dapo">
                                     <thead>
                                         <tr>
@@ -262,5 +265,4 @@
     </div>
 </div>
 </div>
-<x-dcore.script/>
 @endsection
