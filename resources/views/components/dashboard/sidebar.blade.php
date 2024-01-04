@@ -60,7 +60,9 @@
         </a>
         </li>
         <li class="sidebar-item">
+
         <a class="sidebar-link {{ $page === "gelombang" ? "active" : '' }}"" href="{{ route('gelombang') }}"  aria-expanded="false">
+
             <span>
                 <i class="ti ti-article"></i>
             </span>
