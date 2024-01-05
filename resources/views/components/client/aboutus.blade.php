@@ -3,7 +3,7 @@
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h1 class="mb-5 bg-white text-center px-3" style="color: #015fc9;">Tentang Kami</h1>
-
+                    
             </div>
         </div>
     </div>
