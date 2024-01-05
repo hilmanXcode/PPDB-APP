@@ -22,11 +22,11 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@smk.com',
             'password' => Hash::make('123456')
         ]);
-        
+
         $data = [
             [
                 'gelombang' => 'Gelombang_1',
-                'status_gelombang' => 'Tutup'
+                'status_gelombang' => 'Buka'
             ],
             [
                 'gelombang' => 'Gelombang_2',
