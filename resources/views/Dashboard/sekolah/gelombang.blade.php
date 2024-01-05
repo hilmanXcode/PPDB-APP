@@ -35,7 +35,7 @@
                                                             $setting = [
                                                                 'status-color' => 'badge bg-primary',
                                                                 'status-value' => 'Buka',
-                                                                'route' => url('edit_gelombang', $info->id, "Buka"),
+                                                                'route' => route('edit_gelombang', ['id' => $info->id, 'param' => 'Tutup']),
 
                                                                 'param' => 'Buka',
                                                                 'text-link' => 'Tutup',
@@ -45,7 +45,7 @@
                                                             $setting = [
                                                                 'status-color' => 'badge bg-danger',
                                                                 'status-value' => 'Tutup',
-                                                                'route' => url('edit_gelombang', $info->id, "Buka"),
+                                                                'route' => route('edit_gelombang', ['id' => $info->id, 'param' => 'Buka']),
 
                                                                 'param' => 'Tutup',
                                                                 'text-link' => 'Buka',
@@ -57,10 +57,10 @@
                                                             <td>{{ $no++ }}</td>
                                                             <td>{{ $info->gelombang }}</td>
                                                             <td>
-                                                                <span class="badge bg-primary">Primary</span>
+                                                                <span class="{{ $setting['status-color'] }}">{{ $setting['status-value'] }}</span>
                                                             </td>
                                                             <td>
-                                                                <a href="" class="btn btn-primary">Buka</a>
+                                                                <a href="{{ $setting['route'] }}" class="{{ $setting['btn-link'] }}">{{ $setting['text-link']}}</a>
                                                             </td>
                                                         </tr>
                                                     @endforeach
@@ -81,6 +81,5 @@
             <x-dcore.footer />
         </div>
     </div>
-    <x-dcore.modal />
     <x-dcore.script />
 @endsection
