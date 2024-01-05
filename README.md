@@ -14,7 +14,7 @@ Aplikasi ini adalah manajemen PPDB berbasis website yang dibangun dan dikembangk
 - Manajemen Gelombang (Pendaftaran dapat dipisahkan berdasarkan periode)
 - Ekpor data ke File Excel
 
-## Installation / Instalasi
+## Instalasi
 Jalankan perintah berikut untuk menyalin repository dari GitHub
 ```
 git clone https://github.com/hilmanXcode/PPDB-APP.git

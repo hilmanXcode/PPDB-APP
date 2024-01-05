@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{config('app.name')}}</title>
+    <title>{{ $data->nama_siswa }}</title>
 
 </head>
 <body>
@@ -36,7 +36,7 @@
         <tr>
             <td><b>Status Di Terima</b></td>
             <td>:</td>
-            <td>@if($data->acc == '1' && $data->daful == '1' ) Selamat Untuk Ananda {{$data->nama_siswa}} Telah Di Terima Di SMK Telematika Indramayu.@endif</td>
+            <td>@if($data->acc == '1' && $data->daful == '1' ) Selamat Untuk Ananda {{$data->nama_siswa}} Telah Di Terima Di SMK PGRI TELAGASARI.@endif</td>
         </tr>
         
 </table>
@@ -127,17 +127,6 @@
         </tr>
     </table>
     
-    <br><br><br><br><br>
-
-      <div style="float:right;margin-right: 80px">
-         Indramayu, @php echo date('j M Y'); @endphp
-         <br>
-         Kepala Sekolah
-         <br>
-         <img src="https://ppdb.smktelematikaindramayu.sch.id/pbc/ttd.png" alt="" style="widht:130px;height:130px">
-         <br>
-         <b><u>Tien Yanuar Herawaty, S.Pd.</u></b>
-      </div>
       <div style="float:right">
           
       </div>

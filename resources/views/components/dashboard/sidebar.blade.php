@@ -33,7 +33,7 @@
         <li class="sidebar-item">
         <a class="sidebar-link {{ $page === "daftar_admin" ? 'active' : '' }}" href="{{ route('daftar_admin') }}" aria-expanded="false">
             <span>
-                <i class="ti ti-user fs-6"></i>
+                <i class="bi bi-person-add fs-6"></i>
             </span>
             <span class="hide-menu">Daftar Baru</span>
         </a>
@@ -41,7 +41,7 @@
         <li class="sidebar-item">
         <a class="sidebar-link {{ $page === "pendaftar" ? 'active' : '' }}" href="{{ route('pendaftar') }}" aria-expanded="false">
             <span>
-                <i class="ti ti-user fs-6"></i>
+                <i class="bi bi-people-fill fs-6"></i>   
             </span>
             <span class="hide-menu">Pendaftar</span>
         </a>
@@ -54,7 +54,7 @@
         <li class="sidebar-item">
         <a class="sidebar-link {{ $page === "jurusan" ? "active" : '' }}" href="{{ route('jurusan') }}" aria-expanded="false">
             <span>
-                <i class="ti ti-article"></i>
+                <i class="bi bi-mortarboard fs-6"></i>
             </span>
             <span class="hide-menu">Jurusan</span>
         </a>
@@ -64,7 +64,7 @@
         <a class="sidebar-link {{ $page === "gelombang" ? "active" : '' }}"" href="{{ route('gelombang') }}"  aria-expanded="false">
 
             <span>
-                <i class="ti ti-article"></i>
+            <i class="bi bi-arrow-clockwise fs-6"></i>
             </span>
             <span class="hide-menu">Gelombang</span>
         </a>
@@ -72,25 +72,17 @@
         <li class="sidebar-item">
             <a class="sidebar-link {{ $page === "informasi_sekolah" ? 'active' : '' }}" href="{{ route ('informasi_sekolah') }}" aria-expanded="false">
                 <span>
-                    <i class="ti ti-article"></i>
+                    <i class="bi bi-info-circle fs-6"></i>
                 </span>
                 <span class="hide-menu">Informasi Sekolah</span>
             </a>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link {{ $page === "tentang_sekolah" ? 'active' : '' }}" href="{{ route('tentang_sekolah') }}" aria-expanded="false">
-                <span>
-                    <i class="ti ti-article"></i>
-                </span>
-                <span class="hide-menu">Tentang Sekolah</span>
-            </a>
-        </li>
-        <li class="sidebar-item">
             <a class="sidebar-link {{ $page === "kontak_admin" ? 'active' : '' }}" href="{{ route('kontak_admin') }}" aria-expanded="false">
                 <span>
-                    <i class="ti ti-article"></i>
+                    <i class="bi bi-envelope fs-6"></i>
                 </span>
-                <span class="hide-menu">Kontak Depan</span>
+                <span class="hide-menu">Kotak Masuk</span>
             </a>
         </li>
         <li class="nav-small-cap">
