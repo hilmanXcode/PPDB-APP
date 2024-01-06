@@ -53,7 +53,6 @@
       </div>
       <x-dcore.footer />
     </div>
-    <x-dcore.modal />
   </div>
 <x-dcore.script />
 @endsection
