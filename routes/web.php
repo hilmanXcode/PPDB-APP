@@ -55,7 +55,9 @@ Route::group(['prefix' => 'home/sekolah'], function($id = null, $param = null) {
     Route::get('/jurusan/{id}/hapus_jurusan', [AdminController::class, 'hapus_jurusan'])->name('hapus_jurusan', $id);
     Route::post('/add_jurusan', [AdminController::class, 'add_jurusan'])->name('add_jurusan');
 
+
     Route::get('/gelombang',[AdminController::class,'gelombang'])->name('gelombang');
+    
     Route::get('/gelombang/edit_gelombang/{id}/{param}',[AdminController::class,'edit_gelombang'])->name('edit_gelombang');
     Route::post('/add_gelombang', [AdminController::class, 'add_gelombang'])->name('add_gelombang');
 
