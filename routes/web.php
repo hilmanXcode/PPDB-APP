@@ -21,6 +21,8 @@ Route::group(['prefix' => '/'], function($id = null){
     Route::get('/informasi/{id}/baca', [ClientController::class, 'baca'])->name('baca', $id);
     Route::get('/faq', [ClientController::class, 'faq'])->name('faq');
     Route::get('/contactus', [ClientController::class, 'contactus'])->name('contactus');
+    Route::get('/blog', [ClientController::class, 'blog'])->name('blog');
+    Route::get('/blogpost', [ClientController::class, 'blogpost'])->name('blogpost');
 
 
 

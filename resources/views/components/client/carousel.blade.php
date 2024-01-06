@@ -31,7 +31,7 @@
             </div>
             @empty
             <div class="carousel-item active">
-                <img class="w-100" src="{{asset('img/sekolah.webp')}}" width="1378px" height="768px" alt="Image"
+                <img class="w-100" src="{{asset('img/sekolah.webp')}}" width="1378px" height="768px" alt=""
                     style="filter: blur(4px);" />
                 <div class="carousel-caption position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
                     <div class="container">
