@@ -20,10 +20,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @php $no = 1; @endphp
                     @foreach($data as $p)
                         <tr>
-                            <td>{{$no++}}</td>
+                            <td>{{$loop->iteration}}</td>
                             <td>{{$p->nama_siswa}}</td>
                             <td>{{$p->asal_sekolah}}</td>
                             <td>{{$p->gelombang}}</td>
