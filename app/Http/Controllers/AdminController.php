@@ -77,38 +77,13 @@ class AdminController extends Controller
     }
     public function pendaftar()
     {
-        $data_pendaftar = Pendaftar::orderBy('id', 'DESC')->where('acc', '0')->where('daful', '0');
+        $data_pendaftar = Pendaftar::orderBy('id', 'DESC')->where('acc', '0')->where('daful', '0')->get();
 
-        $data_acc       = Pendaftar::orderBy('id', 'DESC')->where('acc', '1');
+        $data_acc       = Pendaftar::orderBy('id', 'DESC')->where('acc', '1')->get();
 
-        $belum_daful    = Pendaftar::orderBy('id', 'DESC')->where('acc', '1')->where('daful', '0');
+        $belum_daful    = Pendaftar::orderBy('id', 'DESC')->where('acc', '1')->where('daful', '0')->get();
 
-        $sudah_daful    = Pendaftar::orderBy('id', 'DESC')->where('acc', '1')->where('daful', '1');
-
-        if(request('pendaftar_search'))
-        {
-            $data_pendaftar->where('nama_siswa','like', '%' . request('pendaftar_search') . '%');
-        }
-        else if(request('data_acc_search'))
-        {
-            $data_acc->where('nama_siswa','like', '%' . request('data_acc_search') . '%');
-        }
-        else if(request('belum_daful_search'))
-        {
-            $belum_daful->where('nama_siswa','like', '%' . request('belum_daful_search') . '%');
-        }
-        else if(request('sudah_daful_search'))
-        {
-            $sudah_daful->where('nama_siswa','like', '%' . request('sudah_daful_search') . '%');
-        }
-
-        $belum_daful    = $belum_daful->paginate(5, ['*'], 'belum_daful');
-
-        $sudah_daful    = $sudah_daful->paginate(5, ['*'], 'sudah_daful');
-
-        $data_pendaftar = $data_pendaftar->paginate(5, ['*'], 'pendaftar');
-
-        $data_acc       = $data_acc->paginate(5, ['*'], 'data_acc');
+        $sudah_daful    = Pendaftar::orderBy('id', 'DESC')->where('acc', '1')->where('daful', '1')->get();
 
         $page = "pendaftar";
 
