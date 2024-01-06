@@ -10,7 +10,7 @@
         <div class="form-group">
             <input type="text" name="jurusan" placeholder="Masukan Jurusan" class="form-control">
         </div>
-        <div class="form-group">
+        <div class="form-group mt-2">
           <label>Deskripsi Jurusan</label>
           <textarea name="deskripsi_jurusan" class="form-control" id="konten" cols="30" rows="10"></textarea>
       </div>

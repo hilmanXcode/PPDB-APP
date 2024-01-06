@@ -10,12 +10,9 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="card">
-                <div class="card-header">
-                  <h4>Informasi Sekolah</h4>
-                </div>
                 <div class="card-body table-responsive">
+                  <h5 class="card-title fw-semibold mb-3">Informasi Sekolah</h5>
                     <div class="row">
-                        
                         <div class="col-md-12">
                             <form action="{{route('upload_informasi')}}" method="post" enctype="multipart/form-data">
                                 @csrf
@@ -24,16 +21,16 @@
                                 <label>Judul Informasi</label>
                                 <input type="text" name="judul" class="form-control" placeholder="SMKTI BISA!">
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-2">
                                 <label>Deskripsi Informasi</label>
                                 <textarea name="deskripsi_informasi" placeholder="Deskripsi Singkat Tentang Informasi" class="form-control" cols="30" rows="10"></textarea>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-2">
                                 <label>Informasi</label>
                                 <textarea name="informasi" id="konten2" class="form-control" cols="30" rows="10"></textarea>
                             </div>
-                            <div class="form-group">
-                                <input type="submit" class="btn btn-primary btn-block" value="Buat Informasi">
+                            <div class="form-group mt-2">
+                                <input type="submit" class="btn btn-primary btn-block w-100" value="Buat Informasi">
                             </div>
                             </form>
                         </div>

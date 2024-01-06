@@ -208,7 +208,7 @@ class AdminController extends Controller
 
     public function gelombang(){
         $data = Gelombang::all();
-        $page = "Gelombang";
+        $page = "gelombang";
 
         return view('Dashboard/sekolah/gelombang', compact('data', 'page'));
     }

@@ -10,16 +10,16 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
-                                <div class="card-header d-flex justify-content-between">
-                                    <h4>Gelombang</h4>
-                                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalGelombang">
-                                      <i class="bi bi-plus-circle"></i>Tambah Gelombang
-                                    </button>
-                                </div>
                                 <div class="card-body table-responsive">
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="card-title fw-semibold">Data Gelombang</h5>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalGelombang">
+                                          <i class="bi bi-plus-circle"></i> Tambah Gelombang
+                                        </button>
+                                    </div>
                                     <div class="row">
                                         <div class="col-md-12 mt-4">
-                                            <table class="table" id="data_sekolah">
+                                            <table class="table table-borderless" id="data_sekolah">
                                                 <thead>
                                                     <tr>
                                                         <th>No</th>
