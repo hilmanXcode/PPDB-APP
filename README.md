@@ -46,7 +46,7 @@ Setelah perintah di atas dijalankan, web app anda bisa sudah bisa diakses
 
 | Email      | admin@smk.com |
 |------------|-----------------|
-| Passwrord  | 123456          |
+| Password   | 123456          |
 
 ## Team Pengembang
 - [hilmanXcode](https://github.com/hilmanXcode) MUHAMMAD HILMAN NURSALAM - XII RPL 2
