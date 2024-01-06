@@ -201,11 +201,9 @@ class AdminController extends Controller
 
     public function edit_gelombang($id, $param){
 
-        Gelombang::find($id)->update([
-            'status_gelombang' => $param
-        ]);
-
+        Gelombang::where(['id' => $id])->update(['status_gelombang' => $param]);
         return redirect()->back()->with('success', 'Sukses update gelombang');
+
     }
 
     public function gelombang(){

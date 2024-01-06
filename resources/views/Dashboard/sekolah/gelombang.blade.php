@@ -10,9 +10,11 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
-                                <div class="card-header">
+                                <div class="card-header d-flex justify-content-between">
                                     <h4>Gelombang</h4>
-
+                                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalGelombang">
+                                      <i class="bi bi-plus-circle"></i>Tambah Gelombang
+                                    </button>
                                 </div>
                                 <div class="card-body table-responsive">
                                     <div class="row">
@@ -35,7 +37,7 @@
                                                             $setting = [
                                                                 'status-color' => 'badge bg-primary',
                                                                 'status-value' => 'Buka',
-                                                                'route' => url('edit_gelombang', $info->id, "Buka"),
+                                                                'route' => route('edit_gelombang', ['id' => $info->id, 'param' => 'Tutup']),
 
                                                                 'param' => 'Buka',
                                                                 'text-link' => 'Tutup',
@@ -45,7 +47,7 @@
                                                             $setting = [
                                                                 'status-color' => 'badge bg-danger',
                                                                 'status-value' => 'Tutup',
-                                                                'route' => url('edit_gelombang', $info->id, "Buka"),
+                                                                'route' => route('edit_gelombang', ['id' => $info->id, 'param' => 'Buka']),
 
                                                                 'param' => 'Tutup',
                                                                 'text-link' => 'Buka',
@@ -57,10 +59,10 @@
                                                             <td>{{ $no++ }}</td>
                                                             <td>{{ $info->gelombang }}</td>
                                                             <td>
-                                                                <span class="badge bg-primary">Primary</span>
+                                                                <span class="{{ $setting['status-color'] }}">{{ $setting['status-value'] }}</span>
                                                             </td>
                                                             <td>
-                                                                <a href="" class="btn btn-primary">Buka</a>
+                                                                <a href="{{ $setting['route'] }}" class="{{ $setting['btn-link'] }}">{{ $setting['text-link']}}</a>
                                                             </td>
                                                         </tr>
                                                     @endforeach
@@ -81,6 +83,5 @@
             <x-dcore.footer />
         </div>
     </div>
-    <x-dcore.modal />
     <x-dcore.script />
 @endsection

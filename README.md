@@ -14,7 +14,7 @@ Aplikasi ini adalah manajemen PPDB berbasis website yang dibangun dan dikembangk
 - Manajemen Gelombang (Pendaftaran dapat dipisahkan berdasarkan periode)
 - Ekpor data ke File Excel
 
-## Installation / Instalasi
+## Instalasi
 Jalankan perintah berikut untuk menyalin repository dari GitHub
 ```
 git clone https://github.com/hilmanXcode/PPDB-APP.git
@@ -46,7 +46,7 @@ Setelah perintah di atas dijalankan, web app anda bisa sudah bisa diakses
 
 | Email      | admin@smk.com |
 |------------|-----------------|
-| Passwrord  | 123456          |
+| Password   | 123456          |
 
 ## Team Pengembang
 - [hilmanXcode](https://github.com/hilmanXcode) MUHAMMAD HILMAN NURSALAM - XII RPL 2

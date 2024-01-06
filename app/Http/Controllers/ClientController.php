@@ -177,6 +177,6 @@ class ClientController extends Controller
         $pdf = PDF::loadView('Client/pdf', compact('data'));
         //dd($data);
         //dd($pdf);
-        return $pdf->stream('data.pdf');
+        return $pdf->stream("$data->nama_siswa.pdf");
     }
 }
