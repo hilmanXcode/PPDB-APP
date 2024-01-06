@@ -34,7 +34,7 @@
                                 <td>{{$no++}}</td>
                                 <td>{{$info->jurusan}}</td>
                                 <td>
-                                    <a href="#" class="btn btn-danger" id="hapus[]" data-bs-id="{{ $info->id }}"><i class="bi bi-trash-fill"></i></a>
+                                    <a href="#" class="btn btn-danger" id="hapus" data-bs-id="{{ $info->id }}"><i class="bi bi-trash-fill"></i></a>
                                 </td>
                                </tr>
                                @endforeach
@@ -53,7 +53,7 @@
       </div>
       <x-dcore.footer />
     </div>
+    <x-dcore.modal />
   </div>
-  <x-dcore.modal />
 <x-dcore.script />
 @endsection

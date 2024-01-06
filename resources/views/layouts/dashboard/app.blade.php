@@ -6,6 +6,7 @@
         <div class="body-wrapper">
             @include('components.dashboard.headbar')
             <div class="container-fluid">
+            @include('components.dashboard.modal')
                 @yield('content')
             </div>
         </div>

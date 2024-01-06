@@ -10,9 +10,11 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
-                                <div class="card-header">
+                                <div class="card-header d-flex justify-content-between">
                                     <h4>Gelombang</h4>
-
+                                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalGelombang">
+                                      <i class="bi bi-plus-circle"></i>Tambah Gelombang
+                                    </button>
                                 </div>
                                 <div class="card-body table-responsive">
                                     <div class="row">
