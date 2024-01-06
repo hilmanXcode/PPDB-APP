@@ -181,7 +181,7 @@ class AdminController extends Controller
 
     public function hapus_jurusan($id)
     {
-       $data = jurusan::find($id)->delete();
+       jurusan::find($id)->delete();
        return redirect()->back()->with('success', 'Sukses Menghapus Jurusan');
     }
 

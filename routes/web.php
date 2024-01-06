@@ -52,7 +52,7 @@ Route::group(['prefix' => 'home/pendaftaran'], function($id = null){
 
 Route::group(['prefix' => 'home/sekolah'], function($id = null, $param = null) {
     Route::get('/jurusan', [AdminController::class, 'jurusan'])->name('jurusan');
-    Route::get('/jurusan/{id}/hapus_jurusan', [AdminController::class, 'hapus_jurusan'])->name('hapus_jurusan', $id);
+    Route::delete('/jurusan/{id}/hapus_jurusan', [AdminController::class, 'hapus_jurusan'])->name('hapus_jurusan');
     Route::post('/add_jurusan', [AdminController::class, 'add_jurusan'])->name('add_jurusan');
 
 

@@ -39,12 +39,11 @@
     </script>
     <script type="text/javascript">
         $(function() {
-            $(document).on('click', '#hapus', function(e) {
+            $(document).on('click', '#hapus_jurusan', function(e) {
                 e.preventDefault();
-                let data = $(this).attr("data-bs-id");
-                let link = "http://127.0.0.1:8000/home/sekolah/jurusan/" + data + "/hapus_jurusan";
+                let form = $('#hapus_jurusan').closest("form");
                 Swal.fire({
-                    title: 'Do you want to save the changes?',
+                    title: 'Apa kamu yakin ingin menghapus jurusan ini?',
                     showDenyButton: true,
                     confirmButtonText: 'Yes',
                     denyButtonText: 'No',
@@ -56,10 +55,7 @@
                     },
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        Swal.fire('Saved!', '', 'success')
-                        window.location.href = link;
-                    } else if (result.isDenied) {
-                        Swal.fire('Changes are not saved', '', 'info')
+                        form.submit();
                     }
                 })
             });

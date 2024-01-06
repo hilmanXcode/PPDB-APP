@@ -29,7 +29,6 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    @php $no = 1; @endphp
                                                     @foreach ($data as $info)
                                                         <?php
                                                         $setting = [];
@@ -56,7 +55,7 @@
                                                         }
                                                         ?>
                                                         <tr>
-                                                            <td>{{ $no++ }}</td>
+                                                            <td>{{ $loop->iteration }}</td>
                                                             <td>{{ $info->gelombang }}</td>
                                                             <td>
                                                                 <span class="{{ $setting['status-color'] }}">{{ $setting['status-value'] }}</span>

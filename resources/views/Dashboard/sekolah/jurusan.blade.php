@@ -28,13 +28,16 @@
                                 </tr>
                               </thead>
                               <tbody>
-                               @php $no = 1; @endphp
                                @foreach($data as $info)
                                <tr>
-                                <td>{{$no++}}</td>
+                                <td>{{$loop->iteration}}</td>
                                 <td>{{$info->jurusan}}</td>
                                 <td>
-                                    <a href="#" class="btn btn-danger" id="hapus" data-bs-id="{{ $info->id }}"><i class="bi bi-trash-fill"></i></a>
+                                    <form action="{{ route('hapus_jurusan', $info->id) }}" method="POST">
+                                      @csrf
+                                      @method('DELETE')
+                                     <button type="submit" class="btn btn-danger" id="hapus_jurusan"><i class="bi bi-trash-fill"></i></button>
+                                    </form>
                                 </td>
                                </tr>
                                @endforeach
