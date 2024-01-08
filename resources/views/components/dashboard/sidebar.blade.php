@@ -74,7 +74,7 @@
                 <span>
                     <i class="bi bi-info-circle fs-6"></i>
                 </span>
-                <span class="hide-menu">Informasi Sekolah</span>
+                <span class="hide-menu">Blog</span>
             </a>
         </li>
         <li class="sidebar-item">

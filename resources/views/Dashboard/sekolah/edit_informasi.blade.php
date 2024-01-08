@@ -11,7 +11,7 @@
             <div class="col-lg-12">
               <div class="card">
                 <div class="card-body table-responsive">
-                  <h5 class="card-title fw-semibold mb-3">Informasi Sekolah</h5>
+                  <h5 class="card-title fw-semibold mb-3">Blog</h5>
                     <div class="row">
                         <div class="col-md-12">
                             <form action="{{route('update_informasi', $data->id)}}" method="post" enctype="multipart/form-data">

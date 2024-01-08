@@ -11,7 +11,7 @@
             <div class="col-lg-12">
               <div class="card">
                 <div class="card-body table-responsive">
-                  <h5 class="card-title fw-semibold mb-3">Informasi Sekolah</h5>
+                  <h5 class="card-title fw-semibold mb-3">Blog</h5>
                     <div class="row">
                         <div class="col-md-12">
                             <form action="{{route('upload_informasi')}}" method="post" enctype="multipart/form-data">
@@ -73,6 +73,7 @@
                                   <th>No</th>
                                   <th>Judul Informasi</th>
                                   <th>Banner Image</th>
+                                  <th>Created At</th>
                                   <th>Option</th>
                                 </tr>
                               </thead>
@@ -84,6 +85,9 @@
                                 <td>
                                   <img src="{{ asset($info->banner_image) }}" width="300" height="200"/>
                                 </td>
+                                <td>
+                                  {{ dateIndo($info) }}
+                                </td>
                                 <td class="d-flex gap-2">
                                     <a href="{{ route('edit_informasi', $info->id) }}" class="btn btn-primary"><i class="bi bi-pencil-square"></i></a>
                                     <form action="{{ route('hapus_informasi', $info->id) }}" method="POST">
@@ -92,6 +96,7 @@
                                       <button href="{{ route('hapus_informasi', $info->id) }}" class="btn btn-danger" id="hapus_informasi"><i class="bi bi-trash"></i></button>
                                     </form>
                                 </td>
+                                
                                </tr>
                                @endforeach
                               </tbody>
