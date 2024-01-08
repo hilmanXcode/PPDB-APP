@@ -51,16 +51,17 @@
                     <div class="col-lg-3">
                         <div class="card">
                             <div class="card-body">
-                              <h5 class="card-title fw-semibold mb-4">ACC Gelombang</h5>
+                              <h5 class="card-title fw-semibold mb-4">ACC Masal</h5>
                                 <form action="{{route('acc_massal')}}" method="POST">
                                     @csrf
                                     <div class="form-group">
                                         <select name="gelombang" class="form-control" id="">
+
                                             <option disabled selected value>Pilih Gelombang</option>
-                                            <option value="Gelombang_1">Gelombang 1</option>
-                                            <option value="Gelombang_2">Gelombang 2</option>
-                                            <option value="Gelombang_3">Gelombang 3</option>
-                                            <option value="Gelombang_4">Gelombang 4</option>
+                                            <option value="Gelombang_1">1</option>
+                                            <option value="Gelombang_2">2</option>
+                                            <option value="Gelombang_3">3</option>
+                                            <option value="Gelombang_4">4</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
