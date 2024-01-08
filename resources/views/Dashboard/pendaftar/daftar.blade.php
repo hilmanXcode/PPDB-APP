@@ -8,10 +8,8 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="card">
-                <div class="card-header">
-                  <h4>Form Pendaftaran</h4>
-                </div>
                 <div class="card-body">
+                  <h5 class="card-title fw-semibold mb-4">Form Pendaftaran</h5>
                   <x-dcore.daftar :jurusan="$jurusan" :gelombang="$gelombang" :form="$form" :button="$button"/>
                 </div>
               </div>

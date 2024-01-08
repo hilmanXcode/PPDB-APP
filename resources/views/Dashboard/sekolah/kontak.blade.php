@@ -14,7 +14,7 @@
                     <div class="row">
                         
                         <div class="col-md-12">
-                            <table class="table" id="data_sekolah">
+                            <table class="table table-borderless" id="data_sekolah">
                                 <thead>
                                     <tr>
                                         <th>No</th>

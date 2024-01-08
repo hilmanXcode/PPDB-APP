@@ -10,16 +10,16 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="card">
-                <div class="card-header d-flex justify-content-between">
-                  <h4>Jurusan</h4>
-                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalJurusan">
-                    <i class="bi bi-plus-circle"></i>Tambah Jurusan
-                  </button>
-                </div>
                 <div class="card-body table-responsive">
+                  <div class="d-flex justify-content-between">
+                  <h5 class="card-title fw-semibold">Data Jurusan</h5>
+                  <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalJurusan">
+                    <i class="bi bi-plus-circle"></i> Tambah Jurusan
+                  </button>
+                  </div>
                     <div class="row">
                         <div class="col-md-12 mt-4">
-                            <table class="table" id="data_sekolah">
+                            <table class="table table-borderless" id="data_sekolah">
                               <thead>
                                 <tr>
                                   <th>No</th>
@@ -28,13 +28,16 @@
                                 </tr>
                               </thead>
                               <tbody>
-                               @php $no = 1; @endphp
                                @foreach($data as $info)
                                <tr>
-                                <td>{{$no++}}</td>
+                                <td>{{$loop->iteration}}</td>
                                 <td>{{$info->jurusan}}</td>
                                 <td>
-                                    <a href="#" class="btn btn-danger" id="hapus" data-bs-id="{{ $info->id }}"><i class="bi bi-trash-fill"></i></a>
+                                    <form action="{{ route('hapus_jurusan', $info->id) }}" method="POST">
+                                      @csrf
+                                      @method('DELETE')
+                                     <button type="submit" class="btn btn-danger" id="hapus_jurusan"><i class="bi bi-trash-fill"></i></button>
+                                    </form>
                                 </td>
                                </tr>
                                @endforeach

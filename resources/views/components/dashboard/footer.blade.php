@@ -8,6 +8,15 @@
     <script src="{{ asset('js/jspdf.umd.min.js') }}"></script>
     <script src="{{ asset('js/jspdf.plugin.autotable.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
     <script>
         window.jsPDF = window.jspdf.jsPDF;
         const Toast = Swal.mixin({
@@ -36,15 +45,68 @@
             const wb = XLSX.utils.table_to_book(table)
             XLSX.writeFile(wb, fileName)
         }
+
+        $(document).ready( function () {
+
+            $('#data_pendaftar').DataTable({
+                "bLengthChange": false,
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        extend: 'excel',
+                        className: 'btn btn-success',
+                        init: function(api, node, config) {
+                            $(node).removeClass('dt-button')
+                        }
+                    }
+                ]
+            });
+            $('#data_acc').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        extend: 'excel',
+                        className: 'btn btn-success',
+                        init: function(api, node, config) {
+                            $(node).removeClass('dt-button')
+                        }
+                    }
+                ]
+            });
+            $('#belum_daful').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        extend: 'excel',
+                        className: 'btn btn-success',
+                        init: function(api, node, config) {
+                            $(node).removeClass('dt-button')
+                        }
+                    }
+                ]
+            });
+            $('#sudah_daful').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        extend: 'excel',
+                        className: 'btn btn-success',
+                        init: function(api, node, config) {
+                            $(node).removeClass('dt-button')
+                        }
+                    }
+                ]
+            });
+       
+        });
     </script>
     <script type="text/javascript">
         $(function() {
-            $(document).on('click', '#hapus', function(e) {
+            $(document).on('click', '#hapus_jurusan', function(e) {
                 e.preventDefault();
-                let data = $(this).attr("data-bs-id");
-                let link = "http://127.0.0.1:8000/home/sekolah/jurusan/" + data + "/hapus_jurusan";
+                let form = $('#hapus_jurusan').closest("form");
                 Swal.fire({
-                    title: 'Do you want to save the changes?',
+                    title: 'Apa kamu yakin ingin menghapus jurusan ini?',
                     showDenyButton: true,
                     confirmButtonText: 'Yes',
                     denyButtonText: 'No',
@@ -56,10 +118,7 @@
                     },
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        Swal.fire('Saved!', '', 'success')
-                        window.location.href = link;
-                    } else if (result.isDenied) {
-                        Swal.fire('Changes are not saved', '', 'info')
+                        form.submit();
                     }
                 })
             });

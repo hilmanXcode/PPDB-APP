@@ -21,6 +21,8 @@ Route::group(['prefix' => '/'], function($id = null){
     Route::get('/informasi/{id}/baca', [ClientController::class, 'baca'])->name('baca', $id);
     Route::get('/faq', [ClientController::class, 'faq'])->name('faq');
     Route::get('/contactus', [ClientController::class, 'contactus'])->name('contactus');
+    Route::get('/blog', [ClientController::class, 'blog'])->name('blog');
+    Route::get('/blogpost', [ClientController::class, 'blogpost'])->name('blogpost');
 
 
 
@@ -50,10 +52,12 @@ Route::group(['prefix' => 'home/pendaftaran'], function($id = null){
 
 Route::group(['prefix' => 'home/sekolah'], function($id = null, $param = null) {
     Route::get('/jurusan', [AdminController::class, 'jurusan'])->name('jurusan');
-    Route::get('/jurusan/{id}/hapus_jurusan', [AdminController::class, 'hapus_jurusan'])->name('hapus_jurusan', $id);
+    Route::delete('/jurusan/{id}/hapus_jurusan', [AdminController::class, 'hapus_jurusan'])->name('hapus_jurusan');
     Route::post('/add_jurusan', [AdminController::class, 'add_jurusan'])->name('add_jurusan');
 
+
     Route::get('/gelombang',[AdminController::class,'gelombang'])->name('gelombang');
+    
     Route::get('/gelombang/edit_gelombang/{id}/{param}',[AdminController::class,'edit_gelombang'])->name('edit_gelombang');
     Route::post('/add_gelombang', [AdminController::class, 'add_gelombang'])->name('add_gelombang');
 

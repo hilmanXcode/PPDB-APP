@@ -369,6 +369,7 @@
 
 .testimonial-left img,
 .testimonial-right img {
+    background: url(fitra.jpg) 50% 50% no-repeat;
     position: absolute;
     padding: 5px;
     border: 1px dashed var(--primary);
@@ -377,6 +378,8 @@
 
 .testimonial-left img:nth-child(1),
 .testimonial-right img:nth-child(3) {
+    background: url(fitra.jpg) 50% 50% no-repeat;
+
     width: 70px;
     height: 70px;
     top: 10%;
@@ -386,6 +389,7 @@
 
 .testimonial-left img:nth-child(2),
 .testimonial-right img:nth-child(2) {
+    background: url(fitra.jpg) 50% 50% no-repeat;
     width: 60px;
     height: 60px;
     top: 50%;
@@ -395,6 +399,7 @@
 
 .testimonial-left img:nth-child(3),
 .testimonial-right img:nth-child(1) {
+    background: url(fitra.jpg) 50% 50% no-repeat;
     width: 50px;
     height: 50px;
     bottom: 10%;
@@ -402,6 +407,7 @@
 }
 
 .testimonial-carousel .owl-item img {
+    background: url(fitra.jpg) 50% 50% no-repeat;
     width: 100px;
     height: 100px;
 }
@@ -484,11 +490,8 @@
 }
 
 .footer .copyright a:hover {
-<<<<<<< HEAD
     color: #ffffff;
 }
-<<<<<<< HEAD
-=======
 
 /*--------------------------------------------------------------
 # F.A.Q
@@ -520,8 +523,3 @@
     padding: 0 0 25px 0;
     border: 0;
 }
->>>>>>> origin
-=======
-    color: #FFFFFF;
-}
->>>>>>> f95ce37abf86b5434d804a3d8eb3eb9f6fa59f19
