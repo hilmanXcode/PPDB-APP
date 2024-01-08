@@ -73,6 +73,7 @@
                                   <th>No</th>
                                   <th>Judul Informasi</th>
                                   <th>Banner Image</th>
+                                  <th>Created At</th>
                                   <th>Option</th>
                                 </tr>
                               </thead>
@@ -84,6 +85,28 @@
                                 <td>
                                   <img src="{{ asset($info->banner_image) }}" width="300" height="200"/>
                                 </td>
+                                <td>
+                                  @php 
+                                    $month = [
+                                      'Januari',
+                                      'Februari',
+                                      'Maret',
+                                      'April',
+                                      'Mei',
+                                      'Juni',
+                                      'Juli',
+                                      'Agustus',
+                                      'September',
+                                      'Oktober',
+                                      'November',
+                                      'Desember'
+                                    ];
+
+                                    $date = $info->created_at->format("j") . " " . $month[$info->created_at->format("n") - 1] . " " . $info->created_at->format("Y");
+
+                                  @endphp
+                                  {{ $date }}
+                                </td>
                                 <td class="d-flex gap-2">
                                     <a href="{{ route('edit_informasi', $info->id) }}" class="btn btn-primary"><i class="bi bi-pencil-square"></i></a>
                                     <form action="{{ route('hapus_informasi', $info->id) }}" method="POST">
@@ -92,6 +115,7 @@
                                       <button href="{{ route('hapus_informasi', $info->id) }}" class="btn btn-danger" id="hapus_informasi"><i class="bi bi-trash"></i></button>
                                     </form>
                                 </td>
+                                
                                </tr>
                                @endforeach
                               </tbody>
