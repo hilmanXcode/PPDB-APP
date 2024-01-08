@@ -11,7 +11,7 @@
             <div class="col-lg-12">
               <div class="card">
                 <div class="card-body table-responsive">
-                  <h5 class="card-title fw-semibold mb-3">Informasi Sekolah</h5>
+                  <h5 class="card-title fw-semibold mb-3">Blog</h5>
                     <div class="row">
                         <div class="col-md-12">
                             <form action="{{route('upload_informasi')}}" method="post" enctype="multipart/form-data">
@@ -86,26 +86,7 @@
                                   <img src="{{ asset($info->banner_image) }}" width="300" height="200"/>
                                 </td>
                                 <td>
-                                  @php 
-                                    $month = [
-                                      'Januari',
-                                      'Februari',
-                                      'Maret',
-                                      'April',
-                                      'Mei',
-                                      'Juni',
-                                      'Juli',
-                                      'Agustus',
-                                      'September',
-                                      'Oktober',
-                                      'November',
-                                      'Desember'
-                                    ];
-
-                                    $date = $info->created_at->format("j") . " " . $month[$info->created_at->format("n") - 1] . " " . $info->created_at->format("Y");
-
-                                  @endphp
-                                  {{ $date }}
+                                  {{ dateIndo($info) }}
                                 </td>
                                 <td class="d-flex gap-2">
                                     <a href="{{ route('edit_informasi', $info->id) }}" class="btn btn-primary"><i class="bi bi-pencil-square"></i></a>
