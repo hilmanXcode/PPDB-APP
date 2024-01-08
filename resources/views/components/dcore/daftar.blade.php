@@ -247,7 +247,7 @@
         </div>
         <div class="col-md-6 mt-3">
             <label>Rekomendasi Masuk</label>
-            <input type="text" class="form-control" placeholder="Rekomendasi Masuk Telematika" {{$form}}
+            <input type="text" class="form-control" placeholder="Rekomendasi Masuk SMK PGRI TELAGASARI" {{$form}}
                 @if($gelombang==null) @elseif($gelombang->status_gelombang == 'Buka') name="rekomendasi"
             @endif value="{{old('rekomendasi')}}">
         </div>
