@@ -108,7 +108,7 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
+    'faker_locale' => env('FAKER_LOCALE', 'en_US'),
 
     /*
     |--------------------------------------------------------------------------
@@ -186,8 +186,6 @@ return [
         /*
          * Package Service Providers...
          */
-        Arikun\Stislasimple\StislaServiceProvider::class,
-        Alaouy\Youtube\YoutubeServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         /*
          * Application Service Providers...
