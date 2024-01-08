@@ -10,12 +10,6 @@
                         <div class="card">
                             <div class="card-body table-responsive">
                               <h5 class="card-title fw-semibold mb-4">Data Pendaftar</h5>
-                                <form action="">
-                                    <div class="input-group">
-                                        <input type="search" class="form-control rounded-start" placeholder="Search" aria-label="Search" aria-describedby="search-addon" name="pendaftar_search" value="{{ request('pendaftar_search') }}" />
-                                        <button type="submit" class="btn btn-outline-primary" data-mdb-ripple-init>search</button>
-                                    </div>
-                                </form>
                                 <table class="table table-borderless" id="data_pendaftar">
                                     <thead>
                                         <tr>
@@ -51,23 +45,23 @@
                                         @endforeach
                                     </tbody>
                                 </table>
-                                {{ $data_pendaftar->links() }}
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="card">
                             <div class="card-body">
-                              <h5 class="card-title fw-semibold mb-4">ACC Gelombang</h5>
+                              <h5 class="card-title fw-semibold mb-4">ACC Masal</h5>
                                 <form action="{{route('acc_massal')}}" method="POST">
                                     @csrf
                                     <div class="form-group">
                                         <select name="gelombang" class="form-control" id="">
+
                                             <option disabled selected value>Pilih Gelombang</option>
-                                            <option value="Gelombang_1">Gelombang 1</option>
-                                            <option value="Gelombang_2">Gelombang 2</option>
-                                            <option value="Gelombang_3">Gelombang 3</option>
-                                            <option value="Gelombang_4">Gelombang 4</option>
+                                            <option value="Gelombang_1">1</option>
+                                            <option value="Gelombang_2">2</option>
+                                            <option value="Gelombang_3">3</option>
+                                            <option value="Gelombang_4">4</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
@@ -88,17 +82,9 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body table-responsive">
-                              <h5 class="card-title fw-semibold mb-4">Data Sudah Di ACC</h5>
-                              <div class="d-flex justify-content-center">
-                                <button class="btn btn-success me-2" onclick="exportData('xlsx', 'data_acc')">Excel</button>
-                                <form class="w-100">
-                                <div class="input-group">
-                                    <input type="search" class="form-control rounded-start" placeholder="Search" aria-label="Search" aria-describedby="search-addon" name="data_acc_search" value="{{ request('data_acc_search') }}" />
-                                    <button type="submit" class="btn btn-outline-primary" data-mdb-ripple-init>search</button>
-                                </div>
-                                </form>
-                              </div>
-                              
+
+                              <h5 class="card-title fw-semibold mb-2">Data Sudah Di ACC</h5>
+                              {{-- <button class="btn btn-success mb-2" onclick="exportData('xlsx', 'data_acc')">Excel</button> --}}
                                 <table class="table table-borderless" id="data_acc">
                                     <thead>
                                         <tr>
@@ -159,7 +145,6 @@
                                         @endforeach
                                     </tbody>
                                 </table>
-                                {{ $data_acc->links() }}
 
                             </div>
                         </div>
@@ -175,15 +160,6 @@
                         <div class="card">
                             <div class="card-body table-responsive">
                               <h5 class="card-title fw-semibold mb-4">Data Belum Daftar Ulang</h5>
-                              <div class="d-flex justify-content-center">
-                                <button class="btn btn-success me-2" onclick="exportData('xlsx', 'data_acc')">Excel</button>
-                                <form class="w-100">
-                                <div class="input-group">
-                                    <input type="search" class="form-control rounded-start" placeholder="Search" aria-label="Search" aria-describedby="search-addon" name="belum_daful_search" value="{{ request('belum_daful_search') }}" />
-                                    <button type="submit" class="btn btn-outline-primary" data-mdb-ripple-init>search</button>
-                                </div>
-                                </form>
-                              </div>
                                 <table class="table table-borderless" id="belum_daful">
                                     <thead>
                                         <tr>
@@ -198,7 +174,7 @@
                                         <tr>
                                             <td>{{$loop->iteration}}</td>
                                             <td>{{$ddf->nama_siswa}}</td>
-                                            <td>{{$ddf->rekomendasi}}</td>
+                                            <td>{{$ddf->rekomendasi ?? '-'}}</td>
 
 
                                             <td>
@@ -209,7 +185,6 @@
                                         @endforeach
                                     </tbody>
                                 </table>
-                                {{ $belum_daful->links() }}
                             </div>
                         </div>
                     </div>
@@ -217,15 +192,6 @@
                         <div class="card">
                             <div class="card-body table-responsive">
                               <h5 class="card-title fw-semibold mb-4">Data Sudah Daftar Ulang</h5>
-                              <div class="d-flex justify-content-center">
-                                <button class="btn btn-success me-2" onclick="exportData('xlsx', 'data_acc')">Excel</button>
-                                <form class="w-100">
-                                <div class="input-group">
-                                    <input type="search" class="form-control rounded-start" placeholder="Search" aria-label="Search" aria-describedby="search-addon" name="sudah_daful_search" value="{{ request('sudah_daful_search') }}" />
-                                    <button type="submit" class="btn btn-outline-primary" data-mdb-ripple-init>search</button>
-                                </div>
-                                </form>
-                              </div>
                                 <table class="table table-borderless" id="sudah_daful">
                                     <thead>
                                         <tr>
@@ -244,7 +210,6 @@
                                         @endforeach
                                     </tbody>
                                 </table>
-                                {{ $sudah_daful->links() }}
                             </div>
 
 

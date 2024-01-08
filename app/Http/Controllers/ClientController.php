@@ -14,6 +14,8 @@ use App\Models\Youtube;
 use PDF;
 use Illuminate\Http\Request;
 
+use function PHPSTORM_META\type;
+
 class ClientController extends Controller
 {
     public function index()
@@ -39,8 +41,7 @@ class ClientController extends Controller
     public function daftar()
     {
         $jurusan = Jurusan::all();
-        $gelombang = Gelombang::first();
-
+        $gelombang = Gelombang::get()->where('status_gelombang', '=', 'Buka')->first();
 
 
         if($gelombang == null){
@@ -53,7 +54,15 @@ class ClientController extends Controller
             $form = '';
             $button = 'type="submit"';
         }
-        return view('Client/daftar', compact('jurusan', 'gelombang', 'form', 'button'));
+
+        // return view('Client/daftar', compact('jurusan', 'gelombang', 'form', 'button'));
+
+        return view('Client/daftar', [
+            'jurusan' => $jurusan,
+            'gelombang' => $gelombang,
+            'form' => $form,
+            'button' => $button
+        ]);
     }
     public function yes_daftar(Request $req)
     {

@@ -1,18 +1,17 @@
 <form action="{{route('kirim_data')}}" method="POST">
     @csrf
     <div class="row">
-
         <div class="col-md-12">
-            <h3>Data Gelombang dan Jurusan</h3>
+            <h5 class="card-title fw-semibold">Data Gelombang Dan Jurusan</h5>
         </div>
         <div class="col-md-6 mt-3">
             <label>Gelombang<sup class="text-danger">*</sup></label>
-            <input type="text" value="{{$gelombang->gelombang ?? 'Belum Ada Gelombang'}}" name="gelombang"
+            <input type="text" value="{{ $gelombang->gelombang ?? 'Belum Ada Gelombang' }}" name="gelombang"
                 class="form-control disabl" readonly>
         </div>
         <div class="col-md-6 mt-3">
             <label>Status Gelombang</label>
-            <input type="text" value="{{$gelombang->status_gelombang ?? 'Belum Di Buka'}}"
+            <input type="text" value="{{ $gelombang->status_gelombang ?? 'Tutup' }} "
                 class="form-control" disabled>
         </div>
         <div class="col-md-12 mt-3">
@@ -29,7 +28,7 @@
             @enderror
         </div>
         <div class="col-md-12 mt-3">
-            <h3>Data Pendaftar</h3>
+            <h5 class="card-title fw-semibold">Data Pendaftar</h5>
         </div>
         <div class="col-md-12 mt-3">
             <label>Nama Siswa <sup class="text-danger">*</sup></label>
@@ -125,7 +124,7 @@
         </div>
 
         <div class="col-md-12 mt-3">
-            <h3>Data Orang Tua</h3>
+            <h5 class="card-title fw-semibold">Data Orang Tua</h5>
         </div>
         <div class="col-md-6 mt-3">
             <label>Nama Ayah<sup class="text-danger">*</sup></label>
@@ -225,7 +224,7 @@
             @enderror
         </div>
         <div class="col-md-12 mt-3">
-            <h3>Data Kontak</h3>
+            <h5 class="card-title fw-semibold">Data Kontak</h5>
         </div>
         <div class="col-md-6 mt-3">
             <label>Nomor HP Ayah</label>
@@ -247,7 +246,7 @@
         </div>
         <div class="col-md-6 mt-3">
             <label>Rekomendasi Masuk</label>
-            <input type="text" class="form-control" placeholder="Rekomendasi Masuk Telematika" {{$form}}
+            <input type="text" class="form-control" placeholder="Rekomendasi Masuk SMK PGRI TELAGASARI" {{$form}}
                 @if($gelombang==null) @elseif($gelombang->status_gelombang == 'Buka') name="rekomendasi"
             @endif value="{{old('rekomendasi')}}">
         </div>
@@ -263,7 +262,7 @@
         <div class="col-md-12 mt-3">
             <input {{$form}} @if($gelombang==null) class="btn btn-outline-danger btn-block w-100"
                 value="Belum Di Buka!" @elseif($gelombang->status_gelombang == 'Buka') class="btn
-            btn-outline-success btn-block" value="Kirim Datamu!" type="submit" @endif
+            btn-outline-success btn-block w-100" value="Kirim Datamu!" type="submit" @endif
             >
         </div>
     </div>
