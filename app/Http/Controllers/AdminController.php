@@ -29,8 +29,7 @@ class AdminController extends Controller
     public function daftar_admin()
     {
         $jurusan = Jurusan::all();
-        $gelombang = Gelombang::first();
-
+        $gelombang = Gelombang::get()->where('status_gelombang', '=', 'Buka')->first();
 
 
         if($gelombang == null){
@@ -176,7 +175,7 @@ class AdminController extends Controller
     }
 
     public function edit_gelombang($id, $param){
-
+        Gelombang::where(['status_gelombang' => 'Buka'])->update(['status_gelombang' => 'Tutup']);
         Gelombang::where(['id' => $id])->update(['status_gelombang' => $param]);
         return redirect()->back()->with('success', 'Sukses update gelombang');
 

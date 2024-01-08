@@ -97,7 +97,13 @@
                     }
                 ]
             });
-       
+
+            @if ($page === "kontak_admin")    
+                $('#data_sekolah').DataTable({
+                    "bLengthChange": false
+                });
+            @endif
+            
         });
     </script>
     <script type="text/javascript">
