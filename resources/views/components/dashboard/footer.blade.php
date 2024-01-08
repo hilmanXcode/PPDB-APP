@@ -122,6 +122,27 @@
                     }
                 })
             });
+
+            $(document).on('click', '#hapus_informasi', function(e) {
+                e.preventDefault();
+                let form = $('#hapus_informasi').closest("form");
+                Swal.fire({
+                    title: 'Apa kamu yakin ingin menghapus informasi ini?',
+                    showDenyButton: true,
+                    confirmButtonText: 'Yes',
+                    denyButtonText: 'No',
+                    customClass: {
+                        actions: 'my-actions',
+                        cancelButton: 'order-1 right-gap',
+                        confirmButton: 'order-2',
+                        denyButton: 'order-3',
+                    },
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        form.submit();
+                    }
+                })
+            });
         });
 
         document.addEventListener('DOMContentLoaded', function() {
