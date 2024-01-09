@@ -2,7 +2,6 @@
     <script src="{{ asset('libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('js/sidebarmenu.js') }}"></script>
     <script src="{{ asset('js/app.min.js') }}"></script>
-    <script src="{{ asset('libs/simplebar/dist/simplebar.js') }}"></script>
     <script src="{{ asset('js/dashboard.js') }}"></script>
     <script src="{{ asset('js/sheet.js') }}"></script>
     <script src="{{ asset('js/jspdf.umd.min.js') }}"></script>
@@ -106,13 +105,13 @@
                 "pageLength": 5
             });
 
-            @if ($page === "kontak_admin")    
+            @if ($page === "kontak_admin")
                 $('#data_sekolah').DataTable({
                     "bLengthChange": false,
                     "pageLength": 5
                 });
             @endif
-            
+
         });
     </script>
     <script type="text/javascript">
@@ -166,7 +165,7 @@
                     });
                 @endforeach
             @endif
-            
+
             @if ($page === "category_manager")
                 @foreach ($data as $info)
                     $(document).on('click', '#hapus_kategori{{ $info->id ?? '' }}', function(e) {
@@ -191,7 +190,7 @@
                     });
                 @endforeach
             @endif
-            
+
         });
 
         document.addEventListener('DOMContentLoaded', function() {
