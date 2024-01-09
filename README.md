@@ -12,7 +12,7 @@ Aplikasi ini adalah manajemen PPDB berbasis website yang dibangun dan dikembangk
 - Website Sekolah
 - Monitoring pendaftaran
 - Manajemen Gelombang (Pendaftaran dapat dipisahkan berdasarkan periode)
-- Ekpor data ke File Excel
+- Export data ke File Excel
 
 ## Instalasi
 Jalankan perintah berikut untuk menyalin repository dari GitHub

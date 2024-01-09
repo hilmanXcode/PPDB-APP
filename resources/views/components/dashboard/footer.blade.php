@@ -59,7 +59,8 @@
                             $(node).removeClass('dt-button')
                         }
                     }
-                ]
+                ],
+                "pageLength": 5
             });
             $('#data_acc').DataTable({
                 dom: 'Bfrtip',
@@ -71,7 +72,8 @@
                             $(node).removeClass('dt-button')
                         }
                     }
-                ]
+                ],
+                "pageLength": 5
             });
             $('#belum_daful').DataTable({
                 dom: 'Bfrtip',
@@ -83,7 +85,8 @@
                             $(node).removeClass('dt-button')
                         }
                     }
-                ]
+                ],
+                "pageLength": 5
             });
             $('#sudah_daful').DataTable({
                 dom: 'Bfrtip',
@@ -95,9 +98,17 @@
                             $(node).removeClass('dt-button')
                         }
                     }
-                ]
+                ],
+                "pageLength": 5
             });
-       
+
+            @if ($page === "kontak_admin")    
+                $('#data_sekolah').DataTable({
+                    "bLengthChange": false,
+                    "pageLength": 5
+                });
+            @endif
+            
         });
     </script>
     <script type="text/javascript">
@@ -107,6 +118,27 @@
                 let form = $('#hapus_jurusan').closest("form");
                 Swal.fire({
                     title: 'Apa kamu yakin ingin menghapus jurusan ini?',
+                    showDenyButton: true,
+                    confirmButtonText: 'Yes',
+                    denyButtonText: 'No',
+                    customClass: {
+                        actions: 'my-actions',
+                        cancelButton: 'order-1 right-gap',
+                        confirmButton: 'order-2',
+                        denyButton: 'order-3',
+                    },
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        form.submit();
+                    }
+                })
+            });
+
+            $(document).on('click', '#hapus_informasi', function(e) {
+                e.preventDefault();
+                let form = $('#hapus_informasi').closest("form");
+                Swal.fire({
+                    title: 'Apa kamu yakin ingin menghapus informasi ini?',
                     showDenyButton: true,
                     confirmButtonText: 'Yes',
                     denyButtonText: 'No',

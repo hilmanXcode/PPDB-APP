@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('informasi', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
+            $table->string('banner_image');
             $table->longText('deskripsi_informasi');
             $table->longText('informasi');
             $table->timestamps();

@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -16,13 +17,13 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-
+        \App\Models\Pendaftar::factory()->count(200)->create();
         \App\Models\User::factory()->create([
             'name' => 'admin',
             'email' => 'admin@smk.com',
             'password' => Hash::make('123456')
         ]);
-
+        
         $data = [
             [
                 'gelombang' => 'Gelombang_1',
@@ -43,7 +44,6 @@ class DatabaseSeeder extends Seeder
         ];
 
         DB::table('gelombang')->insert($data);
-
-
     }
+    
 }
