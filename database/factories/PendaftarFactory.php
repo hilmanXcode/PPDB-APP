@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+
 use App\Models\Pendaftar;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -19,7 +20,7 @@ class PendaftarFactory extends Factory
     protected $model = Pendaftar::class;
 
     public function definition(): array
-    {
+    { 
         return [
             'gelombang' => $this->faker->randomElement(['Gelombang_1', 'Gelombang_2', 'Gelombang_3', 'Gelombang_4']),
             'jurusan'=> $this->faker->randomElement($array = array('Rekayasa Perangkat Lunak', 'Teknik Mesin Industri', 'Teknik Pengelasan')),
@@ -28,7 +29,7 @@ class PendaftarFactory extends Factory
             'tempat_lahir'=> $this->faker->city(),
             'jenis_kelamin'=> $this->faker->randomElement($array = ['Laki Laki','Perempuan']),
             'tanggal_lahir'=> $this->faker->dateTimeThisCentury()->format('Y-m-d'),
-            'asal_sekolah'=> $this->faker->sentence,
+            'asal_sekolah'=> getAPI($this->faker->numberBetween(1,100)),
             'agama'=> $this->faker->randomElement($array = ['Islam', 'Kristen', 'Hindu', 'Buddha', 'Konghucu']),
             'hobi'=> $this->faker->word(),
             'cita'=> $this->faker->word(),
