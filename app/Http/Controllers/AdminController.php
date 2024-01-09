@@ -381,7 +381,7 @@ class AdminController extends Controller
         $judul = $video->snippet->title;
         $channel = $video->snippet->channelTitle;
 
-        $data = YT::create([
+        YT::create([
             'id_youtube' => $req->input('link'),
             'judul'      => $judul,
             'channel'    => $channel
