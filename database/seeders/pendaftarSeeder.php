@@ -17,7 +17,7 @@ class pendaftarSeeder extends Seeder
     public function run()
     {
         $setdisk = Storage::disk('local');
-        if($setdisk->missing('datasekolah.json') and $setdisk->missing('datahobi.json')){
+        if($setdisk->missing('datasekolah.json')){
             $convert= json_encode(getAPI());
             $setdisk->put('datasekolah.json',$convert);
         }
@@ -26,7 +26,6 @@ class pendaftarSeeder extends Seeder
         for($i = 0; $i <= 99; $i++){
             Pendaftar::factory()->create([
             'asal_sekolah'=> $dataArray[$i]['sekolah'],
-            'hobi'=> null,
                 
             ]);
 
