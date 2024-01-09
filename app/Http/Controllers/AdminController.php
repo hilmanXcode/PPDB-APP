@@ -80,11 +80,8 @@ class AdminController extends Controller
     public function pendaftar()
     {
         $data_pendaftar = Pendaftar::orderBy('id', 'DESC')->where('acc', '0')->where('daful', '0')->get();
-
         $data_acc       = Pendaftar::orderBy('id', 'DESC')->where('acc', '1')->get();
-
         $belum_daful    = Pendaftar::orderBy('id', 'DESC')->where('acc', '1')->where('daful', '0')->get();
-
         $sudah_daful    = Pendaftar::orderBy('id', 'DESC')->where('acc', '1')->where('daful', '1')->get();
 
         $page = "pendaftar";
@@ -250,7 +247,7 @@ class AdminController extends Controller
 
         Category::find($id)->update(["category_name" => $req->category_name, "category_slug" => strtolower($req->category_slug)]);
 
-        
+
         return redirect()->route('category_manager')->with('success', 'Sukses mengedit category');
 
     }
@@ -274,7 +271,7 @@ class AdminController extends Controller
         return redirect()->back()->with('success', 'Sukses menambahkan category');
 
     }
-    
+
     public function informasi_sekolah()
     {
         $page ="informasi_sekolah";
@@ -347,7 +344,7 @@ class AdminController extends Controller
     public function hapus_informasi($id)
     {
        $data = Informasi::find($id);
-       
+
        File::delete($data->banner_image);
 
        $data->delete();
