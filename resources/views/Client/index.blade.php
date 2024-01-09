@@ -12,13 +12,17 @@
     <x-client.carousel :slide="$slide" />
     <!-- Carousel End -->
 
+    <!-- Facts Start -->
+    <x-client.facts :tentang="$tentang" :jp="$jp" :jt="$jt" :jj="$jj" />
+    <!-- Facts End -->
+
     <!-- Features Start -->
     <x-client.features />
     <!-- Features End -->
 
-    <!-- Facts Start -->
-    <x-client.facts :tentang="$tentang" :jp="$jp" :jt="$jt" :jj="$jj" />
-    <!-- Facts End -->
+    <!-- Features Start 
+    <x-client.service :info="$info" />
+     Features End -->
 
     <!-- Ayo Daftar -->
     <x-client.ayodaftar />

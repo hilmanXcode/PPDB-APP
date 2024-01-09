@@ -125,14 +125,6 @@ class ClientController extends Controller
         return view('Client/faq');
     }
 
-    public function blog(){
-        return view('Client/blog');
-    }
-
-    public function blogpost(){
-        return view('Client/blogpost');
-    }
-
     public function contactus(){
         return view('Client/contactus');
     }
