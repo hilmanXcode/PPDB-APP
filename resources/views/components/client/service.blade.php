@@ -11,7 +11,7 @@
                 <div class="blog-content">
                     <div class="blog-title">{{$infor->judul}}</div>
                     <div class="blog-subtitle">SMK PGRI Telagasari</div>
-                    <p class="blog-desc">{{Str::limit($infor->deskripsi_informasi, 100, '.....')}}<a
+                    <p class="blog-desc">{{Str::limit($infor->deskripsi_informasi, 100, '.....')}} <a
                             href="{{route('baca', $infor->id)}}">Read
                             More</a></p>
                     <div class="blog-footer">
@@ -86,7 +86,7 @@
 
 .blog-subtitle {
     font-weight: 400;
-    color: #ff003b;
+    color: #015fc9;
     margin-bottom: 16px;
 }
 
@@ -96,7 +96,7 @@
 
 .blog-desc a {
     text-decoration: none;
-    color: #ff003b;
+    color: #015fc9;
     font-weight: 500;
 }
 
