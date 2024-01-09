@@ -59,7 +59,8 @@
                             $(node).removeClass('dt-button')
                         }
                     }
-                ]
+                ],
+                "pageLength": 5
             });
             $('#data_acc').DataTable({
                 dom: 'Bfrtip',
@@ -71,7 +72,8 @@
                             $(node).removeClass('dt-button')
                         }
                     }
-                ]
+                ],
+                "pageLength": 5
             });
             $('#belum_daful').DataTable({
                 dom: 'Bfrtip',
@@ -83,7 +85,8 @@
                             $(node).removeClass('dt-button')
                         }
                     }
-                ]
+                ],
+                "pageLength": 5
             });
             $('#sudah_daful').DataTable({
                 dom: 'Bfrtip',
@@ -95,12 +98,14 @@
                             $(node).removeClass('dt-button')
                         }
                     }
-                ]
+                ],
+                "pageLength": 5
             });
 
             @if ($page === "kontak_admin")    
                 $('#data_sekolah').DataTable({
-                    "bLengthChange": false
+                    "bLengthChange": false,
+                    "pageLength": 5
                 });
             @endif
             
