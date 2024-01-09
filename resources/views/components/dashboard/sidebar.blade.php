@@ -72,7 +72,7 @@
         <li class="sidebar-item">
             <a class="sidebar-link {{ $page === "informasi_sekolah" ? 'active' : '' }}" href="{{ route ('informasi_sekolah') }}" aria-expanded="false">
                 <span>
-                    <i class="bi bi-info-circle fs-6"></i>
+                <i class="bi bi-chat-square-text"></i>
                 </span>
                 <span class="hide-menu">Blog</span>
             </a>

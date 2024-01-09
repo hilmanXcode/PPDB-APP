@@ -23,11 +23,11 @@ if (! function_exists('dateIndo')) {
 }
 
 if (!function_exists('getAPI')) {
-    function getAPI($no) {
-        $response = Http::get('https://api-sekolah-indonesia.vercel.app/sekolah/SMP?kab_kota=022100&page=2&perPage=100');
+    function getAPI() {
+        $response = Http::get('https://api-sekolah-indonesia.vercel.app/sekolah/SMP?kab_kota=022100&page=1&perPage=100');
         $data = (array) $response->json('dataSekolah');
     
-        return $data[$no]['sekolah'];
+        return $data;
     }
 }
 ?>
