@@ -101,6 +101,10 @@
                 ],
                 "pageLength": 5
             });
+            $('#data_kategori').DataTable({
+                "bLengthChange": false,
+                "pageLength": 5
+            });
 
             @if ($page === "kontak_admin")    
                 $('#data_sekolah').DataTable({
@@ -113,47 +117,81 @@
     </script>
     <script type="text/javascript">
         $(function() {
-            $(document).on('click', '#hapus_jurusan', function(e) {
-                e.preventDefault();
-                let form = $('#hapus_jurusan').closest("form");
-                Swal.fire({
-                    title: 'Apa kamu yakin ingin menghapus jurusan ini?',
-                    showDenyButton: true,
-                    confirmButtonText: 'Yes',
-                    denyButtonText: 'No',
-                    customClass: {
-                        actions: 'my-actions',
-                        cancelButton: 'order-1 right-gap',
-                        confirmButton: 'order-2',
-                        denyButton: 'order-3',
-                    },
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        form.submit();
-                    }
-                })
-            });
+            @if ($page === "jurusan")
+                @foreach ($data as $info)
+                    $(document).on('click', '#hapus_jurusan{{ $info->id ?? '' }}', function(e) {
+                    e.preventDefault();
+                    let form = $('#hapus_jurusan{{ $info->id ?? '' }}').closest("form");
+                    Swal.fire({
+                        title: 'Apa kamu yakin ingin menghapus jurusan ini?',
+                        showDenyButton: true,
+                        confirmButtonText: 'Yes',
+                        denyButtonText: 'No',
+                        customClass: {
+                            actions: 'my-actions',
+                            cancelButton: 'order-1 right-gap',
+                            confirmButton: 'order-2',
+                            denyButton: 'order-3',
+                        },
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                form.submit();
+                            }
+                        })
+                    });
+                @endforeach
+            @endif
 
-            $(document).on('click', '#hapus_informasi', function(e) {
-                e.preventDefault();
-                let form = $('#hapus_informasi').closest("form");
-                Swal.fire({
-                    title: 'Apa kamu yakin ingin menghapus informasi ini?',
-                    showDenyButton: true,
-                    confirmButtonText: 'Yes',
-                    denyButtonText: 'No',
-                    customClass: {
-                        actions: 'my-actions',
-                        cancelButton: 'order-1 right-gap',
-                        confirmButton: 'order-2',
-                        denyButton: 'order-3',
-                    },
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        form.submit();
-                    }
-                })
-            });
+            @if ($page === "informasi_sekolah")
+                @foreach ($data as $info)
+                    $(document).on('click', '#hapus_informasi{{ $info->id ?? '' }}', function(e) {
+                    e.preventDefault();
+                    let form = $('#hapus_informasi{{ $info->id ?? '' }}').closest("form");
+                    Swal.fire({
+                        title: 'Apa kamu yakin ingin menghapus informasi ini?',
+                        showDenyButton: true,
+                        confirmButtonText: 'Yes',
+                        denyButtonText: 'No',
+                        customClass: {
+                            actions: 'my-actions',
+                            cancelButton: 'order-1 right-gap',
+                            confirmButton: 'order-2',
+                            denyButton: 'order-3',
+                        },
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                form.submit();
+                            }
+                        })
+                    });
+                @endforeach
+            @endif
+            
+            @if ($page === "category_manager")
+                @foreach ($data as $info)
+                    $(document).on('click', '#hapus_kategori{{ $info->id ?? '' }}', function(e) {
+                    e.preventDefault();
+                    let form = $('#hapus_kategori{{ $info->id ?? '' }}').closest("form");
+                    Swal.fire({
+                        title: 'Apa kamu yakin ingin menghapus kategori ini?',
+                        showDenyButton: true,
+                        confirmButtonText: 'Yes',
+                        denyButtonText: 'No',
+                        customClass: {
+                            actions: 'my-actions',
+                            cancelButton: 'order-1 right-gap',
+                            confirmButton: 'order-2',
+                            denyButton: 'order-3',
+                        },
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                form.submit();
+                            }
+                        })
+                    });
+                @endforeach
+            @endif
+            
         });
 
         document.addEventListener('DOMContentLoaded', function() {

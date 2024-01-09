@@ -36,7 +36,7 @@
                                     <form action="{{ route('hapus_jurusan', $info->id) }}" method="POST">
                                       @csrf
                                       @method('DELETE')
-                                     <button type="submit" class="btn btn-danger" id="hapus_jurusan"><i class="bi bi-trash-fill"></i></button>
+                                     <button type="submit" class="btn btn-danger" id="hapus_jurusan{{ $info->id }}"><i class="bi bi-trash-fill"></i></button>
                                     </form>
                                 </td>
                                </tr>

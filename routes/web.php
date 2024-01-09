@@ -74,6 +74,12 @@ Route::group(['prefix' => 'home/sekolah'], function($id = null, $param = null) {
     Route::get('/galeri', [AdminController::class, 'galeri'])->name('galeri');
     Route::post('/galeri/upload_foto', [AdminController::class, 'upload_foto'])->name('upload_foto');
 
+    Route::get('/kategori', [AdminController::class, 'category_manager'])->name('category_manager');
+    Route::get('/kategori/{id}/edit_kategori', [AdminController::class, 'category_edit'])->name('category_edit');
+    Route::post('/kategori/post', [AdminController::class, 'category_store'])->name('upload_kategori');
+    Route::post('/kategori/{id}/edit_kategori', [AdminController::class, 'category_update'])->name('category_update');
+    Route::delete('/kategori/{id}/hapus_kategori', [AdminController::class, 'category_delete'])->name('category_delete');
+
     Route::post('/galeri/upload_video', [AdminController::class, 'upload_video'])->name('upload_video');
 
     Route::get('/galeri/{id}/hapus_foto', [AdminController::class, 'hapus_foto'])->name('hapus_foto', $id);
