@@ -189,7 +189,16 @@
             }
         });
     });
-</script>
-</body>
+
+    const kategori = document.querySelector('#kategori');
+    const slug = document.querySelector('#slug_kategori');
+
+    kategori.addEventListener('keyup', function(){
+        let preslug = kategori.value;
+        preslug = preslug.replace(/ /g,"-");
+        slug.value = preslug.toLowerCase();
+    });
+    </script>
+    </body>
 
 </html>

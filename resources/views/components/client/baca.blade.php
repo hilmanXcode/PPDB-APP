@@ -51,10 +51,6 @@
         </div>
     </div>
 </div>
-<!-- main content ends -->
-<div class="footer-section mt-5">
-    <p class="text-center m-0 text-white">2018 © Copyright by Bootcatch.com</p>
-</div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

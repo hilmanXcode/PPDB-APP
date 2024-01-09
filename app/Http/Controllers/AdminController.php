@@ -17,6 +17,7 @@ use Illuminate\Http\Request;
 use App\Models\Youtube as YT;
 use Alaouy\Youtube\Facades\Youtube;
 use Illuminate\Support\Facades\File;
+use \Cviebrock\EloquentSluggable\Services\SlugService;
 
 class AdminController extends Controller
 {

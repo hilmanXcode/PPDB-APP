@@ -8,7 +8,6 @@
         "php": "^8.0.2",
         "arielmejiadev/larapex-charts": "^7.0",
         "barryvdh/laravel-dompdf": "^2.0",
-        "cviebrock/eloquent-sluggable": "^9.0",
         "guzzlehttp/guzzle": "^7.0",
         "laravel/framework": "^9.11",
         "laravel/sanctum": "^2.14.1",
