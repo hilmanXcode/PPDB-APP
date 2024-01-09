@@ -18,7 +18,7 @@
                                 @csrf
                            
                             <div class="form-group">
-                                <label class="{{ $errors->get('judul') ? 'text-danger' : '' }}">Judul Informasi<sup class="text-danger">*</sup></label>
+                                <label class="form-label {{ $errors->get('judul') ? 'text-danger' : '' }}">Judul Informasi<sup class="text-danger">*</sup></label>
                                 <input type="text" name="judul" class="form-control {{ $errors->get('judul') ? 'is-invalid' : '' }}" placeholder="SMK PGRI BISA!">
                                 @if ($errors->get('judul'))
                                   <div class="invalid-feedback text-danger">
@@ -29,7 +29,7 @@
                                 @endif
                             </div>
                             <div class="form-group mt-2">
-                                <label class="{{ $errors->get('deskripsi_informasi') ? 'text-danger' : '' }}">Deskripsi Informasi<sup class="text-danger">*</sup></label>
+                                <label class="form-label {{ $errors->get('deskripsi_informasi') ? 'text-danger' : '' }}">Deskripsi Informasi<sup class="text-danger">*</sup></label>
                                 <textarea name="deskripsi_informasi" placeholder="Deskripsi Singkat Tentang Informasi" class="form-control {{ $errors->get('deskripsi_informasi') ? 'is-invalid' : '' }}" cols="30" rows="10"></textarea>
                                 @if ($errors->get('deskripsi_informasi'))
                                   <div class="invalid-feedback text-danger">
@@ -40,7 +40,7 @@
                                 @endif
                             </div>
                             <div class="form-group mt-2">
-                                <label class="{{ $errors->get('informasi') ? 'text-danger' : '' }}">Informasi<sup class="text-danger">*</sup></label>
+                                <label class="form-label {{ $errors->get('informasi') ? 'text-danger' : '' }}">Informasi<sup class="text-danger">*</sup></label>
                                 <textarea name="informasi" id="konten2" class="form-control {{ $errors->get('informasi') ? 'is-invalid' : '' }}" cols="30" rows="10"></textarea>
                                 @if ($errors->get('informasi'))
                                   <div class="invalid-feedback text-danger">
@@ -60,6 +60,16 @@
                                     @endforeach
                                   </div>
                                 @endif
+                            </div>
+                            <div class="form-group mt-2">
+                              <label for="category" class="form-label {{ $errors->get('category') ? 'text-danger' : '' }}">Kategori<sup class="text-danger">*</sup></label>
+                              <select name="category" class="form-control" id="">
+
+                                  <option disabled selected value>Pilih Kategori</option>
+                                  @foreach ($category as $cat)
+                                    <option value="{{ $cat->id }}">{{ $cat->category_name }}</option>
+                                  @endforeach
+                              </select>
                             </div>
                             <div class="form-group mt-2">
                                 <input type="submit" class="btn btn-primary btn-block w-100" value="Buat Informasi">
@@ -93,7 +103,7 @@
                                     <form action="{{ route('hapus_informasi', $info->id) }}" method="POST">
                                       @csrf
                                       @method('DELETE')
-                                      <button href="{{ route('hapus_informasi', $info->id) }}" class="btn btn-danger" id="hapus_informasi"><i class="bi bi-trash"></i></button>
+                                      <button href="{{ route('hapus_informasi', $info->id) }}" class="btn btn-danger" id="hapus_informasi{{ $info->id }}"><i class="bi bi-trash"></i></button>
                                     </form>
                                 </td>
                                 

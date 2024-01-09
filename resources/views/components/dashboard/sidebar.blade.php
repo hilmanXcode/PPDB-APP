@@ -78,6 +78,14 @@
             </a>
         </li>
         <li class="sidebar-item">
+            <a class="sidebar-link {{ $page === "category_manager" ? 'active' : '' }}" href="{{ route ('category_manager') }}" aria-expanded="false">
+                <span>
+                    <i class="bi bi-info-circle fs-6"></i>
+                </span>
+                <span class="hide-menu">Category</span>
+            </a>
+        </li>
+        <li class="sidebar-item">
             <a class="sidebar-link {{ $page === "kontak_admin" ? 'active' : '' }}" href="{{ route('kontak_admin') }}" aria-expanded="false">
                 <span>
                     <i class="bi bi-envelope fs-6"></i>

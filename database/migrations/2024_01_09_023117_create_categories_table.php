@@ -13,13 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('informasi', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('judul');
-            $table->foreignId('category_id');
-            $table->string('banner_image');
-            $table->longText('deskripsi_informasi');
-            $table->longText('informasi');
+            $table->string('category_name');
+            $table->string('category_slug');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('informasi');
+        Schema::dropIfExists('categories');
     }
 };
