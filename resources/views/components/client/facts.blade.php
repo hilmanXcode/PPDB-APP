@@ -1,6 +1,9 @@
 < <!-- Service Start -->
     <div class="container-xxl py-5">
         <div class="container">
+
+
+    
             <div class="row g-2 text-center">
                 <div class="col-12 wow fadeInUp" data-wow-delay="0.3s">
                     <h1 style="color: #000000;">Fasilitas dan keunggulan sekolah.</h1>

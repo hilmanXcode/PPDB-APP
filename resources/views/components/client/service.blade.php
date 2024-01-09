@@ -5,7 +5,7 @@
         <div class="col-lg-3 col-md-6">
             <div class="card">
                 <div class="blog-image">
-                    <img src="images/image4.jpg">
+                    <img src="{{$infor->banner_image}}">
                     <div class="tag bg-primary">blog</div>
                 </div>
                 <div class="blog-content">
