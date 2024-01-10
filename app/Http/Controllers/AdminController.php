@@ -17,7 +17,7 @@ use Illuminate\Http\Request;
 use App\Models\Youtube as YT;
 use Alaouy\Youtube\Facades\Youtube;
 use Illuminate\Support\Facades\File;
-use \Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
@@ -289,12 +289,7 @@ class AdminController extends Controller
             "category" => 'required|integer'
         ]);
 
-        if($image = $req->file('banner_image')){
-            $image_path = 'images/banner/';
-            $banner_image = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($image_path, $banner_image);
-            $path = "images/banner/$banner_image";
-        }
+        $path = $req->file('banner_image')->store('public');
 
         Informasi::create(["judul" => $req->judul, "category_id" => $req->category, "deskripsi_informasi" => $req->deskripsi_informasi, "informasi" => $req->informasi, "banner_image" => $path]);
         return redirect()->back()->with('success', 'Sukses Upload Informasi Sekolah');
@@ -327,12 +322,9 @@ class AdminController extends Controller
 
         $path = $data->banner_image;
 
-        if($image = $req->file('banner_image')){
-            File::delete($data->banner_image);
-            $image_path = 'images/banner/';
-            $banner_image = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($image_path, $banner_image);
-            $path = "images/banner/$banner_image";
+        if($req->file('banner_image')){
+            Storage::delete($data->banner_image);
+            $path = $req->file('banner_image')->store('public');
         }
 
         $data->update(["judul" => $req->judul, "deskripsi_informasi" => $req->deskripsi_informasi, "informasi" => $req->informasi, "banner_image" => $path, "category_id" => $req->category]);
@@ -345,7 +337,7 @@ class AdminController extends Controller
     {
        $data = Informasi::find($id);
 
-       File::delete($data->banner_image);
+       Storage::delete($data->banner_image);
 
        $data->delete();
 
