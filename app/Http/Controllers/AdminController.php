@@ -9,6 +9,7 @@ use App\Models\Kontak;
 use App\Models\Slider;
 use App\Models\Jurusan;
 use App\Models\Tentang;
+use App\Models\Category;
 use App\Models\Gelombang;
 use App\Models\Informasi;
 use App\Models\Pendaftar;
@@ -16,6 +17,7 @@ use Illuminate\Http\Request;
 use App\Models\Youtube as YT;
 use Alaouy\Youtube\Facades\Youtube;
 use Illuminate\Support\Facades\File;
+use \Cviebrock\EloquentSluggable\Services\SlugService;
 
 class AdminController extends Controller
 {
@@ -78,11 +80,8 @@ class AdminController extends Controller
     public function pendaftar()
     {
         $data_pendaftar = Pendaftar::orderBy('id', 'DESC')->where('acc', '0')->where('daful', '0')->get();
-
         $data_acc       = Pendaftar::orderBy('id', 'DESC')->where('acc', '1')->get();
-
         $belum_daful    = Pendaftar::orderBy('id', 'DESC')->where('acc', '1')->where('daful', '0')->get();
-
         $sudah_daful    = Pendaftar::orderBy('id', 'DESC')->where('acc', '1')->where('daful', '1')->get();
 
         $page = "pendaftar";
@@ -218,12 +217,67 @@ class AdminController extends Controller
         return redirect()->back()->with('success', 'Sukses Menghapus Slider');
 
     }
-    
+
+    public function category_manager()
+    {
+        $data = Category::all();
+
+        return view('dashboard/sekolah/category', [
+            'page' => 'category_manager',
+            'data' => $data
+        ]);
+    }
+
+    public function category_edit($id)
+    {
+        $data = Category::find($id);
+
+        return view('Dashboard/sekolah/edit_category', [
+            "page" => "category_manager",
+            "data" => $data
+        ]);
+    }
+
+    public function category_update(Request $req, $id)
+    {
+        $req->validate([
+            "category_name" => "required|unique:categories",
+            "category_slug" => "required|unique:categories"
+        ]);
+
+        Category::find($id)->update(["category_name" => $req->category_name, "category_slug" => strtolower($req->category_slug)]);
+
+
+        return redirect()->route('category_manager')->with('success', 'Sukses mengedit category');
+
+    }
+
+    public function category_delete($id)
+    {
+        Category::find($id)->delete();
+
+        return redirect()->back()->with('success', 'Sukses menghapus category');
+    }
+
+    public function category_store(Request $req)
+    {
+        $req->validate([
+            "category_name" => "required|unique:categories",
+            "category_slug" => "required|unique:categories"
+        ]);
+
+        Category::create(["category_name" => $req->category_name, "category_slug" => strtolower($req->category_slug)]);
+
+        return redirect()->back()->with('success', 'Sukses menambahkan category');
+
+    }
+
     public function informasi_sekolah()
     {
         $page ="informasi_sekolah";
         $data = Informasi::orderBy('id', 'DESC')->get();
-        return view('Dashboard/sekolah/informasi', compact('data', 'page'));
+        $category = Category::all();
+        return view('Dashboard/sekolah/informasi', compact('data', 'page', 'category'));
     }
     public function upload_informasi(Request $req)
     {
@@ -231,7 +285,8 @@ class AdminController extends Controller
             "judul" => 'required',
             "deskripsi_informasi" => 'required',
             "informasi" => 'required',
-            "banner_image" => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            "banner_image" => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            "category" => 'required|integer'
         ]);
 
         if($image = $req->file('banner_image')){
@@ -241,7 +296,7 @@ class AdminController extends Controller
             $path = "images/banner/$banner_image";
         }
 
-        Informasi::create(["judul" => $req->judul, "deskripsi_informasi" => $req->deskripsi_informasi, "informasi" => $req->informasi, "banner_image" => $path]);
+        Informasi::create(["judul" => $req->judul, "category_id" => $req->category, "deskripsi_informasi" => $req->deskripsi_informasi, "informasi" => $req->informasi, "banner_image" => $path]);
         return redirect()->back()->with('success', 'Sukses Upload Informasi Sekolah');
 
     }
@@ -249,9 +304,11 @@ class AdminController extends Controller
     public function edit_informasi($id)
     {
         $data = Informasi::find($id);
+        $category = Category::all();
 
         return view('Dashboard/sekolah/edit_informasi', [
             "data" => $data,
+            "category" => $category,
             "page" => 'informasi_sekolah'
         ]);
     }
@@ -262,6 +319,7 @@ class AdminController extends Controller
             "judul" => 'required',
             "deskripsi_informasi" => 'required',
             "informasi" => 'required',
+            "category" => 'required|integer',
             "banner_image" => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
@@ -277,7 +335,7 @@ class AdminController extends Controller
             $path = "images/banner/$banner_image";
         }
 
-        $data->update(["judul" => $req->judul, "deskripsi_informasi" => $req->deskripsi_informasi, "informasi" => $req->informasi, "banner_image" => $path]);
+        $data->update(["judul" => $req->judul, "deskripsi_informasi" => $req->deskripsi_informasi, "informasi" => $req->informasi, "banner_image" => $path, "category_id" => $req->category]);
 
         return redirect()->route('informasi_sekolah')->with('success', 'Sukses Edit Informasi Sekolah');
 
@@ -286,7 +344,7 @@ class AdminController extends Controller
     public function hapus_informasi($id)
     {
        $data = Informasi::find($id);
-       
+
        File::delete($data->banner_image);
 
        $data->delete();
@@ -321,7 +379,7 @@ class AdminController extends Controller
         $judul = $video->snippet->title;
         $channel = $video->snippet->channelTitle;
 
-        $data = YT::create([
+        YT::create([
             'id_youtube' => $req->input('link'),
             'judul'      => $judul,
             'channel'    => $channel

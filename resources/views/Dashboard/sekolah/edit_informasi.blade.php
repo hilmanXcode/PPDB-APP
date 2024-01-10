@@ -62,6 +62,18 @@
                                 @endif
                             </div>
                             <div class="form-group mt-2">
+                              <label for="category" class="form-label {{ $errors->get('category') ? 'text-danger' : '' }}">Kategori</label>
+                              <select name="category" class="form-control" id="">
+                                  @foreach ($category as $cat)
+                                    @if ($data->category_id === $cat->id)
+                                      <option value="{{ $cat->id }}" selected>{{ $cat->category_name }}</option>
+                                    @else
+                                      <option value="{{ $cat->id }}">{{ $cat->category_name }}</option>
+                                    @endif
+                                  @endforeach
+                              </select>
+                            </div>
+                            <div class="form-group mt-2">
                                 <input type="submit" class="btn btn-primary btn-block w-100" value="Edit Informasi">
                             </div>
                             </form>
