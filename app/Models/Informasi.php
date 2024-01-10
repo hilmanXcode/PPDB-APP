@@ -11,8 +11,12 @@ class Informasi extends Model
     protected $table = 'informasi';
     protected $guarded = [];
 
-    public function category()
-    {
-        return $this->belongsTo(Category::class);
-    }
+    protected $filable = [
+        'judul',
+        'banner_image',
+        'deskripsi_informasi',
+        'category_id',
+    ];
+
+
 }

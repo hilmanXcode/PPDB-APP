@@ -5,10 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ClientController;
-use App\Http\Controllers\MasukController;
-use App\Http\Controllers\testingController;
 
-Route::group(['prefix' => '/'], function($id = null){
+
+Route::group(['prefix' => '/'], function ($id = null) {
     Route::get('/', [ClientController::class, 'index'])->name('/');
     Route::get('/daftar', [ClientController::class, 'daftar'])->name('daftar');
     Route::post('/daftar/yes', [ClientController::class, 'yes_daftar'])->name('yes_daftar');
@@ -34,7 +33,7 @@ Auth::routes(['register' => false]); // LOGIN
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::group(['prefix' => 'home/pendaftaran'], function($id = null){
+Route::group(['prefix' => 'home/pendaftaran'], function ($id = null) {
     Route::get('daftar_admin', [AdminController::class, 'daftar_admin'])->name('daftar_admin');
     Route::post('daftar_admin/kirim_data', [AdminController::class, 'kirim_data'])->name('kirim_data');
 
@@ -47,15 +46,15 @@ Route::group(['prefix' => 'home/pendaftaran'], function($id = null){
 
 });
 
-Route::group(['prefix' => 'home/sekolah'], function($id = null, $param = null) {
+Route::group(['prefix' => 'home/sekolah'], function ($id = null, $param = null) {
     Route::get('/jurusan', [AdminController::class, 'jurusan'])->name('jurusan');
     Route::delete('/jurusan/{id}/hapus_jurusan', [AdminController::class, 'hapus_jurusan'])->name('hapus_jurusan');
     Route::post('/add_jurusan', [AdminController::class, 'add_jurusan'])->name('add_jurusan');
 
 
-    Route::get('/gelombang',[AdminController::class,'gelombang'])->name('gelombang');
-    
-    Route::get('/gelombang/edit_gelombang/{id}/{param}',[AdminController::class,'edit_gelombang'])->name('edit_gelombang');
+    Route::get('/gelombang', [AdminController::class, 'gelombang'])->name('gelombang');
+
+    Route::get('/gelombang/edit_gelombang/{id}/{param}', [AdminController::class, 'edit_gelombang'])->name('edit_gelombang');
     Route::post('/add_gelombang', [AdminController::class, 'add_gelombang'])->name('add_gelombang');
 
     Route::get('/informasi_slide', [AdminController::class, 'informasi_slide'])->name('informasi_slide');
