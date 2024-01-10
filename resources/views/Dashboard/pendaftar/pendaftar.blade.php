@@ -9,7 +9,7 @@
                     <div class="col-lg-9">
                         <div class="card">
                             <div class="card-header d-flex justify-content-between">
-                                <h5 class="card-title fw-semibold mb-4">Data Pendaftar</h5>
+                                <h5 class="card-title fw-semibold">Data Pendaftar</h5>
                             </div>
                             <div class="card-body table-responsive">
 
@@ -21,7 +21,7 @@
                                             <th>Asal Sekolah</th>
                                             <th>Rekomendasi</th>
                                             <th>Gelombang</th>
-
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -54,7 +54,7 @@
                     <div class="col-lg-3">
                         <div class="card">
                             <div class="card-header">
-                                <h5 class="card-title fw-semibold mb-4">ACC Masal</h5>
+                                <h5 class="card-title fw-semibold">ACC Masal</h5>
                             </div>
                             <div class="card-body">
                                 <form action="{{route('acc_massal')}}" method="POST">
@@ -166,7 +166,7 @@
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-header">
-                                <h5 class="card-title fw-semibold mb-4">Data Belum Daftar Ulang</h5>
+                                <h5 class="card-title fw-semibold">Data Belum Daftar Ulang</h5>
                             </div>
                             <div class="card-body table-responsive">
                                 <table class="table table-borderless" id="belum_daful">
@@ -200,7 +200,7 @@
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-header">
-                                <h5 class="card-title fw-semibold mb-4">Data Sudah Daftar Ulang</h5>
+                                <h5 class="card-title fw-semibold">Data Sudah Daftar Ulang</h5>
                             </div>
                             <div class="card-body table-responsive">
                                 <table class="table table-borderless" id="sudah_daful">
