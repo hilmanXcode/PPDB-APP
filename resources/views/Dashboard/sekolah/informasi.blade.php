@@ -93,7 +93,7 @@
                                 <td>{{$loop->iteration}}</td>
                                 <td>{{$info->judul}}</td>
                                 <td>
-                                  <img src="{{ asset('storage/' . $info->banner_image) }}" width="300" height="200"/>
+                                  <img src="{{ asset($info->banner_image) }}" width="300" height="200"/>
                                 </td>
                                 <td>
                                   {{ dateIndo($info) }}
