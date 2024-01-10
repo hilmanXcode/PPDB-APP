@@ -30,4 +30,14 @@ if (!function_exists('getAPI')) {
         return $data;
     }
 }
+if (!function_exists('imageUrl')){
+    function imageUrl(int $width = 200, int $height = 200) {
+        $baseUrl = 'https://loremflickr.com';
+        $url = "{$baseUrl}/{$width}/{$height}";
+        
+        // $response = Http::get($baseUrl);
+        // return $response->body();
+        return $url;
+    }
+}
 ?>
