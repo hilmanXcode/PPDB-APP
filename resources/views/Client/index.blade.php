@@ -20,10 +20,6 @@
     <x-client.features />
     <!-- Features End -->
 
-    <!-- Features Start 
-    <x-client.service :info="$info" />
-     Features End -->
-
     <!-- Ayo Daftar -->
     <x-client.ayodaftar />
     <!-- Ayo Daftar -->
