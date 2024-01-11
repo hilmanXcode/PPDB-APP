@@ -17,7 +17,7 @@ use Illuminate\Http\Request;
 use App\Models\Youtube as YT;
 use Alaouy\Youtube\Facades\Youtube;
 use Illuminate\Support\Facades\File;
-use \Cviebrock\EloquentSluggable\Services\SlugService;
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
@@ -290,10 +290,10 @@ class AdminController extends Controller
         ]);
 
         if($image = $req->file('banner_image')){
-            $image_path = 'images/banner/';
+            $image_path = 'storage/';
             $banner_image = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($image_path, $banner_image);
-            $path = "images/banner/$banner_image";
+            $path = "storage/$banner_image";
         }
 
         Informasi::create(["judul" => $req->judul, "category_id" => $req->category, "deskripsi_informasi" => $req->deskripsi_informasi, "informasi" => $req->informasi, "banner_image" => $path]);
@@ -329,10 +329,10 @@ class AdminController extends Controller
 
         if($image = $req->file('banner_image')){
             File::delete($data->banner_image);
-            $image_path = 'images/banner/';
+            $image_path = 'storage/';
             $banner_image = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($image_path, $banner_image);
-            $path = "images/banner/$banner_image";
+            $path = "storage/$banner_image";
         }
 
         $data->update(["judul" => $req->judul, "deskripsi_informasi" => $req->deskripsi_informasi, "informasi" => $req->informasi, "banner_image" => $path, "category_id" => $req->category]);

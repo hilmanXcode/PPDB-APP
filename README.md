@@ -36,6 +36,10 @@ Jalankan perintah berikut untuk membuat skema database
 ```
 php artisan migrate:fresh --seed
 ```
+Jalankan perintah berikut untuk menyambungkan folder storage dengan public
+```
+php artisan storage:link
+```
 Terakhir, jalankan perintah berikut untuk menyalakan web server bawaan laravel 
 ```
 php artisan serve
