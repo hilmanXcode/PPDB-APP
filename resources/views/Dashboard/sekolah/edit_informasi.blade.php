@@ -29,17 +29,6 @@
                                 @endif
                             </div>
                             <div class="form-group mt-2">
-                                <label class="{{ $errors->get('deskripsi_informasi') ? 'text-danger' : '' }}">Deskripsi Informasi<sup class="text-danger">*</sup></label>
-                                <textarea name="deskripsi_informasi" placeholder="Deskripsi Singkat Tentang Informasi" class="form-control {{ $errors->get('deskripsi_informasi') ? 'is-invalid' : '' }}" cols="30" rows="10">{{ $data->deskripsi_informasi }}</textarea>
-                                @if ($errors->get('deskripsi_informasi'))
-                                    <div class="invalid-feedback text-danger">
-                                    @foreach ($errors->get('deskripsi_informasi') as $message)
-                                        {{ $message }}
-                                    @endforeach
-                                    </div>
-                                @endif
-                            </div>
-                            <div class="form-group mt-2">
                                 <label class="{{ $errors->get('informasi') ? 'text-danger' : '' }}">Informasi<sup class="text-danger">*</sup></label>
                                 <textarea name="informasi" id="konten2" class="form-control {{ $errors->get('informasi') ? 'is-invalid' : '' }}" cols="30" rows="10">{{ $data->informasi }}</textarea>
                                 @if ($errors->get('informasi'))
