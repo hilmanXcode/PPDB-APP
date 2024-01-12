@@ -9,7 +9,7 @@
           <div class="card mb-0 mx-auto rounded-lg">
              <div class="card-body">
              <a
-                    href="./index.html"
+                    href="#"
                     class="text-nowrap logo-img text-center d-block py-5 w-100"
                   >
                     <img
@@ -47,7 +47,7 @@
                     @enderror
           </div>
 
-             <div class="form-group">
+             <div class="form-group my-2">
                   <div class="custom-control custom-checkbox">
 
                     <input class="custom-control-input" type="checkbox" name="remember" id="remember-me"
@@ -58,7 +58,7 @@
         </div>
 
             <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
+                <button type="submit" class="btn btn-primary btn-lg btn-block w-100" tabindex="4">
                     Login
                 </button>
             </div>
@@ -70,4 +70,4 @@
     </div>
   </div>
 </div>
-<x-script />
+<x-dashboard.footer />
