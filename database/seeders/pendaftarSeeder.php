@@ -17,16 +17,16 @@ class pendaftarSeeder extends Seeder
     public function run()
     {
         $setdisk = Storage::disk('local');
-        if($setdisk->missing('datasekolah.json')){
-            $convert= json_encode(getAPI());
-            $setdisk->put('datasekolah.json',$convert);
+        if ($setdisk->missing('datasekolah.json')) {
+            $convert = json_encode(getAPI());
+            $setdisk->put('datasekolah.json', $convert);
         }
         $getdisk = Storage::get('datasekolah.json');
         $dataArray = json_decode($getdisk, true);
-        for($i = 0; $i <= 99; $i++){
+        for ($i = 0; $i <= 99; $i++) {
             Pendaftar::factory()->create([
-            'asal_sekolah'=> $dataArray[$i]['sekolah'],
-                
+                'asal_sekolah' => $dataArray[$i]['sekolah'],
+
             ]);
 
         }
