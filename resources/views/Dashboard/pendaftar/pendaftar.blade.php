@@ -8,8 +8,11 @@
                 <div class="row">
                     <div class="col-lg-9">
                         <div class="card">
+                            <div class="card-header d-flex justify-content-between">
+                                <h5 class="card-title fw-semibold">Data Pendaftar</h5>
+                            </div>
                             <div class="card-body table-responsive">
-                              <h5 class="card-title fw-semibold mb-4">Data Pendaftar</h5>
+
                                 <table class="table table-borderless" id="data_pendaftar">
                                     <thead>
                                         <tr>
@@ -18,7 +21,7 @@
                                             <th>Asal Sekolah</th>
                                             <th>Rekomendasi</th>
                                             <th>Gelombang</th>
-                                            <th>OPTION</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -34,7 +37,7 @@
                                                 <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                                   Option
                                                 </a>
-                                              
+
                                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                                   <li><a class="dropdown-item" href="{{ route('acc', $dp->id) }}">ACC</a></li>
                                                   <li><a class="dropdown-item" href="{{ route('lihat', $dp->id) }}">Lihat</a></li>
@@ -50,8 +53,10 @@
                     </div>
                     <div class="col-lg-3">
                         <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title fw-semibold">ACC Masal</h5>
+                            </div>
                             <div class="card-body">
-                              <h5 class="card-title fw-semibold mb-4">ACC Masal</h5>
                                 <form action="{{route('acc_massal')}}" method="POST">
                                     @csrf
                                     <div class="form-group">
@@ -81,9 +86,11 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title fw-semibold mb-2">Data Sudah Di ACC</h5>
+                            </div>
                             <div class="card-body table-responsive">
 
-                              <h5 class="card-title fw-semibold mb-2">Data Sudah Di ACC</h5>
                               {{-- <button class="btn btn-success mb-2" onclick="exportData('xlsx', 'data_acc')">Excel</button> --}}
                                 <table class="table table-borderless" id="data_acc">
                                     <thead>
@@ -135,7 +142,7 @@
                                               <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                                 Option
                                               </a>
-                                            
+
                                               <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                                 <li><a class="dropdown-item" href="{{ route('lihat', $dc->id) }}">Lihat</a></li>
                                                 <li><a class="dropdown-item" href="{{ route('hapus_siswa', $dc->id) }}">Hapus</a></li>
@@ -158,8 +165,10 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title fw-semibold">Data Belum Daftar Ulang</h5>
+                            </div>
                             <div class="card-body table-responsive">
-                              <h5 class="card-title fw-semibold mb-4">Data Belum Daftar Ulang</h5>
                                 <table class="table table-borderless" id="belum_daful">
                                     <thead>
                                         <tr>
@@ -190,8 +199,10 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title fw-semibold">Data Sudah Daftar Ulang</h5>
+                            </div>
                             <div class="card-body table-responsive">
-                              <h5 class="card-title fw-semibold mb-4">Data Sudah Daftar Ulang</h5>
                                 <table class="table table-borderless" id="sudah_daful">
                                     <thead>
                                         <tr>
@@ -215,9 +226,9 @@
 
                         </div>
                     </div>
-                    
+
                 </div>
-        
+
         </section>
 
     </div>

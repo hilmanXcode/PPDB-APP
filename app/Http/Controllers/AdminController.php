@@ -17,6 +17,7 @@ use Illuminate\Http\Request;
 use App\Models\Youtube as YT;
 use Alaouy\Youtube\Facades\Youtube;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
@@ -79,11 +80,8 @@ class AdminController extends Controller
     public function pendaftar()
     {
         $data_pendaftar = Pendaftar::orderBy('id', 'DESC')->where('acc', '0')->where('daful', '0')->get();
-
         $data_acc       = Pendaftar::orderBy('id', 'DESC')->where('acc', '1')->get();
-
         $belum_daful    = Pendaftar::orderBy('id', 'DESC')->where('acc', '1')->where('daful', '0')->get();
-
         $sudah_daful    = Pendaftar::orderBy('id', 'DESC')->where('acc', '1')->where('daful', '1')->get();
 
         $page = "pendaftar";
@@ -249,7 +247,7 @@ class AdminController extends Controller
 
         Category::find($id)->update(["category_name" => $req->category_name, "category_slug" => strtolower($req->category_slug)]);
 
-        
+
         return redirect()->route('category_manager')->with('success', 'Sukses mengedit category');
 
     }
@@ -273,7 +271,7 @@ class AdminController extends Controller
         return redirect()->back()->with('success', 'Sukses menambahkan category');
 
     }
-    
+
     public function informasi_sekolah()
     {
         $page ="informasi_sekolah";
@@ -291,12 +289,7 @@ class AdminController extends Controller
             "category" => 'required|integer'
         ]);
 
-        if($image = $req->file('banner_image')){
-            $image_path = 'images/banner/';
-            $banner_image = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($image_path, $banner_image);
-            $path = "images/banner/$banner_image";
-        }
+        $path = $req->file('banner_image')->store('public');
 
         Informasi::create(["judul" => $req->judul, "category_id" => $req->category, "deskripsi_informasi" => $req->deskripsi_informasi, "informasi" => $req->informasi, "banner_image" => $path]);
         return redirect()->back()->with('success', 'Sukses Upload Informasi Sekolah');
@@ -329,12 +322,9 @@ class AdminController extends Controller
 
         $path = $data->banner_image;
 
-        if($image = $req->file('banner_image')){
-            File::delete($data->banner_image);
-            $image_path = 'images/banner/';
-            $banner_image = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($image_path, $banner_image);
-            $path = "images/banner/$banner_image";
+        if($req->file('banner_image')){
+            Storage::delete($data->banner_image);
+            $path = $req->file('banner_image')->store('public');
         }
 
         $data->update(["judul" => $req->judul, "deskripsi_informasi" => $req->deskripsi_informasi, "informasi" => $req->informasi, "banner_image" => $path, "category_id" => $req->category]);
@@ -346,8 +336,8 @@ class AdminController extends Controller
     public function hapus_informasi($id)
     {
        $data = Informasi::find($id);
-       
-       File::delete($data->banner_image);
+
+       Storage::delete($data->banner_image);
 
        $data->delete();
 
@@ -381,7 +371,7 @@ class AdminController extends Controller
         $judul = $video->snippet->title;
         $channel = $video->snippet->channelTitle;
 
-        $data = YT::create([
+        YT::create([
             'id_youtube' => $req->input('link'),
             'judul'      => $judul,
             'channel'    => $channel

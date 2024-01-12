@@ -16,8 +16,5 @@ class Category extends Model
     ];
     protected $guarded = ['id'];
 
-    public function Informasi()
-    {
-        return $this->hasMany(Informasi::class, 'category_id', 'id');
-    }
+
 }

@@ -15,7 +15,7 @@ class InformasiSeeder extends Seeder
      */
     public function run()
     {
-        
-        Informasi::factory()->count(1)->create([]);
+
+        Informasi::factory()->count(10)->create([]);
     }
 }

@@ -25,7 +25,7 @@ class InformasiFactory extends Factory
 
         Storage::put('public/' . $fileName, $response->body());
         $imageUrl = Storage::url($fileName);
-        $fullPath = storage_path('app/public/' . $fileName);
+        $fullPath = storage_path('app/public' . $fileName);
 
         return [
             'judul' => $this->faker->word(),
