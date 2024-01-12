@@ -289,7 +289,14 @@ class AdminController extends Controller
             "category" => 'required|integer'
         ]);
 
-        $path = $req->file('banner_image')->store('public');
+
+        if($image = $req->file('banner_image')){
+            $image_path = 'storage/';
+            $banner_image = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($image_path, $banner_image);
+            $path = "storage/$banner_image";
+        }
+
 
         Informasi::create(["judul" => $req->judul, "category_id" => $req->category, "deskripsi_informasi" => $req->deskripsi_informasi, "informasi" => $req->informasi, "banner_image" => $path]);
         return redirect()->back()->with('success', 'Sukses Upload Informasi Sekolah');
@@ -322,9 +329,13 @@ class AdminController extends Controller
 
         $path = $data->banner_image;
 
-        if($req->file('banner_image')){
-            Storage::delete($data->banner_image);
-            $path = $req->file('banner_image')->store('public');
+
+        if($image = $req->file('banner_image')){
+            File::delete($data->banner_image);
+            $image_path = 'storage/';
+            $banner_image = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($image_path, $banner_image);
+            $path = "storage/$banner_image";
         }
 
         $data->update(["judul" => $req->judul, "deskripsi_informasi" => $req->deskripsi_informasi, "informasi" => $req->informasi, "banner_image" => $path, "category_id" => $req->category]);
@@ -337,7 +348,8 @@ class AdminController extends Controller
     {
        $data = Informasi::find($id);
 
-       Storage::delete($data->banner_image);
+       File::delete($data->banner_image);
+
 
        $data->delete();
 

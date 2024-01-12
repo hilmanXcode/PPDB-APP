@@ -1,3 +1,4 @@
+{{ $page ?? $page = "" }}
 <!-- Sidebar Start -->
 <aside class="left-sidebar">
 <!-- Sidebar scroll-->
