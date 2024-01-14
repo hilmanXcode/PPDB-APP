@@ -53,7 +53,7 @@
                   edit-heading
                 ">
                             <h4 class="m-0 pointer">Recent Post</h4>
-                            <a href="{{route('informasi')}}" target="_blank"
+                            <a href="{{route('blog')}}" target="_blank"
                                 class="m-0 text-primary me-3 pointer edit-button" type="button" data-bs-toggle="modal"
                                 data-bs-target="#shortCutModal">
                                 Show all
