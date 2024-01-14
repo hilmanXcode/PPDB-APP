@@ -86,13 +86,13 @@
                                 <div class="row alig n-items-start">
                                     <div class="col-8">
                                         <h5 class="card-title mb-9 fw-semibold"> Total Pendaftar </h5>
-                                        <h4 class="fw-semibold mb-3">1234</h4>
+                                        <h4 class="fw-semibold mb-3">{{ $g1 + $g2 + $g3 + $g4 }}</h4>
                                         <div class="d-flex align-items-center pb-1">
                                             <span
                                                 class="me-2 rounded-circle bg-light-primary round-20 d-flex align-items-center justify-content-center">
                                                 <i class="ti ti-gender-male text-primary" title="Laki-laki"></i>
                                             </span>
-                                            <p class="text-dark me-1 fs-3 mb-0">12</p>
+                                            <p class="text-dark me-1 fs-3 mb-0">{{ $data_lelaki }}</p>
                                             <p class="fs-3 mb-0">laki-laki</p>
 
                                         </div>
@@ -101,7 +101,7 @@
                                                 class="me-2 rounded-circle bg-light-danger round-20 d-flex align-items-center justify-content-center">
                                                 <i class="ti ti-gender-female text-danger" title="Laki-laki"></i>
                                             </span>
-                                            <p class="text-dark me-1 fs-3 mb-0">12</p>
+                                            <p class="text-dark me-1 fs-3 mb-0">{{ $data_perempuan }}</p>
                                             <p class="fs-3 mb-0">Perempuan</p>
                                         </div>
                                     </div>
@@ -126,13 +126,13 @@
                                 <div class="row alig n-items-start">
                                     <div class="col-8">
                                         <h5 class="card-title mb-9 fw-semibold"> Sudah ACC </h5>
-                                        <h4 class="fw-semibold mb-3">1234</h4>
+                                        <h4 class="fw-semibold mb-3">{{ $sudah_acc }}</h4>
                                         <div class="d-flex align-items-center pb-1">
                                             <span
                                                 class="me-2 rounded-circle bg-light-danger round-20 d-flex align-items-center justify-content-center">
                                                 <i class="ti ti-ban text-danger"></i>
                                             </span>
-                                            <p class="text-dark me-1 fs-3 mb-0">143</p>
+                                            <p class="text-dark me-1 fs-3 mb-0">{{ $belum_acc }}</p>
                                             <p class="fs-3 mb-0">belum acc</p>
                                         </div>
                                     </div>
@@ -157,13 +157,13 @@
                                 <div class="row alig n-items-start">
                                     <div class="col-8">
                                         <h5 class="card-title mb-9 fw-semibold"> Sudah Daftar Ulang </h5>
-                                        <h4 class="fw-semibold mb-3">$6,820</h4>
+                                        <h4 class="fw-semibold mb-3">{{ $sudah_daful }}</h4>
                                         <div class="d-flex align-items-center pb-1">
                                             <span
                                                 class="me-2 rounded-circle bg-light-danger round-20 d-flex align-items-center justify-content-center">
                                                 <i class="ti ti-archive-off text-danger"></i>
                                             </span>
-                                            <p class="text-dark me-1 fs-3 mb-0">123</p>
+                                            <p class="text-dark me-1 fs-3 mb-0">{{ $belum_daful }}</p>
                                             <p class="fs-3 mb-0">Belum daftar ulang</p>
                                         </div>
                                     </div>
