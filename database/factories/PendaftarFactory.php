@@ -20,7 +20,7 @@ class PendaftarFactory extends Factory
     protected $model = Pendaftar::class;
 
     public function definition(): array
-    { 
+    {
         $path = storage_path('app/datasekolah.json');
         $data = json_decode(file_get_contents($path), true);
         $asal_sekolah = array_map(function ($item) { return $item['sekolah']; }, $data);
@@ -48,7 +48,8 @@ class PendaftarFactory extends Factory
             'rekomendasi'=> "",
             'alamat'=> $this->faker->address(),
             'acc'=> $this->faker->randomElement(['0','1']),
-            'daful'=> $this->faker->randomElement(['0','1'])
+            'daful'=> $this->faker->randomElement(['0','1']),
+            'created_at'=> $this->faker->dateTimeBetween('-2 months', '-10 days', 'Asia/Jakarta')
         ];
     }
 }
