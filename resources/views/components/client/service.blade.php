@@ -5,7 +5,7 @@
         <div class="col-lg-3 col-md-6">
             <div class="card">
                 <div class="blog-image">
-                    <img src="{{$infor->banner_image}}">
+                    <img src="{{ asset($infor->banner_image) }}">
                     <div class="tag bg-primary">blog</div>
                 </div>
                 <div class="blog-content">
@@ -20,7 +20,6 @@
                             <span class="blog-author">Administrator</span>
                             <div class="blog-post">
                                 <span><i class="fa fa-clock-o"></i> 6 days ago</span>
-                                <span class="blog-comment"><i class="fa fa-comments"></i> 0 comments</span>
                             </div>
                         </div>
                         <button class="btn btn-sm"><i class="fa fa-share-alt"></i></button>

@@ -23,9 +23,13 @@ Jalankan perintah berikut untuk menginstal dependensi php
 ```
 composer install
 ```
-Jalankan perintah berikut untuk mengatur _environment variable_
+Jalankan perintah berikut untuk mengatur _environment variable_ (Linux)
 ```
 cp .env.example .env
+```
+Jalankan perintah berikut untuk mengatur _environment variable_ (Windows)
+```
+copy .env.example .env
 ```
 Pastikan Anda telah membuat database baru bernama `db_ppdb_app` di MySQL dan silakan tambahkan di file `.env`. <br>
 Jalankan perintah berikut untuk membuat _key_ untuk web app Anda
