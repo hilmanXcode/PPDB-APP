@@ -47,13 +47,13 @@
                     <!-- heading -->
                     <div
                         class="
-              d-flex
-              justify-content-between
-              align-items-center
-              mt-2
-              text-muted
-              edit-heading
-            ">
+                            d-flex
+                            justify-content-between
+                            align-items-center
+                            mt-2
+                            text-muted
+                            edit-heading
+                            ">
                         <h4 class="m-0 pointer">Recent Post</h4>
                         <a href="{{ route('informasi') }}" target="_blank"
                             class="m-0 text-primary me-3 pointer edit-button" type="button" data-bs-toggle="modal"

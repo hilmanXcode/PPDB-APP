@@ -283,7 +283,6 @@ class AdminController extends Controller
     {
         $req->validate([
             "judul" => 'required',
-            "deskripsi_informasi" => 'required',
             "informasi" => 'required',
             "banner_image" => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             "category" => 'required|integer'
@@ -298,7 +297,7 @@ class AdminController extends Controller
         }
 
 
-        Informasi::create(["judul" => $req->judul, "category_id" => $req->category, "deskripsi_informasi" => $req->deskripsi_informasi, "informasi" => $req->informasi, "banner_image" => $path]);
+        Informasi::create(["judul" => $req->judul, "category_id" => $req->category, "informasi" => $req->informasi, "banner_image" => $path]);
         return redirect()->back()->with('success', 'Sukses Upload Informasi Sekolah');
 
     }
@@ -319,7 +318,6 @@ class AdminController extends Controller
     {
         $req->validate([
             "judul" => 'required',
-            "deskripsi_informasi" => 'required',
             "informasi" => 'required',
             "category" => 'required|integer',
             "banner_image" => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
@@ -331,14 +329,14 @@ class AdminController extends Controller
 
 
         if($image = $req->file('banner_image')){
-            File::delete($data->banner_image);
             $image_path = 'storage/';
             $banner_image = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($image_path, $banner_image);
             $path = "storage/$banner_image";
+            File::delete($data->banner_image);
         }
 
-        $data->update(["judul" => $req->judul, "deskripsi_informasi" => $req->deskripsi_informasi, "informasi" => $req->informasi, "banner_image" => $path, "category_id" => $req->category]);
+        $data->update(["judul" => $req->judul, "informasi" => $req->informasi, "banner_image" => $path, "category_id" => $req->category]);
 
         return redirect()->route('informasi_sekolah')->with('success', 'Sukses Edit Informasi Sekolah');
 

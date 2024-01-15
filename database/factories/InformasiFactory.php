@@ -30,7 +30,7 @@ class InformasiFactory extends Factory
         return [
             'judul' => $this->faker->word(),
             'banner_image' => $imageUrl,
-            'deskripsi_informasi' => $this->faker->text(200),
+            'informasi' => $this->faker->text(200),
             'category_id' => Category::factory(Category::class)->create()->id,
 
         ];

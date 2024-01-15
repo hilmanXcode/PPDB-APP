@@ -129,10 +129,10 @@ class ClientController extends Controller
         return view('Client/contactus');
     }
 
-    public function informasi()
+    public function blog()
     {
         $info = Informasi::orderBy('id', 'DESC')->limit(9)->get();
-        return view('Client/informasi', compact('info'));
+        return view('Client/blog', compact('info'));
     }
     public function baca($id)
     {

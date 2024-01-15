@@ -2,7 +2,7 @@
     <div class="row">
         <!-- -----------x---------- LOOP -------------x------------>
         @forelse ($info as $infor)
-        <div class="col-lg-3 col-md-6">
+        <div class="col-lg-3 col-md-6 mb-4">
             <div class="card">
                 <div class="blog-image">
                     <img src="{{ asset($infor->banner_image) }}">

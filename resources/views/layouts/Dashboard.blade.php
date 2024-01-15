@@ -1,11 +1,16 @@
-<x-head />
+<html>
+    <head>
+        <title>Admin login</title>
+    </head>
+    <body>
     <div id="app">
         <section class="section">
             <div class="container mt-5">
                 <div class="row">
                     
-                   @yield('content')
+                    @yield('content')
                 </div>
-        </section>
+            </section>
     </div>
-<x-script />
+    </body>
+</html>   

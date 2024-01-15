@@ -29,7 +29,7 @@
             <div class="col-lg-4 col-md-6">
                 <h5 class="text-light mb-4">Link Alternatif</h5>
                 <a class="btn btn-link" href="{{route('aboutus')}}">Tentang Kami</a>
-                <a class="btn btn-link" href="{{route('informasi')}}">Blog</a>
+                <a class="btn btn-link" href="{{route('blog')}}">Blog</a>
                 <a class="btn btn-link" href="{{route('daftar')}}">Daftar</a>
 
             </div>

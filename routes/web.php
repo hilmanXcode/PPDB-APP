@@ -16,7 +16,7 @@ Route::group(['prefix' => '/'], function ($id = null) {
     Route::get('/cek/{id}/download', [ClientController::class, 'download'])->name('download', $id);
 
     Route::get('/aboutus', [ClientController::class, 'aboutus'])->name('aboutus');
-    Route::get('/informasi', [ClientController::class, 'informasi'])->name('informasi');
+    Route::get('/blog', [ClientController::class, 'blog'])->name('blog');
     Route::get('/informasi/{id}/baca', [ClientController::class, 'baca'])->name('baca', $id);
     Route::get('/faq', [ClientController::class, 'faq'])->name('faq');
     Route::get('/contactus', [ClientController::class, 'contactus'])->name('contactus');

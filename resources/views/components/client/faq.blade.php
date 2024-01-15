@@ -83,7 +83,7 @@
                            <div id="faq2-content-2" class="accordion-collapse collapse" data-bs-parent="#faqlist2">
                                <div class="accordion-body">
                                    Untuk melihat informasi dapat dilihat
-                                   <a href="{{route('informasi')}}" target="_blank">disini<i
+                                   <a href="{{route('blog')}}" target="_blank">disini<i
                                            class="ri-arrow-right-up-line"></i></a>
                                </div>
                            </div>

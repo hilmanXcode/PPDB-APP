@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->string('judul');
             $table->bigInteger('category_id')->index();
             $table->string('banner_image');
-            $table->longText('deskripsi_informasi');
+            $table->longText('informasi');
             $table->timestamps();
         });
     }
