@@ -31,6 +31,7 @@ class Pendaftar extends Model
         'hp_ibu',
         'hp_siswa',
         'alamat',
-        'daful'
+        'daful',
+        'created_at',
     ];
 }
