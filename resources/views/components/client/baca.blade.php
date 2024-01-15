@@ -6,7 +6,7 @@
                 <div class="card-body">
                     <img class="card-img-top" src="" alt="">
                     <hr>
-                    <h2 class="card-title">{{$data->judul}}</h2>
+                    <h2 class="card-title">{{ $data->judul }}</h2>
                     <p class="card-text"> {!! $data->informasi !!} </p>
                 </div>
                 <div class="card-footer">
