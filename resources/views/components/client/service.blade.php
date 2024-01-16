@@ -19,7 +19,7 @@
                         <div>
                             <span class="blog-author">Administrator</span>
                             <div class="blog-post">
-                                <span><i class="fa fa-clock-o"></i> 6 days ago</span>
+                                <span><i class="fa fa-clock-o"></i>{{ timestampToAgo($infor->created_at) }}</span>
                             </div>
                         </div>
                         <button class="btn btn-sm"><i class="fa fa-share-alt"></i></button>

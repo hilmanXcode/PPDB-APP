@@ -1,4 +1,5 @@
 <?php
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Http;
 
 if (! function_exists('dateIndo')) {
@@ -38,6 +39,12 @@ if (!function_exists('imageUrl')){
         // $response = Http::get($baseUrl);
         // return $response->body();
         return $url;
+    }
+}
+
+if(!function_exists('timestampToAgo')){
+    function timestampToAgo($timestamp){
+        return Carbon::parse($timestamp)->ago();
     }
 }
 ?>

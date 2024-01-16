@@ -29,8 +29,8 @@
                                     @endif
                                 </div>
                                 <div class="form-group my-2">
-                                    <label for="kategori" class="{{ $errors->get('category_slug') ? 'text-danger' : '' }}">Slug Kategori</label>
-                                    <input type="text" class="form-control {{ $errors->get('category_slug') ? 'is-invalid' : '' }}" name="category_slug" id="kategori" placeholder="Ex. web_programming" value="{{ $data->category_slug }}">
+                                    <label for="slug_kategori" class="{{ $errors->get('category_slug') ? 'text-danger' : '' }}">Slug Kategori</label>
+                                    <input type="text" class="form-control {{ $errors->get('category_slug') ? 'is-invalid' : '' }}" name="category_slug" id="slug_kategori" placeholder="Ex. web_programming" value="{{ $data->category_slug }}">
                                     @if ($errors->get('category_slug'))
                                         <div class="invalid-feedback text-danger">
                                         @foreach ($errors->get('category_slug') as $message)
