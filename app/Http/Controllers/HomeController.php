@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $data_pendaftar = Pendaftar::orderBy('created_at', 'DESC')->get();
+        $data_pendaftar = Pendaftar::orderBy('created_at', 'DESC')->limit(5, 0)->get();
 
         $data_lelaki = Pendaftar::where('jenis_kelamin', 'Laki Laki')->count();
         $data_perempuan = Pendaftar::where('jenis_kelamin', 'Perempuan')->count();
@@ -36,7 +36,7 @@ class HomeController extends Controller
         $bdf = Pendaftar::where('acc', '1')->where('daful', '0')->count();
         $sdf = Pendaftar::where('acc', '1')->where('daful', '1')->count();
         $page = "dashboard";
-        
+
         $belum_daful = Pendaftar::where('acc', '1')->where('daful', '0')->count();
         $belum_acc = Pendaftar::where('acc', '0')->count();
         $sudah_acc = Pendaftar::where('acc', '1')->count();

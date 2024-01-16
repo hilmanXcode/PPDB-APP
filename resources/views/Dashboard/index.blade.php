@@ -197,8 +197,8 @@
                                         <th>No</th>
                                         <th>Nama Lengkap</th>
                                         <th>Asal Sekolah</th>
-                                        <th>Rekomendasi</th>
-                                        <th>Gelombang</th>
+                                        <th>Jenis Kelamin</th>
+                                        <th>Tanggal Daftar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
