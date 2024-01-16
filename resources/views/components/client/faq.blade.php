@@ -1,5 +1,5 @@
    <!-- ======= F.A.Q Section ======= -->
-   <div>
+   <div class="mt-4">
        <div class="container">
            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
 

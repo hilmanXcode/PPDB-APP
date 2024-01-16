@@ -16,6 +16,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
+<script src="//cdn.ckeditor.com/4.19.1/full/ckeditor.js"></script>
 {{ $page ?? $page = '' }}
 
 @if ($page === "dashboard")
@@ -26,7 +27,17 @@
 @endif
 <script>
 
-    window.jsPDF = window.jspdf.jsPDF;
+
+    var konten = document.getElementById("konten");
+    CKEDITOR.replace(konten, {
+        language: 'en-gb'
+    });
+    var konten2 = document.getElementById("konten2");
+    CKEDITOR.replace(konten2, {
+        language: 'en-gb'
+    });
+    CKEDITOR.config.allowedContent = true;
+
     const Toast = Swal.mixin({
         toast: true,
         position: "top-end",
@@ -73,6 +84,7 @@
         $('#data_acc').DataTable(options);
         $('#belum_daful').DataTable(options);
         $('#sudah_daful').DataTable(options);
+        $('#data_sekolah').DataTable(options);
 
         $('#data_kategori').DataTable({
             "bLengthChange": false,

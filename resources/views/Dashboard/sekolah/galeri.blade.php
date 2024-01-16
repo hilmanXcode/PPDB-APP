@@ -84,7 +84,6 @@
 
         </section>
       </div>
-      <x-dcore.footer />
       <div class="modal fade" id="modalFoto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">

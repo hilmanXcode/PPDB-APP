@@ -44,5 +44,4 @@
       </div>
     </div>
   </div>
-  <x-dcore.script />
 @endsection

@@ -75,8 +75,6 @@
 
                 </section>
             </div>
-            <x-dcore.footer />
         </div>
     </div>
-    <x-dcore.script />
 @endsection
