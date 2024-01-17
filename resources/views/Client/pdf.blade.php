@@ -72,7 +72,7 @@
         <tr>
             <td>Alamat Siswa</td>
             <td>:</td>
-            <td>{{ $data->alamat_siswa }}</td>
+            <td>{{ $data->alamat }}</td>
         </tr>
        
         <tr>

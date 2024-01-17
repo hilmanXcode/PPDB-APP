@@ -28,9 +28,6 @@
     <x-client.faq />
     <!-- FAQ End -->
 
-    <!-- Testimonial Start -->
-    <x-client.testimonial />
-    <!-- Testimonial End -->
 
     <!-- Appointment Start -->
     <x-client.contactus />

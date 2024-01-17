@@ -1,6 +1,6 @@
    <!-- ======= F.A.Q Section ======= -->
    <div class="mt-4">
-       <div class="container">
+       <div class="container mb-4">
            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
 
                <h1 class="mb-5">Frequently Asked Questions</h1>
